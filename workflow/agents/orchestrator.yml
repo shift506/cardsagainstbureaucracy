@@ -1,0 +1,11 @@
+agent: orchestrator
+role: Routes user intent to sub-agents and owns the task queue
+model: claude-sonnet-4-20250514
+system_prompt_ref: src/agents/orchestrator.ts
+tools_allowed:
+  - read-context
+  - dispatch-agent
+  - queue-management
+  - read-handoff-contracts
+escalate_to: human-reviewer
+max_iterations: 5

@@ -1,0 +1,11 @@
+quality_gates:
+  test_coverage_min: 80
+  lighthouse_perf_min: 90
+  bundle_size_max_kb:
+    main_chunk: 500
+    animation_chunk: 300
+  animation_fps_floor: 55
+  cls_max: 0.1
+  inp_max_ms: 200
+  a11y_pass_rate: 100
+  critical_findings_allowed: 0

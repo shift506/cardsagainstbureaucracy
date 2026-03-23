@@ -1,0 +1,54 @@
+name: Deploy Staging
+
+on:
+  push:
+    branches: [develop]
+
+jobs:
+  deploy-staging:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        run: pnpm exec tsc --noEmit
+
+      - name: Unit tests
+        run: pnpm exec vitest run
+
+      - name: Build
+        run: pnpm exec vite build
+        env:
+          VITE_ENV: staging
+
+      - name: Deploy to Vercel (preview)
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v11
+        with:
+          urls: ${{ steps.deploy.outputs.preview-url }}
+          budgetPath: .lighthouserc.json
+          uploadArtifacts: true
+
+      - name: Post Lighthouse score comment
+        if: github.event_name == 'pull_request'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx tsx scripts/post-lighthouse-comment.ts

@@ -1,0 +1,40 @@
+name: Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      deploy_sha:
+        description: 'SHA to roll back to'
+        required: true
+        type: string
+      reason:
+        description: 'Reason for rollback'
+        required: true
+        type: string
+
+jobs:
+  rollback:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Rollback Vercel to SHA
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          echo "Rolling back to SHA: ${{ github.event.inputs.deploy_sha }}"
+          # Vercel rollback via CLI
+          npx vercel rollback ${{ github.event.inputs.deploy_sha }} --token ${{ secrets.VERCEL_TOKEN }} --yes
+
+      - name: Invalidate CDN cache
+        run: |
+          echo "CDN cache invalidation for rollback to ${{ github.event.inputs.deploy_sha }}"
+
+      - name: Notify Slack #incidents
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          npx tsx scripts/notify-slack.ts \
+            --channel incidents \
+            --message "ROLLBACK: Reverted to SHA ${{ github.event.inputs.deploy_sha }}. Reason: ${{ github.event.inputs.reason }}" \
+            --level error

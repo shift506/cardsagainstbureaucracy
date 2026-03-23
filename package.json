@@ -1,0 +1,47 @@
+{
+  "name": "my-animation-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "lint": "eslint src --ext .ts,.tsx",
+    "audit": "npx tsx scripts/audit-animations.ts",
+    "scaffold": "npx tsx scripts/scaffold-component.ts",
+    "bump": "npx tsx scripts/bump-version.ts",
+    "changelog": "npx tsx scripts/generate-changelog.ts"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "^0.183.1",
+    "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/ui": "^4.1.1",
+    "jsdom": "^29.0.1",
+    "playwright": "^1.58.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.57.2",
+    "vite": "^8.0.1",
+    "vitest": "^4.1.1"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.80.0",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "framer-motion": "^12.38.0",
+    "gsap": "^3.14.2",
+    "three": "^0.183.2",
+    "zustand": "^5.0.12"
+  }
+}

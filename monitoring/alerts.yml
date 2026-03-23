@@ -1,0 +1,47 @@
+alerts:
+  fps-degradation:
+    name: Animation FPS Degradation
+    query: "avg(last_5m):avg:animation.fps{env:production} < 50"
+    message: |
+      Average animation FPS dropped below 50 for 5 minutes.
+      Runbook: monitoring/runbooks/animation-jank.md
+    notify:
+      - "@engineering"
+    thresholds:
+      critical: 50
+      warning: 55
+
+  cls-spike:
+    name: CLS Spike
+    query: "avg(last_5m):avg:web.cls{env:production} > 0.1"
+    message: |
+      CLS exceeded 0.1 threshold on production.
+      Trigger Monitor agent bisect.
+      Runbook: monitoring/runbooks/animation-jank.md
+    notify:
+      - "@engineering"
+    thresholds:
+      critical: 0.1
+
+  error-rate-surge:
+    name: Error Rate Surge
+    query: "sum(last_5m):sum:errors.total{env:production}.as_rate() > 0.01"
+    message: |
+      Error rate exceeded 1% on production.
+      Paging on-call and capturing Sentry snapshot.
+    notify:
+      - "@on-call"
+    thresholds:
+      critical: 0.01
+
+  bundle-bloat:
+    name: Bundle Size Bloat
+    query: "avg(last_1h):avg:bundle.main_chunk_kb{env:production} > 500"
+    message: |
+      Main bundle chunk exceeded 500kb.
+      Blocking next deploy and notifying #eng.
+      Runbook: monitoring/runbooks/bundle-bloat.md
+    notify:
+      - "#eng"
+    thresholds:
+      critical: 500

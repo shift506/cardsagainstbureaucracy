@@ -1,0 +1,84 @@
+phases:
+  plan:
+    required_agents: [orchestrator, planner]
+    entry_conditions:
+      - user_story_defined: true
+      - acceptance_criteria_written: true
+    exit_criteria:
+      - technical_spec_approved: true
+      - agent_assignments_confirmed: true
+    artifacts_produced:
+      - technical-spec.md
+      - agent-task-queue.json
+
+  design:
+    required_agents: [animator, reviewer]
+    entry_conditions:
+      - technical_spec_approved: true
+    exit_criteria:
+      - motion_variants_defined: true
+      - a11y_review_passed: true
+    artifacts_produced:
+      - variant-map.ts
+      - design-tokens.md
+
+  develop:
+    required_agents: [animator, qa]
+    entry_conditions:
+      - variant_map_approved: true
+    exit_criteria:
+      - unit_tests_pass: true
+      - coverage_gte_80: true
+      - no_critical_lint: true
+    artifacts_produced:
+      - component files
+      - animation hooks
+      - unit test files
+
+  review:
+    required_agents: [reviewer, qa]
+    entry_conditions:
+      - develop_exit_criteria_met: true
+    exit_criteria:
+      - no_critical_findings: true
+      - visual_diff_approved: true
+    artifacts_produced:
+      - review-report.json
+      - pr-comment
+
+  stage:
+    required_agents: [qa, monitor]
+    entry_conditions:
+      - review_approved: true
+    exit_criteria:
+      - lighthouse_perf_gte_90: true
+      - fps_gte_55: true
+      - cls_lte_0_1: true
+    artifacts_produced:
+      - lighthouse-report.json
+      - staging-url
+
+  release:
+    required_agents: [release]
+    entry_conditions:
+      - stage_exit_criteria_met: true
+      - manual_approval: true
+    exit_criteria:
+      - version_bumped: true
+      - changelog_generated: true
+      - github_release_created: true
+    artifacts_produced:
+      - CHANGELOG.md
+      - github-release
+
+  monitor:
+    required_agents: [monitor]
+    entry_conditions:
+      - release_complete: true
+    exit_criteria:
+      - no_fps_degradation: true
+      - no_cls_spike: true
+      - error_rate_lt_1_percent: true
+    artifacts_produced:
+      - monitoring-report.json
+      - datadog-dashboard-snapshot

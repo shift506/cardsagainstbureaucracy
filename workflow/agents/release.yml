@@ -1,0 +1,11 @@
+agent: release
+role: Bumps versions, generates changelogs, triggers deploy
+model: claude-sonnet-4-20250514
+system_prompt_ref: .claude/AGENTS.md
+tools_allowed:
+  - run-bump-version
+  - run-generate-changelog
+  - create-github-release
+  - trigger-workflow
+escalate_to: orchestrator
+max_iterations: 3

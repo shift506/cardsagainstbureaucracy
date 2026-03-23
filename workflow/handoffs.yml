@@ -1,0 +1,45 @@
+handoffs:
+  animator_to_qa:
+    producer: animator
+    consumer: qa
+    contract:
+      produces:
+        - componentPath: string
+        - variantPath: string
+        - hookPath: string
+        - testStubPath: string
+      requires:
+        - testStubPath: string
+
+  reviewer_to_orchestrator:
+    producer: reviewer
+    consumer: orchestrator
+    contract:
+      produces:
+        - reportPath: string
+        - approved: boolean
+        - criticalCount: number
+      requires:
+        - approved: true
+        - criticalCount: 0
+
+  qa_to_release:
+    producer: qa
+    consumer: release
+    contract:
+      produces:
+        - coverageReport: string
+        - allTestsPassing: boolean
+      requires:
+        - allTestsPassing: true
+
+  release_to_monitor:
+    producer: release
+    consumer: monitor
+    contract:
+      produces:
+        - deployedSha: string
+        - version: string
+        - changelogPath: string
+      requires:
+        - deployedSha: string

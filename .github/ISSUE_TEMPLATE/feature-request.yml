@@ -1,0 +1,31 @@
+name: Feature Request
+description: Suggest a new animation or feature
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Feature description
+      placeholder: Describe the animation or feature you want
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      placeholder: Why would this be useful?
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Feature type
+      options:
+        - New animation component
+        - New animation hook
+        - Canvas / Three.js scene
+        - Performance improvement
+        - Developer tooling
+        - Other
+    validations:
+      required: true

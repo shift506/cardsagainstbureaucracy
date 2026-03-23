@@ -1,0 +1,40 @@
+name: Animation Regression
+description: Report an animation regression
+labels: ["animation", "regression"]
+body:
+  - type: input
+    id: component
+    attributes:
+      label: Affected component
+      placeholder: e.g. AnimatedCard, HomePage transition
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Regression description
+      placeholder: What animation broke and how
+    validations:
+      required: true
+  - type: input
+    id: fps-before
+    attributes:
+      label: FPS before regression
+      placeholder: "60"
+  - type: input
+    id: fps-after
+    attributes:
+      label: FPS after regression
+      placeholder: "30"
+  - type: input
+    id: commit-sha
+    attributes:
+      label: First bad commit SHA
+    validations:
+      required: false
+  - type: checkboxes
+    id: reduced-motion
+    attributes:
+      label: Reduced motion
+      options:
+        - label: Bug also occurs with prefers-reduced-motion enabled

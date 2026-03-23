@@ -1,0 +1,71 @@
+name: Deploy Production
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  deploy-prod:
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        run: pnpm exec tsc --noEmit
+
+      - name: Full test suite
+        run: pnpm exec vitest run
+
+      - name: Audit animations
+        run: npx tsx scripts/audit-animations.ts
+
+      - name: Build
+        run: pnpm exec vite build
+        env:
+          VITE_ENV: production
+
+      - name: Deploy to Vercel (production)
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+
+      - name: Datadog deploy marker
+        run: |
+          curl -X POST "https://api.datadoghq.com/api/v1/events" \
+            -H "DD-API-KEY: ${{ secrets.DATADOG_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{"title":"Deploy","text":"Production deploy ${{ github.ref_name }}","tags":["env:production","app:my-animation-app"]}'
+
+      - name: Generate changelog
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npx tsx scripts/generate-changelog.ts
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          body_path: CHANGELOG.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Notify Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: npx tsx scripts/notify-slack.ts --channel releases --message "Deployed ${{ github.ref_name }} to production" --level info

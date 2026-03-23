@@ -1,0 +1,11 @@
+agent: qa
+role: Runs test suites, interprets failures, writes regression tests
+model: claude-sonnet-4-20250514
+system_prompt_ref: .claude/AGENTS.md
+tools_allowed:
+  - run-vitest
+  - run-playwright
+  - write-test
+  - read-coverage
+escalate_to: reviewer
+max_iterations: 5

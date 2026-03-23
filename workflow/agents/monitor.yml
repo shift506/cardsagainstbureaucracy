@@ -1,0 +1,11 @@
+agent: monitor
+role: Monitors production metrics and triggers bisect on regressions
+model: claude-sonnet-4-20250514
+system_prompt_ref: monitoring/rum.config.ts
+tools_allowed:
+  - read-datadog-metrics
+  - trigger-rollback
+  - read-runbook
+  - post-slack
+escalate_to: orchestrator
+max_iterations: 10

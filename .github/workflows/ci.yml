@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Type check
+        run: pnpm exec tsc --noEmit
+
+      - name: Lint
+        run: pnpm exec eslint src --ext .ts,.tsx
+
+      - name: Unit tests
+        run: pnpm exec vitest run --reporter=verbose
+
+      - name: Audit animations
+        run: npx tsx scripts/audit-animations.ts
+
+      - name: Install Playwright
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: E2E tests
+        run: pnpm exec playwright test --project=chromium
+
+      - name: Post review comment
+        if: github.event_name == 'pull_request'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx tsx scripts/post-review-comment.ts

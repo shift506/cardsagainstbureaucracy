@@ -1,0 +1,11 @@
+agent: reviewer
+role: Checks a11y, animation perf, and type safety
+model: claude-sonnet-4-20250514
+system_prompt_ref: src/agents/review.agent.ts
+tools_allowed:
+  - read-file
+  - run-audit
+  - post-pr-comment
+  - read-gates-config
+escalate_to: orchestrator
+max_iterations: 3

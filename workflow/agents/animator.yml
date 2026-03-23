@@ -1,0 +1,11 @@
+agent: animator
+role: Generates Framer Motion variant code and animation hooks
+model: claude-sonnet-4-20250514
+system_prompt_ref: src/agents/animator.agent.ts
+tools_allowed:
+  - read-file
+  - write-file
+  - read-motion-config
+  - run-scaffold-component
+escalate_to: orchestrator
+max_iterations: 4

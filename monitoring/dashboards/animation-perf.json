@@ -1,0 +1,58 @@
+{
+  "title": "Animation Performance",
+  "description": "FPS, CLS, INP, and reduced-motion metrics for my-animation-app",
+  "widgets": [
+    {
+      "id": 1,
+      "type": "timeseries",
+      "title": "FPS by Route",
+      "requests": [
+        {
+          "q": "avg:animation.fps{*} by {route}",
+          "display_type": "line"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "heatmap",
+      "title": "CLS Heatmap",
+      "requests": [
+        {
+          "q": "avg:web.cls{*} by {route}"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "timeseries",
+      "title": "INP p75/p95/p99",
+      "requests": [
+        { "q": "p75:web.inp{env:production}", "display_type": "line" },
+        { "q": "p95:web.inp{env:production}", "display_type": "line" },
+        { "q": "p99:web.inp{env:production}", "display_type": "line" }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "pie",
+      "title": "Reduced Motion Adoption",
+      "requests": [
+        {
+          "q": "sum:reduced_motion.sessions{*} by {active}"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "toplist",
+      "title": "Top 5 Slowest Animation Components",
+      "requests": [
+        {
+          "q": "avg:animation.duration{*} by {component}.top(5)"
+        }
+      ]
+    }
+  ],
+  "layout_type": "ordered"
+}

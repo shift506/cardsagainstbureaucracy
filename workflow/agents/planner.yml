@@ -1,0 +1,10 @@
+agent: planner
+role: Converts user stories into technical specs and agent task assignments
+model: claude-sonnet-4-20250514
+system_prompt_ref: .claude/AGENTS.md
+tools_allowed:
+  - read-context
+  - write-spec
+  - read-codebase
+escalate_to: orchestrator
+max_iterations: 3
