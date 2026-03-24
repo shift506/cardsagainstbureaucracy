@@ -132,3 +132,14 @@
   display: inline-flex;
   align-items: center;
 }
+
+@media (max-width: 480px) {
+  .content {
+    padding: var(--space-6) var(--space-4);
+  }
+  .startButton {
+    width: 100%;
+    justify-content: center;
+    padding: var(--space-4) var(--space-6);
+  }
+}

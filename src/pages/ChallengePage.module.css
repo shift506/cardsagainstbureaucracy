@@ -185,3 +185,20 @@
   opacity: 0.35;
   cursor: not-allowed;
 }
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .transformSection {
+    padding: var(--space-4);
+  }
+  .actions {
+    justify-content: stretch;
+  }
+  .submitButton {
+    width: 100%;
+    text-align: center;
+    padding: var(--space-4) var(--space-6);
+  }
+}

@@ -62,6 +62,30 @@
 @media (max-width: 700px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 16px;
+    padding: var(--space-4);
+    bottom: var(--space-3);
+  }
+  .selectionTitle {
+    white-space: normal;
+  }
+  .confirmButton {
+    text-align: center;
+    padding: var(--space-4) var(--space-6);
   }
 }
 
