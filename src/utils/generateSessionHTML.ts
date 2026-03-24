@@ -1,4 +1,6 @@
-import type { ChallengeInput, SelectedAgenda, DrawnCard, CardCategory, PersonaResponse, PersonaId } from '@/types/session'
+import type { ChallengeInput, SelectedAgenda, DrawnCard, CardCategory, PersonaId } from '@/types/session'
+import { getCardById } from '@/data/cards/index'
+import { isBarrier, isEnabler, isTheory, isTool, isProvocation } from '@/data/types/cards'
 
 const PERSONA_NAMES: Record<PersonaId, string> = {
   critic: 'The Critic',
@@ -94,38 +96,67 @@ function cardHTML(card: DrawnCard): string {
     </div>`
 }
 
-// Fix #3 — only first persona open by default
-function personaHTML(response: PersonaResponse, index: number): string {
-  const name = PERSONA_NAMES[response.personaId]
-  const color = PERSONA_COLORS[response.personaId]
-  const paragraphs = response.content
-    .split('\n\n')
-    .filter(Boolean)
-    .map((p) => `<p>${renderInline(p.trim())}</p>`)
-    .join('\n')
+function cardContentHTML(drawnCard: DrawnCard, personaId: PersonaId, index: number): string {
+  const name = PERSONA_NAMES[personaId]
+  const color = PERSONA_COLORS[personaId]
+  const card = getCardById(drawnCard.id)
+  if (!card) return ''
+
+  const rows: string[] = []
+
+  if (isProvocation(card)) {
+    rows.push(`<p class="card-quote">"${card.quote}"<br><span class="card-attr">— ${card.attribution}</span></p>`)
+    rows.push(`<p><strong>${card.coreQuestion}</strong></p>`)
+    if (card.howToUseIt?.length) rows.push(`<p><strong>How to use it:</strong> ${card.howToUseIt.join(' ')}</p>`)
+    if (card.reflectionPrompts?.length) rows.push(`<p><em>${card.reflectionPrompts[0]}</em></p>`)
+  } else {
+    if ('description' in card) rows.push(`<p>${card.description as string}</p>`)
+    if ('whyItMatters' in card) rows.push(`<p><strong>Why it matters:</strong> ${card.whyItMatters as string}</p>`)
+    if (isBarrier(card)) {
+      if (card.howItShowsUp?.length) rows.push(`<p><strong>How it shows up:</strong> ${card.howItShowsUp.join(' ')}</p>`)
+      if (card.howToCounteract?.length) rows.push(`<p><strong>How to counteract:</strong> ${card.howToCounteract.join(' ')}</p>`)
+      if (card.reflectionPrompt) rows.push(`<p><em>${card.reflectionPrompt}</em></p>`)
+    } else if (isEnabler(card)) {
+      if (card.howToUseIt?.length) rows.push(`<p><strong>How to use it:</strong> ${card.howToUseIt.join(' ')}</p>`)
+      if (card.reflectionPrompt) rows.push(`<p><em>${card.reflectionPrompt}</em></p>`)
+    } else if (isTheory(card) || isTool(card)) {
+      if (card.howToUseIt?.length) rows.push(`<p><strong>How to use it:</strong> ${card.howToUseIt.join(' ')}</p>`)
+      if (card.reflectionPrompts?.length) rows.push(`<p><em>${card.reflectionPrompts[0]}</em></p>`)
+    }
+  }
+
   return `
     <details class="persona"${index === 0 ? ' open' : ''}>
       <summary class="persona-summary">
         <span class="persona-dot" style="background:${color}"></span>
-        <span class="persona-name" style="color:${color}">${name}</span>
+        <span class="persona-name" style="color:${color}">${name} — ${drawnCard.title}</span>
         <span class="persona-toggle">▸</span>
       </summary>
-      <div class="persona-content">${paragraphs}</div>
+      <div class="persona-content">${rows.join('\n')}</div>
     </details>`
+}
+
+const PERSONA_ORDER: PersonaId[] = ['critic', 'optimist', 'academic', 'practitioner', 'philosopher']
+const PERSONA_SUITS: Record<PersonaId, CardCategory> = {
+  critic: 'barrier', optimist: 'enabler', academic: 'theory',
+  practitioner: 'tool', philosopher: 'provocation', lead: 'agenda',
 }
 
 export function generateSessionHTML(
   challenge: ChallengeInput,
   agenda: SelectedAgenda | null,
   drawnCards: Partial<Record<CardCategory, DrawnCard>>,
-  responses: PersonaResponse[],
   synthesis: string,
   sessionDate: string
 ): string {
   const cards = Object.values(drawnCards).filter(Boolean) as DrawnCard[]
-  const personaSections = responses
-    .filter((r) => r.content && r.personaId !== 'lead')
-    .map((r, i) => personaHTML(r, i))
+  const personaSections = PERSONA_ORDER
+    .map((personaId, i) => {
+      const card = drawnCards[PERSONA_SUITS[personaId]]
+      if (!card) return ''
+      return cardContentHTML(card, personaId, i)
+    })
+    .filter(Boolean)
     .join('\n')
 
   const tocAgenda = agenda ? `<a href="#agenda" class="toc-link">Agenda</a>` : ''
@@ -402,13 +433,12 @@ export function downloadSessionHTML(
   challenge: ChallengeInput,
   agenda: SelectedAgenda | null,
   drawnCards: Partial<Record<CardCategory, DrawnCard>>,
-  responses: PersonaResponse[],
   synthesis: string
 ): void {
   const date = new Date().toLocaleDateString('en-AU', {
     year: 'numeric', month: 'long', day: 'numeric',
   })
-  const html = generateSessionHTML(challenge, agenda, drawnCards, responses, synthesis, date)
+  const html = generateSessionHTML(challenge, agenda, drawnCards, synthesis, date)
   const blob = new Blob([html], { type: 'text/html;charset=utf-8' })
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')

@@ -55,8 +55,11 @@ export interface AgendaCard extends BaseCard {
 
 export interface ProvocationCard extends BaseCard {
   category: 'provocation'
-  description?: string
-  [key: string]: unknown
+  quote: string
+  attribution: string
+  coreQuestion: string
+  howToUseIt: string[]
+  reflectionPrompts: string[]
 }
 
 export type TransformationCard =

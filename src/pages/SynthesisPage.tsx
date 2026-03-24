@@ -17,7 +17,6 @@ export function SynthesisPage() {
     challengeInput,
     selectedAgenda,
     drawnCards,
-    personaResponses,
     synthesis,
     setSynthesis,
     setFacilitatorStreaming,
@@ -34,7 +33,7 @@ export function SynthesisPage() {
 
     let accumulated = ''
 
-    runSynthesis(challengeInput, selectedAgenda, drawnCards, personaResponses, {
+    runSynthesis(challengeInput, selectedAgenda, drawnCards, {
       onChunk: (_personaId, chunk) => {
         accumulated += chunk
         setSynthesis(accumulated)
@@ -56,7 +55,7 @@ export function SynthesisPage() {
 
   function handleDownload() {
     if (!challengeInput || !synthesis) return
-    downloadSessionHTML(challengeInput, selectedAgenda, drawnCards, personaResponses, synthesis)
+    downloadSessionHTML(challengeInput, selectedAgenda, drawnCards, synthesis)
   }
 
   const sections = parseSynthesis(synthesis ?? '')

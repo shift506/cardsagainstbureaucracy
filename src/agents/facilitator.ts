@@ -3,35 +3,20 @@
  * @allowed_tools Vercel proxy → Anthropic API (server-side)
  * @escalation_path User is shown error if API call fails; session state preserved
  */
-import type { ChallengeInput, SelectedAgenda, DrawnCard, CardCategory, PersonaId, PersonaResponse } from '@/types/session'
+import type { ChallengeInput, SelectedAgenda, DrawnCard, CardCategory } from '@/types/session'
+import type { PersonaId } from '@/types/session'
 import { PERSONAS, getPersona } from './personas'
-
-const DELIBERATION_ORDER: PersonaId[] = ['critic', 'optimist', 'academic', 'practitioner', 'philosopher']
+import { getCardById } from '@/data/cards/index'
+import {
+  isBarrier, isEnabler, isTheory, isTool, isProvocation,
+} from '@/data/types/cards'
 
 function buildChallengeContext(input: ChallengeInput): string {
   return `CHALLENGE: ${input.name}
 CONTEXT: ${input.context}
 STAKEHOLDERS: ${input.stakeholders}
 STAKES: ${input.stakes}
-TRANSFORMATION: We are transforming from "${input.transformFrom}" to "${input.transformTo}" so that "${input.transformSoThat}"`
-}
-
-function buildCardContext(personaId: PersonaId, drawnCards: Partial<Record<CardCategory, DrawnCard>>): string {
-  const persona = getPersona(personaId)
-  const card = drawnCards[persona.suit]
-  if (!card) return ''
-  return `Your drawn card: "${card.title}" — ${card.description}`
-}
-
-function buildDeliberationContext(responses: PersonaResponse[]): string {
-  if (!responses.length) return ''
-  return '\n\nPREVIOUS DELIBERATION:\n' + responses
-    .filter((r) => !r.isStreaming)
-    .map((r) => {
-      const p = getPersona(r.personaId)
-      return `${p.name}:\n${r.content}`
-    })
-    .join('\n\n---\n\n')
+TRANSFORMATION: From "${input.transformFrom}" to "${input.transformTo}" so that "${input.transformSoThat}"`
 }
 
 function buildAgendaContext(agenda: SelectedAgenda | null): string {
@@ -40,6 +25,49 @@ function buildAgendaContext(agenda: SelectedAgenda | null): string {
 AGENDA TYPE: ${agenda.transformationType}
 AGENDA STATEMENT: ${agenda.statement}
 DESIGN PROVOCATION: ${agenda.designProvocation}`
+}
+
+function buildRichCardContext(drawnCards: Partial<Record<CardCategory, DrawnCard>>): string {
+  const PERSONA_ORDER: PersonaId[] = ['critic', 'optimist', 'academic', 'practitioner', 'philosopher']
+  const sections: string[] = []
+
+  for (const personaId of PERSONA_ORDER) {
+    const persona = getPersona(personaId)
+    const drawn = drawnCards[persona.suit]
+    if (!drawn) continue
+
+    const card = getCardById(drawn.id)
+    if (!card) continue
+
+    let content = `[${persona.name.toUpperCase()} — ${card.title}]\n`
+
+    if (isProvocation(card)) {
+      content += `Quote: "${card.quote}" — ${card.attribution}\n`
+      content += `Core Question: ${card.coreQuestion}\n`
+      if (card.howToUseIt?.length) content += `How to use: ${card.howToUseIt.join(' | ')}\n`
+      if (card.reflectionPrompts?.length) content += `Reflections: ${card.reflectionPrompts.join(' | ')}`
+    } else if (isBarrier(card)) {
+      content += `Description: ${card.description}\n`
+      content += `Why it matters: ${card.whyItMatters}\n`
+      if (card.howItShowsUp?.length) content += `How it shows up: ${card.howItShowsUp.join(' | ')}\n`
+      if (card.howToCounteract?.length) content += `How to counteract: ${card.howToCounteract.join(' | ')}\n`
+      content += `Reflection: ${card.reflectionPrompt}`
+    } else if (isEnabler(card)) {
+      content += `Description: ${card.description}\n`
+      content += `Why it matters: ${card.whyItMatters}\n`
+      if (card.howToUseIt?.length) content += `How to use: ${card.howToUseIt.join(' | ')}\n`
+      content += `Reflection: ${card.reflectionPrompt}`
+    } else if (isTheory(card) || isTool(card)) {
+      content += `Description: ${card.description}\n`
+      content += `Why it matters: ${card.whyItMatters}\n`
+      if (card.howToUseIt?.length) content += `How to use: ${card.howToUseIt.join(' | ')}\n`
+      if (card.reflectionPrompts?.length) content += `Reflections: ${card.reflectionPrompts.join(' | ')}`
+    }
+
+    sections.push(content)
+  }
+
+  return '\n\nTHE SPREAD:\n' + sections.join('\n\n')
 }
 
 export interface StreamCallbacks {
@@ -86,65 +114,24 @@ async function* streamFromProxy(
   }
 }
 
-export async function runDeliberation(
-  challenge: ChallengeInput,
-  agenda: SelectedAgenda | null,
-  drawnCards: Partial<Record<CardCategory, DrawnCard>>,
-  existingResponses: PersonaResponse[],
-  callbacks: StreamCallbacks
-): Promise<void> {
-  const pendingPersonas = DELIBERATION_ORDER.filter(
-    (id) => !existingResponses.some((r) => r.personaId === id && !r.isStreaming)
-  )
-
-  for (const personaId of pendingPersonas) {
-    const persona = getPersona(personaId)
-    const challengeCtx = buildChallengeContext(challenge)
-    const agendaCtx = buildAgendaContext(agenda)
-    const cardCtx = buildCardContext(personaId, drawnCards)
-    const deliberationCtx = buildDeliberationContext(existingResponses)
-
-    const userMessage = `${challengeCtx}${agendaCtx}\n\n${cardCtx}${deliberationCtx}\n\nPlease give your perspective in 150 words or fewer. Be direct and specific.`
-
-    try {
-      let accumulatedText = ''
-      for await (const text of streamFromProxy(
-        persona.systemPrompt,
-        [{ role: 'user', content: userMessage }],
-        250,
-        'claude-sonnet-4-20250514'
-      )) {
-        accumulatedText += text
-        callbacks.onChunk(personaId, text)
-      }
-
-      callbacks.onComplete(personaId)
-      existingResponses = [...existingResponses, { personaId, content: accumulatedText, isStreaming: false }]
-    } catch (err) {
-      callbacks.onError(personaId, err instanceof Error ? err : new Error(String(err)))
-    }
-  }
-}
-
 export async function runSynthesis(
   challenge: ChallengeInput,
   agenda: SelectedAgenda | null,
-  _drawnCards: Partial<Record<CardCategory, DrawnCard>>,
-  responses: PersonaResponse[],
+  drawnCards: Partial<Record<CardCategory, DrawnCard>>,
   callbacks: Pick<StreamCallbacks, 'onChunk' | 'onComplete' | 'onError'>
 ): Promise<void> {
   const lead = PERSONAS.find((p) => p.id === 'lead')!
   const challengeCtx = buildChallengeContext(challenge)
   const agendaCtx = buildAgendaContext(agenda)
-  const deliberationCtx = buildDeliberationContext(responses)
+  const cardCtx = buildRichCardContext(drawnCards)
 
-  const userMessage = `${challengeCtx}${agendaCtx}${deliberationCtx}\n\nPlease synthesize the deliberation into the structured output format.`
+  const userMessage = `${challengeCtx}${agendaCtx}${cardCtx}\n\nPlease synthesize the full spread into the structured output format.`
 
   try {
     for await (const text of streamFromProxy(
       lead.systemPrompt,
       [{ role: 'user', content: userMessage }],
-      900,
+      1200,
       'claude-sonnet-4-20250514'
     )) {
       callbacks.onChunk('lead', text)

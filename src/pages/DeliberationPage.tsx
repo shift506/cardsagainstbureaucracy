@@ -1,12 +1,14 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/animations/hooks/useReducedMotion'
 import { useSessionStore } from '@/store/sessionStore'
-import { runDeliberation } from '@/agents/facilitator'
-import { PersonaPanel } from '@/components/PersonaPanel/PersonaPanel'
+import { getPersona } from '@/agents/personas'
+import { CardContentPanel } from '@/components/CardContentPanel/CardContentPanel'
 import { CardFace } from '@/components/Card/CardFace'
+import { getCardById } from '@/data/cards/index'
 import type { PersonaId } from '@/types/session'
+import type { TransformationCard } from '@/data/types/cards'
 import styles from './DeliberationPage.module.css'
 
 const DELIBERATION_ORDER: PersonaId[] = ['critic', 'optimist', 'academic', 'practitioner', 'philosopher']
@@ -14,80 +16,30 @@ const DELIBERATION_ORDER: PersonaId[] = ['critic', 'optimist', 'academic', 'prac
 export function DeliberationPage() {
   const prefersReduced = useReducedMotion()
   const navigate = useNavigate()
-  const hasStarted = useRef(false)
-  const [fatalError, setFatalError] = useState<string | null>(null)
 
-  const {
-    challengeInput,
-    selectedAgenda,
-    drawnCards,
-    personaResponses,
-    addPersonaResponse,
-    updatePersonaResponse,
-    finalizePersonaResponse,
-    setPhase,
-    setFacilitatorStreaming,
-  } = useSessionStore()
+  const { challengeInput, drawnCards, setPhase } = useSessionStore()
 
   useEffect(() => {
-    if (!challengeInput) { navigate('/'); return }
-    if (hasStarted.current) return
-    hasStarted.current = true
-
-    setFacilitatorStreaming(true)
-
-    DELIBERATION_ORDER.forEach((id) => {
-      addPersonaResponse({ personaId: id, content: '', isStreaming: false })
-    })
-
-    runDeliberation(challengeInput, selectedAgenda, drawnCards, [], {
-      onChunk: (personaId, chunk) => {
-        const existing = useSessionStore.getState().personaResponses.find((r) => r.personaId === personaId)
-        if (!existing) {
-          useSessionStore.getState().addPersonaResponse({ personaId, content: chunk, isStreaming: true })
-        } else if (!existing.isStreaming) {
-          // Mark as streaming when first chunk arrives
-          useSessionStore.setState((s) => ({
-            personaResponses: s.personaResponses.map((r) =>
-              r.personaId === personaId ? { ...r, isStreaming: true } : r
-            ),
-          }))
-          updatePersonaResponse(personaId, chunk)
-        } else {
-          updatePersonaResponse(personaId, chunk)
-        }
-      },
-      onComplete: (personaId) => {
-        finalizePersonaResponse(personaId)
-      },
-      onError: (personaId, error) => {
-        console.error(`Persona ${personaId} error:`, error)
-        setFatalError(`${personaId}: ${error.message}`)
-        finalizePersonaResponse(personaId)
-      },
-    })
-    .catch((err) => {
-      const msg = err instanceof Error ? err.message : String(err)
-      console.error('runDeliberation failed:', msg)
-      setFatalError(msg)
-    })
-    .finally(() => setFacilitatorStreaming(false))
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
-
-  const allComplete = personaResponses.length === DELIBERATION_ORDER.length &&
-    personaResponses.every((r) => !r.isStreaming && r.content.length > 0)
-
-  const activePersonaId = personaResponses.find((r) => r.isStreaming)?.personaId ?? null
+    if (!challengeInput) navigate('/')
+  }, [challengeInput, navigate])
 
   function handleProceed() {
     setPhase('synthesis')
     navigate('/session/synthesis')
   }
 
+  const panels = DELIBERATION_ORDER.map((personaId) => {
+    const persona = getPersona(personaId)
+    const drawnCard = drawnCards[persona.suit]
+    if (!drawnCard) return null
+    const card = getCardById(drawnCard.id) as TransformationCard | undefined
+    if (!card) return null
+    return { personaId, card, drawnCard }
+  }).filter(Boolean) as { personaId: PersonaId; card: TransformationCard; drawnCard: NonNullable<typeof drawnCards[keyof typeof drawnCards]> }[]
+
   return (
     <div className={styles.page}>
       <div className={styles.layout}>
-        {/* Sidebar: drawn cards */}
         <motion.aside
           className={styles.sidebar}
           initial={{ opacity: 0, x: prefersReduced ? 0 : -20 }}
@@ -104,48 +56,36 @@ export function DeliberationPage() {
           </div>
         </motion.aside>
 
-        {/* Main: persona responses */}
         <main className={styles.main}>
           <div className={styles.header}>
             <span className="subheading" style={{ color: 'var(--color-new-leaf)', fontSize: '0.7rem' }}>
               Phase 3 — Deliberation
             </span>
-            <h1 className={styles.title}>The Deliberation</h1>
-            <p className={styles.subtitle}>
-              {challengeInput?.name}
-            </p>
+            <h1 className={styles.title}>The Spread</h1>
+            {challengeInput && (
+              <p className={styles.subtitle}>{challengeInput.name}</p>
+            )}
           </div>
-
-          {fatalError && (
-            <p style={{ color: '#f87171', fontSize: '0.85rem', padding: '1rem', background: 'rgba(248,113,113,0.1)', borderRadius: '8px', marginBottom: '1rem' }}>
-              Error: {fatalError}
-            </p>
-          )}
 
           <div className={styles.responses}>
-            {DELIBERATION_ORDER.map((personaId) => {
-              const response = personaResponses.find((r) => r.personaId === personaId)
-              if (!response) return null
-              return (
-                <PersonaPanel
-                  key={personaId}
-                  personaId={personaId}
-                  content={response.content}
-                  isStreaming={response.isStreaming}
-                  isActive={activePersonaId === personaId}
-                />
-              )
-            })}
+            {panels.map(({ personaId, card }, i) => (
+              <CardContentPanel
+                key={personaId}
+                personaId={personaId}
+                card={card}
+                index={i}
+              />
+            ))}
           </div>
 
-          {allComplete && (
+          {panels.length > 0 && (
             <motion.div
               className={styles.actions}
               initial={{ opacity: 0, y: prefersReduced ? 0 : 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
+              transition={{ delay: prefersReduced ? 0 : 0.6 }}
             >
-              <p className={styles.actionHint}>All five perspectives have been heard.</p>
+              <p className={styles.actionHint}>Review the spread, then proceed to synthesis.</p>
               <div className={styles.buttonRow}>
                 <motion.button
                   className={styles.secondaryButton}

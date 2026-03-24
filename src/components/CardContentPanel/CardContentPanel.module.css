@@ -1,0 +1,154 @@
+.panel {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left-width: 3px;
+  border-radius: 8px;
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.personaName {
+  font-family: var(--font-subheading);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 1.3;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.description {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sectionLabel {
+  font-family: var(--font-subheading);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.sectionText {
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.65;
+  margin: 0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.listItem {
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.6;
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.listItem::before {
+  content: '–';
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.italic {
+  font-style: italic;
+}
+
+.reflection {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.reflectionMark {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.65rem;
+  font-style: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 2px;
+}
+
+/* Provocation styles */
+.quote {
+  margin: 0;
+  padding: var(--space-4);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.quoteText {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.attribution {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-style: normal;
+}
+
+.coreQuestion {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 1.45;
+  margin: 0;
+}
