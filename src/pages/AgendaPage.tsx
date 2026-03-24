@@ -8,12 +8,23 @@ import type { SelectedAgenda } from '@/types/session'
 import styles from './AgendaPage.module.css'
 import logoUrl from '@/assets/WEB/WEB/Landscape/ShiftFlow-Logo-Landscape-FullColour-DarkBackground-2500x930px-72dpi.png'
 
+const cardImages = import.meta.glob<{ default: string }>(
+  '../data/cards/agenda-card-images/*.png',
+  { eager: true }
+)
+
+function getImageUrl(cardId: string): string | undefined {
+  const key = Object.keys(cardImages).find((k) => k.includes(`${cardId}.png`))
+  return key ? cardImages[key].default : undefined
+}
+
 export function AgendaPage() {
   const prefersReduced = useReducedMotion()
   const navigate = useNavigate()
   const { challengeInput, setSelectedAgenda, setPhase } = useSessionStore()
 
   const [selected, setSelected] = useState<SelectedAgenda | null>(null)
+  const [hoveredId, setHoveredId] = useState<string | null>(null)
 
   useEffect(() => {
     if (!challengeInput) navigate('/session/challenge')
@@ -42,11 +53,7 @@ export function AgendaPage() {
   return (
     <div className={styles.page}>
       <div className={styles.topBar}>
-        <img
-          src={logoUrl}
-          alt="ShiftFlow"
-          className={styles.logo}
-        />
+        <img src={logoUrl} alt="ShiftFlow" className={styles.logo} />
         <span className={`subheading ${styles.appLabel}`}>Cards Against Bureaucracy</span>
       </div>
 
@@ -70,6 +77,9 @@ export function AgendaPage() {
         >
           {agendaCards.map((card) => {
             const isSelected = selected?.id === card.id
+            const isHovered = hoveredId === card.id
+            const imageUrl = getImageUrl(card.id)
+
             return (
               <motion.button
                 key={card.id}
@@ -84,21 +94,26 @@ export function AgendaPage() {
                     designProvocation: card.designProvocation,
                   })
                 }
-                whileHover={{ scale: prefersReduced ? 1 : 1.01 }}
-                whileTap={{ scale: prefersReduced ? 1 : 0.99 }}
+                onHoverStart={() => setHoveredId(card.id)}
+                onHoverEnd={() => setHoveredId(null)}
+                whileTap={{ scale: prefersReduced ? 1 : 0.97 }}
               >
-                <div className={styles.cardMeta}>
-                  <span className={styles.cardNumber}>{String(agendaCards.indexOf(card) + 1).padStart(2, '0')}</span>
+                <div
+                  className={styles.imageWrapper}
+                  style={
+                    isHovered && !prefersReduced
+                      ? { boxShadow: `0 8px 40px 4px ${card.color}55, 0 0 0 1px ${card.color}44` }
+                      : isSelected
+                      ? { boxShadow: `0 0 0 2px var(--color-new-leaf), 0 8px 32px 2px ${card.color}33` }
+                      : undefined
+                  }
+                >
+                  {imageUrl && (
+                    <img src={imageUrl} alt={card.title} className={styles.cardImage} />
+                  )}
                   {isSelected && <span className={styles.selectedBadge}>✓</span>}
                 </div>
-                <div className={styles.cardBody}>
-                  <span className={styles.cardTitle}>{card.title}</span>
-                  <p className={styles.cardType}>{card.transformationType}</p>
-                  <p className={styles.cardStatement}>{card.statement}</p>
-                </div>
-                <div className={styles.cardProvocation}>
-                  <p className={styles.cardProvocationText}>{card.designProvocation}</p>
-                </div>
+                <p className={styles.cardLabel}>{card.title}</p>
               </motion.button>
             )
           })}
