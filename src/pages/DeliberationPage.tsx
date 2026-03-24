@@ -104,7 +104,7 @@ export function DeliberationPage() {
             </span>
             <h1 className={styles.title}>The Deliberation</h1>
             <p className={styles.subtitle}>
-              {challengeInput?.challenge}
+              {challengeInput?.name}
             </p>
           </div>
 
