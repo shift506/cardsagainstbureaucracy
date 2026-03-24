@@ -94,6 +94,7 @@ export function AgendaPage() {
                 <div className={styles.cardBody}>
                   <span className={styles.cardTitle}>{card.title}</span>
                   <p className={styles.cardType}>{card.transformationType}</p>
+                  <p className={styles.cardStatement}>{card.statement}</p>
                 </div>
                 <div className={styles.cardProvocation}>
                   <p className={styles.cardProvocationText}>{card.designProvocation}</p>
