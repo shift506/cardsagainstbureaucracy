@@ -6,7 +6,7 @@
   overflow: hidden;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
   flex-shrink: 0;
-  aspect-ratio: 2.5 / 3.5;   /* standard card proportions */
+  aspect-ratio: 198 / 340;   /* matches SVG viewBox */
 }
 
 /* Image fills the card */
@@ -89,7 +89,7 @@
 /* Flip */
 .flipContainer {
   width: 200px;
-  aspect-ratio: 2.5 / 3.5;
+  aspect-ratio: 198 / 340;
   cursor: pointer;
   position: relative;
   perspective: 1000px;

@@ -54,7 +54,9 @@ export function LandingPage() {
         animate="visible"
       >
         <motion.div className={styles.eyebrow} variants={itemVariants}>
-          <img src={logoUrl} alt="ShiftFlow" className={styles.logo} />
+          <a href="https://www.shiftflow.ca/transformation" target="_blank" rel="noopener noreferrer">
+            <img src={logoUrl} alt="ShiftFlow" className={styles.logo} />
+          </a>
         </motion.div>
 
         <motion.h1 className={styles.title} variants={itemVariants}>

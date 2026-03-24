@@ -14,7 +14,7 @@
 
 .cardZone {
   /* Fixed height so layout doesn't shift while AnimatePresence swaps cards */
-  height: 290px;
+  height: 385px;
   display: flex;
   align-items: center;
   justify-content: center;

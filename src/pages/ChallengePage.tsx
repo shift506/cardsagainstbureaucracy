@@ -84,11 +84,9 @@ export function ChallengePage() {
   return (
     <div className={styles.page}>
       <div className={styles.topBar}>
-        <img
-          src={logoUrl}
-          alt="ShiftFlow"
-          className={styles.logo}
-        />
+        <a href="https://www.shiftflow.ca/transformation" target="_blank" rel="noopener noreferrer">
+          <img src={logoUrl} alt="ShiftFlow" className={styles.logo} />
+        </a>
         <span className={`subheading ${styles.appLabel}`}>Cards Against Bureaucracy</span>
       </div>
 
