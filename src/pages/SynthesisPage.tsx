@@ -50,7 +50,7 @@ export function SynthesisPage() {
 
   function handleNewSession() {
     reset()
-    navigate('/')
+    window.location.href = 'https://transformation.shiftflow.ca'
   }
 
   function handleDownload() {
