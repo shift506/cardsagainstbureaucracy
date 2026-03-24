@@ -15,24 +15,24 @@
 @media (max-width: 768px) {
   .layout {
     grid-template-columns: 1fr;
-    gap: var(--space-5);
+    gap: 0;
   }
   .sidebar {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    gap: var(--space-3);
-    position: static;
-    padding-bottom: var(--space-2);
+    display: none;
   }
-}
-
-@media (max-width: 480px) {
   .page {
     padding: var(--space-5) var(--space-3);
   }
   .title {
     font-size: 1.35rem;
+  }
+  .actions {
+    position: sticky;
+    bottom: 0;
+    background: var(--color-galaxy);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--space-4) 0;
+    margin-top: var(--space-4);
   }
   .buttonRow {
     flex-direction: column;
@@ -41,6 +41,7 @@
   .secondaryButton {
     text-align: center;
     padding: var(--space-4) var(--space-6);
+    width: 100%;
   }
 }
 
