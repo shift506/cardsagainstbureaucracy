@@ -87,13 +87,17 @@ export function AgendaPage() {
                 whileHover={{ scale: prefersReduced ? 1 : 1.01 }}
                 whileTap={{ scale: prefersReduced ? 1 : 0.99 }}
               >
-                <div className={styles.cardHeader}>
-                  <span className={styles.cardTitle}>{card.title}</span>
+                <div className={styles.cardMeta}>
+                  <span className={styles.cardNumber}>{String(agendaCards.indexOf(card) + 1).padStart(2, '0')}</span>
                   {isSelected && <span className={styles.selectedBadge}>✓</span>}
                 </div>
-                <p className={styles.cardType}>{card.transformationType}</p>
-                <p className={styles.cardStatement}>{card.statement}</p>
-                <p className={styles.cardProvocation}>{card.designProvocation}</p>
+                <div className={styles.cardBody}>
+                  <span className={styles.cardTitle}>{card.title}</span>
+                  <p className={styles.cardType}>{card.transformationType}</p>
+                </div>
+                <div className={styles.cardProvocation}>
+                  <p className={styles.cardProvocationText}>{card.designProvocation}</p>
+                </div>
               </motion.button>
             )
           })}
