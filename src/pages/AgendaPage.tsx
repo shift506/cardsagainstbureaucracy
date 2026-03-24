@@ -101,17 +101,19 @@ export function AgendaPage() {
                 <div
                   className={styles.imageWrapper}
                   style={
-                    isHovered && !prefersReduced
-                      ? { boxShadow: `0 8px 40px 4px ${card.color}55, 0 0 0 1px ${card.color}44` }
-                      : isSelected
-                      ? { boxShadow: `0 0 0 2px var(--color-new-leaf), 0 8px 32px 2px ${card.color}33` }
+                    isSelected
+                      ? { borderColor: card.color, boxShadow: `0 0 0 1px ${card.color}, 0 8px 40px 6px ${card.color}55` }
+                      : isHovered && !prefersReduced
+                      ? { boxShadow: `0 8px 40px 4px ${card.color}66, 0 0 0 1px ${card.color}55` }
                       : undefined
                   }
                 >
                   {imageUrl && (
                     <img src={imageUrl} alt={card.title} className={styles.cardImage} />
                   )}
-                  {isSelected && <span className={styles.selectedBadge}>✓</span>}
+                  {isSelected && (
+                    <span className={styles.selectedBadge} style={{ background: card.color, color: 'var(--color-galaxy)' }}>✓</span>
+                  )}
                 </div>
                 <p className={styles.cardLabel}>{card.title}</p>
               </motion.button>

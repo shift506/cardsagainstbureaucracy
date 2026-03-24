@@ -10,7 +10,7 @@ interface CardFaceProps {
 }
 
 export function CardFace({ card, compact = false, onClick }: CardFaceProps) {
-  const faceImage = getCardFaceImage(card.category, card.imageIndex)
+  const faceImage = getCardFaceImage(card.category, card.id)
 
   return (
     <motion.div
