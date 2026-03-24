@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/animations/hooks/useReducedMotion'
@@ -15,6 +15,7 @@ export function DeliberationPage() {
   const prefersReduced = useReducedMotion()
   const navigate = useNavigate()
   const hasStarted = useRef(false)
+  const [fatalError, setFatalError] = useState<string | null>(null)
 
   const {
     challengeInput,
@@ -61,9 +62,16 @@ export function DeliberationPage() {
       },
       onError: (personaId, error) => {
         console.error(`Persona ${personaId} error:`, error)
+        setFatalError(`${personaId}: ${error.message}`)
         finalizePersonaResponse(personaId)
       },
-    }).finally(() => setFacilitatorStreaming(false))
+    })
+    .catch((err) => {
+      const msg = err instanceof Error ? err.message : String(err)
+      console.error('runDeliberation failed:', msg)
+      setFatalError(msg)
+    })
+    .finally(() => setFacilitatorStreaming(false))
   }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const allComplete = personaResponses.length === DELIBERATION_ORDER.length &&
@@ -107,6 +115,12 @@ export function DeliberationPage() {
               {challengeInput?.name}
             </p>
           </div>
+
+          {fatalError && (
+            <p style={{ color: '#f87171', fontSize: '0.85rem', padding: '1rem', background: 'rgba(248,113,113,0.1)', borderRadius: '8px', marginBottom: '1rem' }}>
+              Error: {fatalError}
+            </p>
+          )}
 
           <div className={styles.responses}>
             {DELIBERATION_ORDER.map((personaId) => {
