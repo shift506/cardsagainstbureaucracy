@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { MotionProvider } from '@/animations/motion.config'
+import { PasswordGate } from '@/components/PasswordGate/PasswordGate'
 import { LandingPage } from '@/pages/LandingPage'
 import { ChallengePage } from '@/pages/ChallengePage'
 import { AgendaPage } from '@/pages/AgendaPage'
@@ -13,6 +14,7 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <MotionProvider>
+      <PasswordGate>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<LandingPage />} />
@@ -24,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
+      </PasswordGate>
     </MotionProvider>
   </React.StrictMode>,
 )
