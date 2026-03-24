@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/animations/hooks/useReducedMotion'
 import { useSessionStore } from '@/store/sessionStore'
-import { captureLeadEmail } from '@/lib/supabase'
+import { captureLead } from '@/lib/supabase'
 import type { ChallengeInput } from '@/types/session'
 import styles from './ChallengePage.module.css'
 import logoUrl from '@/assets/WEB/WEB/Landscape/ShiftFlow-Logo-Landscape-FullColour-DarkBackground-2500x930px-72dpi.png'
@@ -23,6 +23,8 @@ export function ChallengePage() {
     transformSoThat: '',
   })
   const [email, setEmail] = useState('')
+  const [userName, setUserName] = useState('')
+  const [organisation, setOrganisation] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   function set(key: keyof ChallengeInput) {
@@ -32,6 +34,8 @@ export function ChallengePage() {
 
   const isValid =
     email.trim().includes('@') &&
+    userName.trim().length > 0 &&
+    organisation.trim().length > 0 &&
     form.name.trim().length > 0 &&
     form.context.trim().length > 0 &&
     form.transformFrom.trim().length > 0 &&
@@ -44,7 +48,18 @@ export function ChallengePage() {
 
     setIsSubmitting(true)
     try {
-      await captureLeadEmail(email.trim(), form.name.trim())
+      await captureLead({
+        email: email.trim(),
+        name: userName.trim(),
+        organisation: organisation.trim(),
+        challenge: form.name.trim(),
+        context: form.context.trim(),
+        stakeholders: form.stakeholders.trim(),
+        stakes: form.stakes.trim(),
+        transform_from: form.transformFrom.trim(),
+        transform_to: form.transformTo.trim(),
+        transform_so_that: form.transformSoThat.trim(),
+      })
     } catch {
       // Non-blocking — proceed even if lead capture fails
     }
@@ -106,6 +121,36 @@ export function ChallengePage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="you@organisation.com"
+              required
+            />
+          </div>
+
+          {/* Name */}
+          <div className={styles.field}>
+            <label className={styles.label}>
+              <span className={styles.labelText}>Your Name</span>
+            </label>
+            <input
+              type="text"
+              className={styles.input}
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
+              placeholder="Jane Smith"
+              required
+            />
+          </div>
+
+          {/* Organisation */}
+          <div className={styles.field}>
+            <label className={styles.label}>
+              <span className={styles.labelText}>Organisation</span>
+            </label>
+            <input
+              type="text"
+              className={styles.input}
+              value={organisation}
+              onChange={(e) => setOrganisation(e.target.value)}
+              placeholder="Department of..."
               required
             />
           </div>

@@ -8,10 +8,21 @@ const supabase = supabaseUrl && supabaseAnonKey
   ? createClient(supabaseUrl, supabaseAnonKey)
   : null
 
-export async function captureLeadEmail(email: string, challengeName: string): Promise<void> {
+export interface LeadData {
+  email: string
+  name: string
+  organisation: string
+  challenge: string
+  context: string
+  stakeholders: string
+  stakes: string
+  transform_from: string
+  transform_to: string
+  transform_so_that: string
+}
+
+export async function captureLead(data: LeadData): Promise<void> {
   if (!supabase) return  // silently skip if Supabase not configured yet
-  const { error } = await supabase
-    .from('leads')
-    .insert({ email, challenge: challengeName })
+  const { error } = await supabase.from('leads').insert(data)
   if (error) throw error
 }
