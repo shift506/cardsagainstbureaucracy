@@ -1,0 +1,126 @@
+.card {
+  width: 200px;
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+  aspect-ratio: 2.5 / 3.5;   /* standard card proportions */
+}
+
+/* Image fills the card */
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-card);
+  user-select: none;
+}
+
+/* Face — used when no image available (fallback) */
+.cardFace {
+  background-color: var(--color-galaxy);
+  border: 2px solid rgba(255,255,255,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.compact {
+  width: 140px;
+}
+
+.compact .cardDescription {
+  display: none;
+}
+
+.cardAccent {
+  height: 6px;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.cardContent {
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.categoryLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 1rem;
+  color: var(--color-white);
+  line-height: 1.3;
+}
+
+.cardDescription {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin-top: var(--space-2);
+}
+
+/* Card back */
+.cardBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-galaxy);
+}
+
+/* Fallback gradients when back image missing */
+.backFallback { position: absolute; inset: 0; border-radius: var(--radius-card); }
+.backFallback.barrier    { background: linear-gradient(135deg, #2a1a14, #3d2218); }
+.backFallback.enabler    { background: linear-gradient(135deg, #0f2218, #163020); }
+.backFallback.theory     { background: linear-gradient(135deg, #0d1e28, #122a35); }
+.backFallback.tool       { background: linear-gradient(135deg, #1e1f0a, #2a2b0d); }
+.backFallback.provocation { background: linear-gradient(135deg, #131820, #1a2230); }
+.backFallback.agenda     { background: linear-gradient(135deg, #131820, #1a2230); }
+
+/* Flip */
+.flipContainer {
+  width: 200px;
+  aspect-ratio: 2.5 / 3.5;
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+}
+
+.flipInner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.flipFront,
+.flipBack {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+}
+
+.flipBack {
+  transform: rotateY(180deg);
+}
+
+.flipHint {
+  position: absolute;
+  bottom: var(--space-3);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  pointer-events: none;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}

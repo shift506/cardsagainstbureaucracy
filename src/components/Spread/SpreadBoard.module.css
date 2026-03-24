@@ -1,0 +1,53 @@
+/* Progress strip — compact row of locked cards */
+.board {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: var(--space-4) var(--space-4) var(--space-2);
+}
+
+.slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  position: relative;
+}
+
+/* Compact card size in the strip */
+.slot > div:not(.lockedBadge) {
+  width: 100px;
+}
+
+.slotLabel {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.12em;
+}
+
+.drawn .slotLabel {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.pending .slotLabel {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.lockedBadge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-new-leaf);
+  color: var(--color-galaxy);
+  font-size: 0.65rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}

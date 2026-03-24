@@ -1,0 +1,382 @@
+[
+  {
+    "id": "stop-downloading-the-past",
+    "title": "Stop Downloading the Past",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "The quality of results produced by any system depends on the quality of awareness from which people in the system operate.",
+    "attribution": "Otto Scharmer",
+    "coreQuestion": "Are we solving today's problems with yesterday's assumptions?",
+    "howToUseIt": [
+      "Ask the group what assumptions about 'how things work here' are being carried forward from the past",
+      "Surface the mental models that shape how people see the challenge",
+      "Invite participants to describe the problem as if they were seeing it for the first time"
+    ],
+    "reflectionPrompts": [
+      "What past experience or assumption is shaping how we're defining this problem?",
+      "If we had no history with this issue, what would we notice that we're currently blind to?",
+      "What would it mean to approach this challenge from a place of open awareness rather than inherited habit?"
+    ]
+  },
+  {
+    "id": "designed-results",
+    "title": "Designed Results",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "Every system is perfectly designed to get the results it gets.",
+    "attribution": "W. Edwards Deming",
+    "coreQuestion": "What is the current system actually designed to produce — and is that what we want?",
+    "howToUseIt": [
+      "Reframe the problem as a design question: what system produced this outcome?",
+      "Ask participants to work backwards from the current result to its structural causes",
+      "Challenge any assumption that poor outcomes are accidental rather than systemic"
+    ],
+    "reflectionPrompts": [
+      "What structures, incentives, and processes are producing the current outcome?",
+      "If you wanted to guarantee more of the same result, what would you keep unchanged?",
+      "What would need to be redesigned — not just improved — to get a different result?"
+    ]
+  },
+  {
+    "id": "interconnected-problems",
+    "title": "Interconnected Problems",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "The more we study the major problems of our time, the more we come to realize that they cannot be understood in isolation. They are systemic problems, interconnected and interdependent.",
+    "attribution": "Fritjof Capra",
+    "coreQuestion": "What are we missing by treating this as a standalone problem?",
+    "howToUseIt": [
+      "Ask participants to map the connections between this challenge and others in the organisation",
+      "Invite the group to consider what solving this problem in isolation might break elsewhere",
+      "Surface the upstream and downstream dependencies being treated as external"
+    ],
+    "reflectionPrompts": [
+      "What other challenges in this organisation are connected to this one?",
+      "Who else — outside this room — is affected by or contributing to this problem?",
+      "What would change about our approach if we treated this as part of a larger system?"
+    ]
+  },
+  {
+    "id": "limits-of-imagination",
+    "title": "Limits of Imagination",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "The crisis is not climate or technology — it is our incapacity to reimagine our institutional infrastructure.",
+    "attribution": "Indy Johar",
+    "coreQuestion": "Is the real constraint our imagination, not our resources?",
+    "howToUseIt": [
+      "Challenge the group to separate 'what is technically possible' from 'what we can imagine our institution doing'",
+      "Ask what institutional forms, assumptions, or structures are being treated as fixed when they are not",
+      "Invite participants to imagine what this institution could look like if designed from scratch today"
+    ],
+    "reflectionPrompts": [
+      "What is being treated as a fixed constraint that is actually a design choice?",
+      "If institutional norms were not a barrier, what would you do differently?",
+      "What examples exist — elsewhere or in other sectors — that this organisation hasn't allowed itself to learn from?"
+    ]
+  },
+  {
+    "id": "19th-century-institutions",
+    "title": "19th Century Institutions",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "We're trying to fix 21st-century problems with 19th-century institutions. We need to instead promote new methods of thinking and problem solving towards complex societal problems that acknowledge existing methods but also question them in order to improve on them.",
+    "attribution": "Giulio Quaggiotto",
+    "coreQuestion": "Is the institution itself part of the problem?",
+    "howToUseIt": [
+      "Name the mismatch between the age and design of the institution and the nature of the problems it is trying to solve",
+      "Ask what the institution was originally designed for — and whether those conditions still apply",
+      "Invite participants to separate 'what this institution does well' from 'what the current challenge actually requires'"
+    ],
+    "reflectionPrompts": [
+      "Was this institution designed to solve the kind of problem we're facing today?",
+      "What assumptions about how the world works are baked into the structure of this organisation?",
+      "What would it look like to solve this problem with 21st-century institutional logic?"
+    ]
+  },
+  {
+    "id": "iterative-learning",
+    "title": "Iterative Learning",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "Innovation is an iterative learning process — both at systems, organisational, project and individual level.",
+    "attribution": "Christian Bason",
+    "coreQuestion": "Are we treating this as a one-shot solution or a learning journey?",
+    "howToUseIt": [
+      "Challenge any plan designed as a single implementation rather than a series of learning cycles",
+      "Ask what feedback loops are built into the proposed approach",
+      "Invite the group to name what they need to learn at each level — system, organisation, project, and individual"
+    ],
+    "reflectionPrompts": [
+      "What are the learning cycles built into this initiative — and are they fast enough?",
+      "What would we need to unlearn at the individual level for this to work?",
+      "How is this approach designed to get smarter over time rather than just deliver once?"
+    ]
+  },
+  {
+    "id": "collaboration-as-experiment",
+    "title": "Collaboration as Experiment",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "Collaboration is not about agreement. It's about moving forward together — even when we don't see eye to eye.",
+    "attribution": "Adam Kahane",
+    "coreQuestion": "Are we waiting for consensus when we should be committing to movement?",
+    "howToUseIt": [
+      "Challenge any assumption that alignment must precede action",
+      "Ask what it would look like to move forward together while holding genuine disagreement",
+      "Surface the difference between productive collaboration and forced consensus"
+    ],
+    "reflectionPrompts": [
+      "What legitimate disagreements are being suppressed in the name of alignment?",
+      "What would it look like to move forward with this challenge while acknowledging we don't all see it the same way?",
+      "Who is being left out of this collaboration because they are not in agreement?"
+    ]
+  },
+  {
+    "id": "righter-wrong",
+    "title": "Righter Wrong",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "The righter we do the wrong thing, the wronger we become. When we make a mistake doing the wrong thing and correct it, we become wronger. When we make a mistake doing the right thing and correct it, we become righter. Therefore, it is better to do the right thing wrong than the wrong thing right.",
+    "attribution": "Russell Ackoff",
+    "coreQuestion": "Are we getting better at solving the wrong problem?",
+    "howToUseIt": [
+      "Challenge the group to question whether they are optimising for the right outcome",
+      "Ask whether efficiency improvements are being made to a system fundamentally misaligned with its purpose",
+      "Invite participants to ask 'what is the right thing to do here?' before asking 'how do we do it better?'"
+    ],
+    "reflectionPrompts": [
+      "Is this the right problem to be solving — or are we getting more efficient at the wrong thing?",
+      "Where in this organisation are people being rewarded for doing the wrong thing with excellence?",
+      "What would it mean to do the right thing imperfectly, rather than the wrong thing perfectly?"
+    ]
+  },
+  {
+    "id": "collective-expertise",
+    "title": "Collective Expertise",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "The task of government is not to solve problems alone, but to create the conditions under which others can help solve them.",
+    "attribution": "Beth Noveck",
+    "coreQuestion": "Are we trying to solve this alone when the solution is distributed?",
+    "howToUseIt": [
+      "Ask who has relevant knowledge or capability that is not currently in the room",
+      "Challenge any assumption that the institution must own the solution rather than enable it",
+      "Invite participants to map the ecosystem of actors who have a stake and a contribution to make"
+    ],
+    "reflectionPrompts": [
+      "Who has expertise or lived experience relevant to this problem that we haven't engaged?",
+      "What would it look like to co-produce the solution rather than deliver it?",
+      "What conditions would we need to create for others to bring their knowledge to bear on this?"
+    ]
+  },
+  {
+    "id": "we-are-the-system",
+    "title": "We Are The System",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "The ultimate, hidden truth of the world is that it is something we make, and could just as easily make differently.",
+    "attribution": "David Graeber",
+    "coreQuestion": "Are we treating as fixed something that we ourselves created and could change?",
+    "howToUseIt": [
+      "Challenge the group to name what in this system they have treated as given that is actually a human construction",
+      "Ask who has the agency to make things differently — and what is stopping them",
+      "Invite a moment of genuine possibility-thinking: if we made this, we can remake it"
+    ],
+    "reflectionPrompts": [
+      "What aspects of this situation have been treated as inevitable that are actually the result of past choices?",
+      "Who made the rules that are constraining this work — and can those rules be changed?",
+      "What would it mean to take full responsibility for having created the current situation?"
+    ]
+  },
+  {
+    "id": "think-again",
+    "title": "Think Again",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "For every complex problem there is an answer that is clear, simple, and wrong.",
+    "attribution": "H. L. Mencken",
+    "coreQuestion": "Is the attractive solution too simple for the complexity of this problem?",
+    "howToUseIt": [
+      "Challenge any solution that feels obvious or generates quick agreement",
+      "Ask what complexity is being hidden by a clean narrative",
+      "Invite the group to name the second and third-order consequences of the proposed approach"
+    ],
+    "reflectionPrompts": [
+      "What is the appealing, simple answer to this problem — and what does it get wrong?",
+      "Where is the complexity being underestimated in how this challenge is framed?",
+      "What would a dissenting expert say about the approach we're most attracted to?"
+    ]
+  },
+  {
+    "id": "safe-to-fail",
+    "title": "Safe-to-Fail",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "Because complex systems are inherently unpredictable, we cannot plan or design outcomes in advance. Instead, we must run multiple safe-to-fail experiments, learn from what happens, and allow successful patterns to emerge.",
+    "attribution": "Dave Snowden",
+    "coreQuestion": "Are we trying to plan our way through something that requires experimentation?",
+    "howToUseIt": [
+      "Challenge any approach that assumes predictable outcomes in a complex system",
+      "Ask what small, reversible experiments could be run to generate learning before committing to scale",
+      "Invite the group to shift from 'how do we implement this?' to 'how do we learn fast enough?'"
+    ],
+    "reflectionPrompts": [
+      "What is the smallest, most reversible action we could take to learn something important?",
+      "Are we trying to plan outcomes that are inherently unpredictable in this context?",
+      "What would a portfolio of experiments look like instead of a single implementation plan?"
+    ]
+  },
+  {
+    "id": "always-be-learning",
+    "title": "Always Be Learning",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "In times of change, learners inherit the earth, while the learned find themselves beautifully equipped to deal with a world that no longer exists.",
+    "attribution": "Eric Hoffer",
+    "coreQuestion": "Are we drawing on expertise that is no longer fit for purpose?",
+    "howToUseIt": [
+      "Ask which parts of the existing approach are based on what worked in a different context",
+      "Challenge participants to name what they need to unlearn — not just learn — for this challenge",
+      "Invite a distinction between accumulated knowledge and current learning capacity"
+    ],
+    "reflectionPrompts": [
+      "What expertise in this room might be less relevant than it once was — and how would we know?",
+      "What are we not learning because we already believe we know the answer?",
+      "How is this organisation's learning capacity — not just its knowledge — positioned for the change ahead?"
+    ]
+  },
+  {
+    "id": "the-system-is-us",
+    "title": "The System is Us",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "The original sin of addressing complex challenges is the belief that you can change things without changing yourself.",
+    "attribution": "Zaid Hassan",
+    "coreQuestion": "Are we expecting the system to change while we remain the same?",
+    "howToUseIt": [
+      "Ask participants what they personally would need to change for this initiative to succeed",
+      "Challenge any framing that locates the problem entirely outside the room",
+      "Invite honest reflection on how those leading the change may be contributing to the problem"
+    ],
+    "reflectionPrompts": [
+      "What would you personally need to do differently for this change to succeed?",
+      "How might those championing this initiative be part of what needs to change?",
+      "What belief or behaviour in yourself is hardest to examine in the context of this challenge?"
+    ]
+  },
+  {
+    "id": "manage-expectations",
+    "title": "Manage Expectations",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "Scratch the surface of most cynics and you find a frustrated idealist — someone who made the mistake of converting his ideals into expectations.",
+    "attribution": "Peter Senge",
+    "coreQuestion": "Is the resistance we're encountering born of disappointment rather than disagreement?",
+    "howToUseIt": [
+      "Ask participants to consider whether the 'resisters' in this challenge are failed idealists who once cared deeply",
+      "Challenge any framing that treats cynics as obstacles rather than people with important history",
+      "Invite the group to distinguish between cynicism as a personality trait and cynicism as a learned response to broken promises"
+    ],
+    "reflectionPrompts": [
+      "What promises have been made and broken in this organisation that are fuelling current resistance?",
+      "Who are the frustrated idealists in this story — and what would it take to re-engage them?",
+      "What would change about your strategy if you treated cynics as your most important audience?"
+    ]
+  },
+  {
+    "id": "listen-to-the-system",
+    "title": "Listen to the System",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "We can't impose our will on a system. We can listen to what the system tells us, and discover how its properties and our values can work together to bring forth something much better.",
+    "attribution": "Donella Meadows",
+    "coreQuestion": "Are we listening to what the system is telling us, or imposing our model on it?",
+    "howToUseIt": [
+      "Ask what signals the current system is sending that are being ignored or overridden",
+      "Challenge any change strategy designed entirely in advance without feedback loops",
+      "Invite the group to name what the system is already doing well that the proposed change might disrupt"
+    ],
+    "reflectionPrompts": [
+      "What is the current system telling us that we haven't been willing to hear?",
+      "Where is this organisation already moving in the direction we want — and how could we amplify that?",
+      "What would change about our approach if we started by listening rather than planning?"
+    ]
+  },
+  {
+    "id": "what-we-practice-we-become",
+    "title": "What We Practice, We Become",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "Culture changes faster through collaborative project work than through a culture change initiative.",
+    "attribution": "Alex Ryan",
+    "coreQuestion": "Are we trying to change culture directly when we should be changing what people do together?",
+    "howToUseIt": [
+      "Challenge any culture change strategy that is primarily communicative rather than behavioural",
+      "Ask what new practices — not values statements — would actually shift how people work",
+      "Invite participants to name what people would need to start doing together, not just believing"
+    ],
+    "reflectionPrompts": [
+      "What would people need to actually do differently — not think or feel differently — for this to work?",
+      "What new collaborative practice could we start tomorrow that embodies the culture we want?",
+      "Where is this organisation trying to change belief before behaviour — and is that the right sequence?"
+    ]
+  },
+  {
+    "id": "connect-the-dots-networks",
+    "title": "Connect the Dots",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "Building a network — connecting people or institutions in specific ways for specific purposes — is a far better starting point than a strategy of deterrence, cooperation, or coordination with another government.",
+    "attribution": "Anne-Marie Slaughter",
+    "coreQuestion": "Is the missing ingredient connection rather than coordination?",
+    "howToUseIt": [
+      "Ask who needs to be connected to whom for this challenge to be addressed",
+      "Challenge any strategy built on formal coordination mechanisms when informal networks might move faster",
+      "Invite the group to map the relationships that don't exist yet but would unlock progress"
+    ],
+    "reflectionPrompts": [
+      "Who is not connected to whom in this challenge — and what would change if they were?",
+      "What relationships, if built, would make this initiative more likely to succeed than any formal strategy?",
+      "Are we trying to coordinate when we should be connecting?"
+    ]
+  },
+  {
+    "id": "what-matters-most",
+    "title": "What Matters Most",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "When all your time is spent answering questions and writing reports for other people inside government, it's mighty hard to be focused on the people outside government you're supposed to serve.",
+    "attribution": "Jennifer Pahlka",
+    "coreQuestion": "Has internal process displaced the people we exist to serve?",
+    "howToUseIt": [
+      "Ask participants to estimate what proportion of their work directly reaches intended beneficiaries versus feeds internal systems",
+      "Challenge any initiative that adds internal process without a corresponding reduction elsewhere",
+      "Invite the group to name the last time they heard directly from the people this work is meant to help"
+    ],
+    "reflectionPrompts": [
+      "Who is this organisation's work actually for — and how much of our capacity reaches them?",
+      "What internal reporting, approval, or coordination demands are crowding out delivery?",
+      "When did you last speak directly with someone this work is meant to serve?"
+    ]
+  },
+  {
+    "id": "connect-the-dots-people",
+    "title": "Connect the Dots",
+    "category": "provocation",
+    "color": "#BAE0C6",
+    "quote": "In the name of doing things for people, traditional and hierarchical organisations end up doing things to people.",
+    "attribution": "Charles Leadbeater",
+    "coreQuestion": "Is this organisation serving people or subjecting them?",
+    "howToUseIt": [
+      "Ask participants to examine whether the change they're proposing is being done with or to its intended beneficiaries",
+      "Challenge any design process that does not involve the people it affects",
+      "Invite the group to distinguish between good intentions and the actual experience of those being served"
+    ],
+    "reflectionPrompts": [
+      "Are the people this initiative is meant to help involved in designing it — or just receiving it?",
+      "What is the lived experience of this organisation for the people it serves, as distinct from its stated purpose?",
+      "Where are well-intentioned processes creating harm or powerlessness for the people they're meant to help?"
+    ]
+  }
+]

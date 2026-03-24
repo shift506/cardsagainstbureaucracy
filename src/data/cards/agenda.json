@@ -1,0 +1,272 @@
+[
+  {
+    "id": "digital-technology-transformation",
+    "title": "Digital & Technology Transformation",
+    "category": "agenda",
+    "color": "#B8C4C8",
+    "transformationType": "Rewiring how work gets done through digital tools, data, and automation.",
+    "statement": "We are transforming from manual, fragmented, and reactive processes to digital, integrated, and intelligence-enabled workflows so that decisions and services improve continuously.",
+    "examples": [
+      {
+        "label": "From paper forms and PDFs to end-to-end digital journeys",
+        "exemplar": "Government Digital Service redesigned services like tax and benefits around complete user journeys, eliminating paper and duplicate steps."
+      },
+      {
+        "label": "From legacy IT owned by departments to shared digital platforms",
+        "exemplar": "Service NSW built a whole-of-government platform used by dozens of agencies to deliver services consistently."
+      },
+      {
+        "label": "From static reports to real-time operational dashboards",
+        "exemplar": "New Zealand Ministry of Health uses near-real-time data during system stress (e.g., COVID response) to inform operational decisions."
+      },
+      {
+        "label": "From staff hunting for information to systems that proactively surface what matters",
+        "exemplar": "Netflix internal platforms push actionable insights directly to teams rather than relying on manual analysis."
+      }
+    ],
+    "designProvocation": "Where does work still exist purely because the system cannot 'see' itself?"
+  },
+  {
+    "id": "operating-model-transformation",
+    "title": "Operating Model Transformation",
+    "category": "agenda",
+    "color": "#B8C4C8",
+    "transformationType": "Redesigning how authority, work, and accountability are organized.",
+    "statement": "We are transforming from siloed, function-based structures to mission-oriented, cross-functional teams so that outcomes—not outputs—drive how we work.",
+    "examples": [
+      {
+        "label": "From departments optimizing mandates to shared missions",
+        "exemplar": "Government of Finland has experimented with phenomenon-based budgeting and cross-ministerial missions."
+      },
+      {
+        "label": "From annual plans to rolling priorities",
+        "exemplar": "Spotify popularized squad- and tribe-based planning with frequent reprioritization."
+      },
+      {
+        "label": "From escalation-heavy governance to clear decision rights at the edge",
+        "exemplar": "Buurtzorg empowers self-managing teams with minimal hierarchy."
+      },
+      {
+        "label": "From project handoffs to persistent product teams",
+        "exemplar": "US Digital Service embeds durable teams within agencies rather than short-term projects."
+      }
+    ],
+    "designProvocation": "Where does the org chart prevent the work from flowing?"
+  },
+  {
+    "id": "culture-leadership-transformation",
+    "title": "Culture & Leadership Transformation",
+    "category": "agenda",
+    "color": "#B8C4C8",
+    "transformationType": "Shifting norms, incentives, and leadership behaviours.",
+    "statement": "We are transforming from risk-averse, compliance-driven culture to one that values learning, trust, and shared responsibility so that people can act with confidence.",
+    "examples": [
+      {
+        "label": "From 'don't fail' to learning cultures",
+        "exemplar": "NASA institutionalized after-action reviews following failures like Challenger and Columbia."
+      },
+      {
+        "label": "From heroic leaders to collective leadership",
+        "exemplar": "Haier shifted to micro-enterprises with distributed leadership."
+      },
+      {
+        "label": "From permission-seeking to intent-based autonomy",
+        "exemplar": "US Navy adopted intent-based leadership practices championed by David Marquet."
+      },
+      {
+        "label": "From blame to reflection after action",
+        "exemplar": "Toyota uses structured reflection (hansei) as a core practice."
+      }
+    ],
+    "designProvocation": "What signals does leadership send when things go wrong?"
+  },
+  {
+    "id": "citizen-experience-transformation",
+    "title": "Customer / Citizen Experience (CX) Transformation",
+    "category": "agenda",
+    "color": "#B8C4C8",
+    "transformationType": "Designing around lived experience rather than organizational convenience.",
+    "statement": "We are transforming from services designed around internal structures to experiences designed around people's real needs and life events.",
+    "examples": [
+      {
+        "label": "From multiple applications to one journey across programs",
+        "exemplar": "Service Canada has moved toward bundled services around life events like retirement."
+      },
+      {
+        "label": "From 'contact us' to anticipatory services",
+        "exemplar": "Estonia provides automatic child benefits triggered by birth registration."
+      },
+      {
+        "label": "From channel teams to journey owners",
+        "exemplar": "Capital One assigns ownership to customer journeys rather than channels."
+      },
+      {
+        "label": "From policy-first to experience-informed policy",
+        "exemplar": "MindLab embedded user research directly into policymaking."
+      }
+    ],
+    "designProvocation": "Where do people experience your organization as a maze?"
+  },
+  {
+    "id": "workforce-talent-transformation",
+    "title": "Workforce & Talent Transformation",
+    "category": "agenda",
+    "color": "#B8C4C8",
+    "transformationType": "Rethinking roles, skills, and capability building.",
+    "statement": "We are transforming from static roles and job descriptions to dynamic, skills-based models so that talent can flow to where it is most needed.",
+    "examples": [
+      {
+        "label": "From fixed positions to talent pools",
+        "exemplar": "Unilever uses an internal talent marketplace to match skills to work."
+      },
+      {
+        "label": "From training events to learning in the flow of work",
+        "exemplar": "IBM embeds continuous learning platforms into daily work."
+      },
+      {
+        "label": "From consultants to internal capability building",
+        "exemplar": "UK NHS built internal improvement academies rather than outsourcing change."
+      },
+      {
+        "label": "From credentials to demonstrated skills",
+        "exemplar": "Google reduced degree requirements in favor of skill-based hiring."
+      }
+    ],
+    "designProvocation": "Where is talent underused because the system cannot see it?"
+  },
+  {
+    "id": "policy-governance-transformation",
+    "title": "Policy & Governance Transformation",
+    "category": "agenda",
+    "color": "#B8C4C8",
+    "transformationType": "Changing rules, incentives, and decision logic.",
+    "statement": "We are transforming from rules-driven, output-focused policy to outcomes-oriented, adaptive governance so that policy evolves with reality.",
+    "examples": [
+      {
+        "label": "From prescriptive regulation to principle-based policy",
+        "exemplar": "Financial Conduct Authority moved toward outcomes-focused regulation."
+      },
+      {
+        "label": "From closed cycles to iterative policy",
+        "exemplar": "Behavioural Insights Team uses experimentation to refine policy continuously."
+      },
+      {
+        "label": "From mandates to shared missions",
+        "exemplar": "European Commission adopted mission-oriented innovation frameworks."
+      },
+      {
+        "label": "From compliance to outcome accountability",
+        "exemplar": "New Zealand Treasury introduced wellbeing budgeting."
+      }
+    ],
+    "designProvocation": "Which policies are frozen snapshots of a world that no longer exists?"
+  },
+  {
+    "id": "service-system-integration",
+    "title": "Service System Integration",
+    "category": "agenda",
+    "color": "#B8C4C8",
+    "transformationType": "Aligning multiple organizations around shared outcomes.",
+    "statement": "We are transforming from fragmented services and handoffs to integrated pathways with shared accountability for outcomes.",
+    "examples": [
+      {
+        "label": "From referrals to integrated pathways",
+        "exemplar": "Kaiser Permanente integrates care delivery, financing, and prevention."
+      },
+      {
+        "label": "From boundaries to place-based models",
+        "exemplar": "Greater Manchester Combined Authority integrated health and social care at the regional level."
+      },
+      {
+        "label": "From crisis to prevention",
+        "exemplar": "Housing First prioritizes stable housing before crisis intervention."
+      },
+      {
+        "label": "From 'not our mandate' to shared outcomes",
+        "exemplar": "Ontario Health Teams align multiple providers around population outcomes."
+      }
+    ],
+    "designProvocation": "Where does the system force people to repeat their story?"
+  },
+  {
+    "id": "funding-resource-flow-transformation",
+    "title": "Funding & Resource Flow Transformation",
+    "category": "agenda",
+    "color": "#B8C4C8",
+    "transformationType": "Aligning money with learning and outcomes.",
+    "statement": "We are transforming from rigid, line-item funding to flexible, mission-aligned resource flows so that learning and impact can scale.",
+    "examples": [
+      {
+        "label": "From annual budgets to multi-year funding",
+        "exemplar": "Social Impact Bonds fund long-term outcomes rather than activities."
+      },
+      {
+        "label": "From program silos to pooled funding",
+        "exemplar": "Better Care Fund pools health and social care budgets."
+      },
+      {
+        "label": "From pilots to scaling pathways",
+        "exemplar": "UNDP Accelerator Labs explicitly designs pathways from experiment to scale."
+      },
+      {
+        "label": "From spend tracking to value measurement",
+        "exemplar": "OECD promotes value-for-money and outcomes frameworks."
+      }
+    ],
+    "designProvocation": "What promising work dies because funding cannot move?"
+  },
+  {
+    "id": "data-learning-system-transformation",
+    "title": "Data & Learning System Transformation",
+    "category": "agenda",
+    "color": "#B8C4C8",
+    "transformationType": "Making learning a core system capability.",
+    "statement": "We are transforming from retrospective reporting to real-time learning systems so that the organization can sense, adapt, and improve continuously.",
+    "examples": [
+      {
+        "label": "From lagging indicators to leading signals",
+        "exemplar": "Johns Hopkins Health System uses early warning indicators for patient safety."
+      },
+      {
+        "label": "From KPIs to learning questions",
+        "exemplar": "IDEO frames metrics as learning hypotheses."
+      },
+      {
+        "label": "From data ownership to sharing ecosystems",
+        "exemplar": "Barcelona City Council built open data and data commons models."
+      },
+      {
+        "label": "From evaluation at the end to continuous learning",
+        "exemplar": "World Bank integrates adaptive learning into projects."
+      }
+    ],
+    "designProvocation": "What would change if metrics were tools for inquiry, not judgment?"
+  },
+  {
+    "id": "ecosystem-partnership-transformation",
+    "title": "Ecosystem & Partnership Transformation",
+    "category": "agenda",
+    "color": "#B8C4C8",
+    "transformationType": "Shifting from solo delivery to orchestration.",
+    "statement": "We are transforming from acting as a single provider to orchestrating an ecosystem of partners so that complex challenges can be addressed together.",
+    "examples": [
+      {
+        "label": "From contracts to long-term partnerships",
+        "exemplar": "NHS England uses alliance contracting for integrated care."
+      },
+      {
+        "label": "From competition to collaboration",
+        "exemplar": "C40 Cities coordinates cities to act collectively on climate."
+      },
+      {
+        "label": "From government-led delivery to shared value creation",
+        "exemplar": "MaRS Discovery District convenes public, private, and social actors."
+      },
+      {
+        "label": "From transactions to trust-based alliances",
+        "exemplar": "Collective Impact emphasizes shared measurement and backbone support."
+      }
+    ],
+    "designProvocation": "What outcome is impossible alone—but plausible together?"
+  }
+]

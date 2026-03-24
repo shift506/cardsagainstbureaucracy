@@ -1,0 +1,489 @@
+[
+  {
+    "id": "projectification",
+    "title": "Projectification",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Projectification is the tendency to rely on short-term, output-focused projects as the primary vehicle for change. While projects can deliver quick wins, over-reliance fragments effort, duplicates work, and prevents systemic transformation. Projects often churn through staff time and budgets without addressing underlying structures or sustaining impact.",
+    "whyItMatters": "Complex social challenges cannot be solved in 12–18 month cycles. Projectification locks governments into a 'perpetual pilot mode,' where energy is consumed by initiating and closing projects rather than embedding learning, scaling impact, or shifting systems. It creates fatigue, wastes resources, and erodes trust.",
+    "howItShowsUp": [
+      "Countless unconnected projects run in parallel with little integration.",
+      "Success is measured in deliverables, not outcomes.",
+      "Staff rotate between projects with no continuity or institutional learning.",
+      "Promising work disappears when funding cycles end."
+    ],
+    "howToCounteract": [
+      "Balance projects with long-term programs, portfolios, and systemic strategies.",
+      "Build pathways to embed project learning into policy and practice.",
+      "Invest in governance and funding models that support sustained transformation.",
+      "Use adaptive management approaches to connect short-term projects with long-term outcomes."
+    ],
+    "reflectionPrompt": "Where are we investing in endless projects—and what would it take to shift from short-term delivery to long-term system change?",
+    "examples": [
+      "European Commission's Horizon Programmes fund projects but now also build long-term research missions.",
+      "Canada's Impact Canada initiative uses challenge-based projects but links them to broader policy objectives.",
+      "Scotland's Improvement Collaboratives embed project learning into ongoing service improvement."
+    ]
+  },
+  {
+    "id": "rigid-hierarchies",
+    "title": "Rigid Hierarchies",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Rigid hierarchies lock organizations into command-and-control structures where authority flows only from the top. This management style stifles collaboration, slows decision-making, and prevents adaptive responses. In environments that demand agility and cross-boundary cooperation, strict hierarchies discourage initiative and disempower staff.",
+    "whyItMatters": "Complex challenges rarely fit neatly within organizational charts. When authority is too centralized, frontline insights are ignored, and opportunities for innovation are lost. Hierarchical rigidity creates bottlenecks, erodes morale, and leaves governments unable to adapt quickly to crises or citizen needs.",
+    "howItShowsUp": [
+      "Staff wait for approvals rather than acting on insight.",
+      "Collaboration across silos is discouraged or blocked.",
+      "Performance is judged by compliance, not creativity.",
+      "Leaders focus on control rather than enabling problem-solving."
+    ],
+    "howToCounteract": [
+      "Empower cross-level decision-making and trust frontline expertise.",
+      "Flatten hierarchies in innovation teams and projects.",
+      "Reward collaboration and initiative across levels rather than strict compliance.",
+      "Create governance models that balance accountability with distributed authority."
+    ],
+    "reflectionPrompt": "Where does hierarchy hold us back from acting quickly or creatively?",
+    "examples": [
+      "UK Government Digital Service (GDS) empowered small, cross-level teams to overhaul service delivery.",
+      "Netherlands' Buurtzorg model flattened healthcare hierarchies by giving frontline nurses autonomy.",
+      "Estonia's e-Government reforms distributed decision-making to agile, cross-functional teams."
+    ]
+  },
+  {
+    "id": "departmental-silos",
+    "title": "Departmental Silos",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Departmental silos emerge when agencies and units operate in isolation, with limited communication or collaboration across boundaries. While silos may simplify accountability within departments, they fragment service delivery, duplicate effort, and make it harder to address complex, cross-cutting challenges.",
+    "whyItMatters": "Citizens experience government as one entity, not a collection of departments. Silos create inefficiency, generate frustration when people are asked to repeat information, and undermine trust in public services. They also block innovation by limiting collaboration, resource-sharing, and collective problem-solving.",
+    "howItShowsUp": [
+      "Each agency asks citizens for the same information during a service journey.",
+      "Data systems are incompatible and can't 'talk' to each other.",
+      "Policy interventions are designed in isolation, missing connections with other domains.",
+      "Staff are incentivized to optimize for their department, not for the whole system."
+    ],
+    "howToCounteract": [
+      "Build cross-agency integration through shared platforms and governance.",
+      "Use stakeholder mapping to visualize overlaps, gaps, and dependencies.",
+      "Incentivize collaboration in performance management systems.",
+      "Pilot joint initiatives focused on life events (e.g., birth, retirement, illness)."
+    ],
+    "reflectionPrompt": "What opportunity are we missing because we're working in isolation instead of together?",
+    "examples": [
+      "UK's 'Tell Us Once' service allows citizens to report a death once, triggering updates across multiple departments.",
+      "Singapore's Moments of Life app integrates services across ministries for key life events.",
+      "Canada's Benefits Finder tool consolidates programs from multiple agencies in one portal."
+    ]
+  },
+  {
+    "id": "legacy-systems",
+    "title": "Legacy Systems",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Legacy systems are outdated technologies and IT infrastructures that governments continue to depend on despite high costs and inefficiency. These systems absorb resources, limit agility, and create 'technical debt' that blocks modernization. While they may keep critical services running, they prevent integration, innovation, and responsiveness.",
+    "whyItMatters": "When core public services run on decades-old platforms, the risks compound: systems are expensive to maintain, vulnerable to failure, and difficult to adapt to new needs. Legacy systems trap governments in reactive mode, leaving little room for innovation. Technical debt isn't just an IT problem—it's a systemic barrier to transformation.",
+    "howItShowsUp": [
+      "40-year-old benefit payment systems still in operation.",
+      "Critical software written in outdated languages (e.g., COBOL) with few experts left to maintain it.",
+      "New digital services 'bolted onto' fragile legacy systems rather than integrated properly.",
+      "Innovation projects stalled because old systems can't support modern capabilities."
+    ],
+    "howToCounteract": [
+      "Prioritize modernization of core systems as a transformation investment, not just an IT fix.",
+      "Adopt shared service platforms to consolidate and standardize functions.",
+      "Use innovation labs to prototype replacements incrementally before full migration.",
+      "Build hybrid approaches (APIs, middleware) as bridges while phasing out legacy infrastructure."
+    ],
+    "reflectionPrompt": "What's the true cost and risk of maintaining our legacy systems?",
+    "examples": []
+  },
+  {
+    "id": "myopic-funding-cycles",
+    "title": "Myopic Funding Cycles",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Myopic funding cycles occur when annual budgets, short-term procurement rules, and rigid fiscal processes dominate decision-making. These cycles reward incremental spending and quick outputs but undermine the ability to invest in systemic, multi-year transformation. Promising projects often collapse when the budget resets, regardless of their long-term value.",
+    "whyItMatters": "Systemic change takes years, sometimes decades. Annual cycles force public servants into a short-term mindset, prioritizing what can be delivered quickly over what will matter most in the long run. This creates churn, discourages bold initiatives, and undermines trust when good ideas fail for financial—not strategic—reasons.",
+    "howItShowsUp": [
+      "Multi-year initiatives stalled because budgets must be spent (or lost) by year-end.",
+      "Innovation projects funded as pilots with no runway for scaling.",
+      "Procurement rules prevent flexible partnerships with communities or private actors.",
+      "Staff focus on compliance with fiscal rules rather than outcomes for citizens."
+    ],
+    "howToCounteract": [
+      "Create dedicated innovation funds protected from annual cuts.",
+      "Establish multi-year funding envelopes tied to long-term outcomes.",
+      "Use collective impact frameworks to align funders and partners around shared goals.",
+      "Explore outcome-based procurement and financing (e.g., social impact bonds)."
+    ],
+    "reflectionPrompt": "If we could secure funding for five years, what transformation would we attempt?",
+    "examples": [
+      "Canada's Impact and Innovation Fund provides multi-year support for experimental policy approaches.",
+      "Scotland's National Performance Framework links budget priorities to long-term wellbeing outcomes.",
+      "US Pay for Success initiatives experiment with outcome-based financing models."
+    ]
+  },
+  {
+    "id": "skills-gaps",
+    "title": "Skills Gaps",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Skill gaps emerge when public servants lack the digital, design, and facilitation capabilities needed to drive innovation. Without these core competencies, governments struggle to adapt and often default to outsourcing critical work to consultants, weakening long-term capacity.",
+    "whyItMatters": "Transformation depends on people, not just tools. When governments lack in-house expertise, innovation becomes episodic, fragile, and dependent on external actors. Building internal skills is essential for sustainability, resilience, and legitimacy, ensuring that governments can lead change instead of renting it.",
+    "howItShowsUp": [
+      "Digital transformation projects outsourced because staff lack coding or data literacy.",
+      "Policy innovation left to consultants rather than cultivated internally.",
+      "Facilitation and co-design skills absent, leaving collaboration superficial.",
+      "Training budgets treated as discretionary rather than strategic."
+    ],
+    "howToCounteract": [
+      "Invest in capacity-building programs to develop digital, design, and facilitation skills.",
+      "Create learning journeys where staff rotate across teams to build cross-functional expertise.",
+      "Embed peer-to-peer learning and coaching as everyday practices.",
+      "Use external consultants strategically—as teachers and capacity-builders, not substitutes."
+    ],
+    "reflectionPrompt": "How could we turn every project into a learning journey for staff, not just a deliverable?",
+    "examples": []
+  },
+  {
+    "id": "organizational-inertia",
+    "title": "Organizational Inertia",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Organizational inertia occurs when institutions prioritize stability over adaptation. Even in the face of pressing challenges, established routines, processes, and power structures resist change. Momentum for transformation fizzles as energy is absorbed by defending the status quo rather than experimenting with new approaches.",
+    "whyItMatters": "Inertia erodes trust and wastes opportunities. Citizens and staff become cynical when bold visions are written into 'strategic plans' that never translate into action. Without mechanisms to disrupt inertia, governments risk becoming less relevant, less responsive, and increasingly unable to tackle complex problems.",
+    "howItShowsUp": [
+      "Strategic plans or transformation roadmaps written but never implemented.",
+      "Endless committees or reviews substitute for meaningful action.",
+      "Leaders delay decisions, citing 'timing' or 'stability' concerns.",
+      "Reforms piloted but never mainstreamed, leaving core systems unchanged."
+    ],
+    "howToCounteract": [
+      "Use adaptive governance structures with short feedback loops to act and adjust.",
+      "Set up clear pathways from vision to action, with accountability checkpoints.",
+      "Apply transition design methods to guide stepwise shifts in systems over time.",
+      "Reward experimentation and incremental progress rather than penalizing risk."
+    ],
+    "reflectionPrompt": "How might we shift incentives so that trying and learning is rewarded as much as maintaining stability?",
+    "examples": []
+  },
+  {
+    "id": "pilotitis",
+    "title": "Pilotitis",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Pilotitis is the overuse of pilots—short-term, small-scale experiments—that never scale or integrate into the wider system. While pilots can generate learning, too many disconnected ones drain resources, erode trust, and trap innovation at the surface. They often generate excitement at launch but fade without institutional adoption or long-term impact.",
+    "whyItMatters": "When innovation is stuck in perpetual pilot mode, organizations learn little, citizens grow skeptical, and staff become fatigued. Pilotitis creates churn—celebrating activity without changing core systems. It signals that government is more interested in 'trying things out' than in delivering lasting transformation.",
+    "howItShowsUp": [
+      "Dozens of overlapping pilots are launched, celebrated, and abandoned.",
+      "Promising prototypes don't have pathways for scaling or embedding.",
+      "Pilots are disconnected from strategic goals, becoming one-offs.",
+      "Citizens or staff see repeated pilots but little actual improvement."
+    ],
+    "howToCounteract": [
+      "Establish clear scaling pathways that link pilots to adoption and integration.",
+      "Use portfolio approaches to manage multiple pilots strategically, not in isolation.",
+      "Connect pilots to long-term missions or systemic outcomes, not just outputs.",
+      "Build evaluation frameworks that emphasize learning and pathways forward."
+    ],
+    "reflectionPrompt": "How could we design our next pilot with scaling in mind from the start?",
+    "examples": []
+  },
+  {
+    "id": "whongs-law",
+    "title": "Whong's Law",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Whong's Law is the pattern where every government agency believes a new, all-encompassing IT system will finally solve its data and service problems—if only it can be built in the next 18–24 months. In reality, these monolithic 'big bang' systems often run over budget, underdeliver, and delay adoption of more flexible, adaptive solutions.",
+    "whyItMatters": "Overpromised IT transformations create cycles of disappointment and paralysis. They drain resources, justify inaction ('we'll wait for the new system'), and block experimentation with modular or iterative approaches. The result is wasted investment, stalled innovation, and systems that rarely meet the evolving needs of citizens.",
+    "howItShowsUp": [
+      "Agencies embark on multi-year 'system replacements' that never fully launch.",
+      "Massive IT contracts lock governments into rigid vendor relationships.",
+      "Frontline staff wait for the 'new system' instead of improving existing workflows.",
+      "Systems built don't solve root problems—just digitize outdated processes."
+    ],
+    "howToCounteract": [
+      "Shift from monolithic builds to modular architectures that allow incremental upgrades.",
+      "Use agile and iterative processes to deliver value continuously.",
+      "Invest in interoperability standards and APIs instead of single 'silver bullet' systems.",
+      "Treat IT not as a one-off procurement but as an evolving, adaptive ecosystem."
+    ],
+    "reflectionPrompt": "What's one improvement we could make today instead of waiting for a future system?",
+    "examples": [
+      "UK GOV.UK Verify illustrates the risk—ambitious system build that struggled to deliver on promises.",
+      "Estonia's modular e-Government infrastructure shows the alternative: interoperable building blocks that evolve.",
+      "US Digital Service (USDS) emphasizes agile delivery over monolithic procurement."
+    ]
+  },
+  {
+    "id": "path-dependence",
+    "title": "Path Dependence",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Path dependence occurs when organizations become locked into existing routines, technologies, or policies, making it difficult to adopt new approaches. Past decisions—sometimes made decades ago—constrain present choices, even when better alternatives exist. Over time, 'the way we've always done it' becomes an unofficial rule that shapes behavior more than strategy.",
+    "whyItMatters": "Path dependence locks institutions into outdated practices, preventing adaptation to new realities. It creates rigidity, limits creativity, and erodes public trust when governments fail to evolve. Breaking free requires conscious effort to recognize historical choices and intentionally design new pathways.",
+    "howItShowsUp": [
+      "Legacy policies remain in place despite evidence they no longer work.",
+      "Procurement rules designed for physical goods constrain digital services.",
+      "Organizational charts mirror structures from decades past.",
+      "Staff rely on inherited practices rather than exploring alternatives."
+    ],
+    "howToCounteract": [
+      "Use adaptive governance structures that allow adjustment over time.",
+      "Apply Two-Loops Mapping to identify what is declining and what is emerging.",
+      "Celebrate and amplify 'path-breakers' who experiment with alternatives.",
+      "Create formal exit strategies for outdated practices and policies."
+    ],
+    "reflectionPrompt": "What 'old loops' could we let go of to free energy for new approaches?",
+    "examples": [
+      "US healthcare billing systems still shaped by paper-era processes.",
+      "UK House of Lords reform debates illustrate institutional stickiness and resistance to change.",
+      "Estonia's shift to e-Government broke dependence on paper-based bureaucracy by digitizing from scratch."
+    ]
+  },
+  {
+    "id": "fear-of-failure",
+    "title": "Fear of Failure",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Fear of failure arises when leaders and staff avoid risk because of accountability pressures, media scrutiny, or reputational concerns. In environments where failure is punished rather than treated as a learning opportunity, promising ideas are killed too early, and teams retreat to business-as-usual at the first sign of trouble.",
+    "whyItMatters": "Innovation requires experimentation, and experimentation involves uncertainty. If failure is not tolerated, governments cannot adapt or generate breakthrough solutions. Fear of failure creates paralysis, leaving only safe, incremental changes while systemic challenges remain unsolved.",
+    "howItShowsUp": [
+      "Projects shut down after a minor setback instead of being adapted.",
+      "Leaders refuse to sponsor bold ideas, citing risk to reputation.",
+      "Staff 'play it safe,' sticking to routine work rather than experimenting.",
+      "Media criticism or political cycles turn mistakes into scandals."
+    ],
+    "howToCounteract": [
+      "Create safe-to-fail spaces with clear boundaries for experimentation.",
+      "Use developmental evaluation to capture and communicate learning from setbacks.",
+      "Normalize 'fast failures' as stepping stones to insight and improvement.",
+      "Model courageous leadership—leaders who own risk and protect their teams."
+    ],
+    "reflectionPrompt": "What risks are we avoiding because we fear the optics, and what's the cost of not acting?",
+    "examples": [
+      "Denmark's MindLab made learning from failed prototypes part of its DNA.",
+      "US Digital Service (USDS) reframes failures as feedback loops to refine delivery.",
+      "UNICEF Innovation Unit uses 'fail fairs' to share lessons from unsuccessful projects."
+    ]
+  },
+  {
+    "id": "silo-mentality",
+    "title": "Silo Mentality",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Silo mentality occurs when teams, departments, or agencies view others as competitors rather than partners. Driven by distrust, fear of losing control, or resource protection, this 'us vs. them' mindset blocks collaboration, even when problems clearly span boundaries. Instead of pooling knowledge and assets, organizations hoard data, staff, or funding.",
+    "whyItMatters": "Complex challenges demand collective action. When silo mentality dominates, collaboration becomes tokenistic, duplication increases, and opportunities for innovation are lost. Citizens experience fragmented services, while staff feel trapped in territorial battles that undermine morale and progress.",
+    "howItShowsUp": [
+      "Departments hoard data or refuse to share insights with others.",
+      "Leaders prioritize protecting turf over solving shared problems.",
+      "Teams compete for recognition or budget instead of collaborating.",
+      "Partnerships exist in name only, with little trust or reciprocity."
+    ],
+    "howToCounteract": [
+      "Invest in trust-building activities that surface shared goals and interdependence.",
+      "Use collective sensemaking workshops to align understanding across silos.",
+      "Design shared accountability structures that reward collaboration.",
+      "Model openness from leadership by sharing resources, credit, and data transparently."
+    ],
+    "reflectionPrompt": "What resource or information could we share tomorrow that would signal trust?",
+    "examples": [
+      "New Zealand's Better Public Services program created cross-agency targets to reduce silo thinking.",
+      "Estonia's X-Road platform required departments to share and interoperate data securely.",
+      "US Interagency Councils (e.g., on Homelessness) demonstrate how joint governance can override turf battles."
+    ]
+  },
+  {
+    "id": "weak-accountability",
+    "title": "Weak Accountability",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Weak accountability happens when oversight systems focus narrowly on compliance, processes, or financial inputs rather than on outcomes that matter to citizens. Leaders and organizations become more concerned with passing audits or meeting spending targets than achieving real impact. This creates a culture of box-ticking rather than problem-solving.",
+    "whyItMatters": "When success is defined as 'money spent' or 'rules followed,' transformational efforts stall. Weak accountability discourages innovation, since new approaches often don't fit existing audit metrics. It also erodes trust, as citizens see governments reporting activity rather than meaningful results.",
+    "howItShowsUp": [
+      "Success reported as 'budget spent/saved' rather than outcomes achieved.",
+      "Audit requirements dominate reporting, sidelining learning and adaptation.",
+      "Staff optimize for compliance to avoid scrutiny instead of focusing on impact.",
+      "Leaders shy away from innovative approaches that are harder to measure."
+    ],
+    "howToCounteract": [
+      "Shift accountability frameworks toward outcomes and citizen value.",
+      "Use Theory of Change models to link activities to long-term goals.",
+      "Balance compliance with adaptive learning and transparent reporting.",
+      "Reward teams for demonstrating progress toward impact, not just efficiency."
+    ],
+    "reflectionPrompt": "What outcomes matter most to citizens and how do we make those visible in our accountability systems?",
+    "examples": [
+      "Scotland's National Performance Framework reoriented accountability around wellbeing outcomes.",
+      "US Government Performance and Results Act (GPRA) Modernization emphasized outcomes over inputs.",
+      "New Zealand Treasury's Living Standards Framework embeds outcomes into budgeting and reporting."
+    ]
+  },
+  {
+    "id": "cultural-resistance",
+    "title": "Cultural Resistance",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Cultural resistance arises when legacy mindsets, skepticism, or entrenched habits slow down the adoption of new practices. Even when new tools, methods, or policies are introduced, they often fail to take root if staff view them as temporary fads or irrelevant to their daily work.",
+    "whyItMatters": "Culture shapes behavior as much as strategy or structure. Without cultural alignment, transformation remains superficial—policies may be passed and systems launched, but people revert to old ways of working. Overcoming resistance requires shifting beliefs, values, and narratives alongside introducing new practices.",
+    "howItShowsUp": [
+      "Staff dismiss new approaches as 'just another fad' or 'flavor of the month.'",
+      "Teams comply superficially with change initiatives but continue old routines.",
+      "New tools remain unused, or are used only for reporting, not transformation.",
+      "Leaders underestimate the emotional and identity dimensions of change."
+    ],
+    "howToCounteract": [
+      "Invest in workforce training and experiential learning to build comfort with new practices.",
+      "Celebrate early adopters and peer champions who model the change.",
+      "Use storytelling to connect transformation to shared values and purpose.",
+      "Create feedback loops where staff can influence how changes are shaped."
+    ],
+    "reflectionPrompt": "How can we make change feel less like an external imposition and more like a shared journey?",
+    "examples": [
+      "NHS Change Model (UK) emphasized culture as a driver of large-scale health reform.",
+      "Singapore's Civil Service College integrates cultural change into leadership development.",
+      "UNDP's Learning and Experimentation Labs build confidence in new practices through hands-on work."
+    ]
+  },
+  {
+    "id": "risk-averse-culture",
+    "title": "Risk Averse Culture",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "A risk averse culture develops when fear of criticism, blame, or political fallout overshadows curiosity and experimentation. In such environments, innovation is stifled because staff quickly learn that the safest course of action is to maintain the status quo rather than attempt something new.",
+    "whyItMatters": "Risk aversion reinforces inertia. Without tolerance for experimentation, organizations can only deliver incremental improvements, leaving systemic challenges unresolved. Over time, risk aversion erodes morale, suppresses creativity, and deters talented staff who want to contribute to meaningful change.",
+    "howItShowsUp": [
+      "Staff punished or sidelined for trying new approaches that didn't succeed.",
+      "Leaders prioritize reputation management over citizen outcomes.",
+      "Innovation projects watered down to avoid controversy.",
+      "Staff perceive 'initiative' as a liability rather than a strength."
+    ],
+    "howToCounteract": [
+      "Foster a culture of learning where mistakes are reframed as data for improvement.",
+      "Create safe-to-fail experiments with explicit boundaries for acceptable risk.",
+      "Recognize and reward initiative, even when outcomes differ from expectations.",
+      "Encourage leaders to model vulnerability by sharing their own risks and learnings."
+    ],
+    "reflectionPrompt": "How could we make failure a source of learning rather than blame?",
+    "examples": []
+  },
+  {
+    "id": "entrenched-resistance",
+    "title": "Entrenched Resistance",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Entrenched resistance is the subtle but powerful force of embedded habits and collective memory that quietly block change. Even when new initiatives are introduced, staff draw on past experiences to dismiss them, relying on phrases like 'we tried that before' as a rationale for inaction. This resistance is often informal, operating beneath official policies or strategies.",
+    "whyItMatters": "Entrenched resistance prevents transformation momentum from spreading or scaling. When skepticism becomes ingrained, even well-designed innovations fail to take root. It erodes trust in leadership and creates cynicism among staff, reinforcing the status quo.",
+    "howItShowsUp": [
+      "Staff dismiss ideas by referencing failed past attempts.",
+      "Teams comply superficially but undermine initiatives in practice.",
+      "Organizational memory frames change as risky or futile.",
+      "Informal networks reinforce 'the way things are done here.'"
+    ],
+    "howToCounteract": [
+      "Use stakeholder co-creation to involve staff early and shape change together.",
+      "Develop service blueprints to make clear how new approaches differ from past ones.",
+      "Acknowledge past failures openly and explain what will be done differently this time.",
+      "Celebrate early wins and amplify stories of positive change."
+    ],
+    "reflectionPrompt": "What small, visible success could show that 'this time is different'?",
+    "examples": [
+      "NHS England's Quality Improvement collaboratives overcame resistance by engaging frontline clinicians in co-design.",
+      "Estonia's e-Government reforms succeeded by reframing past failures and involving civil servants directly in solution-building.",
+      "ISSA Social Security Programs (2023) highlight co-creation practices that shifted entrenched habits in large bureaucracies."
+    ]
+  },
+  {
+    "id": "change-fatigue",
+    "title": "Change Fatigue",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Change fatigue sets in when staff and stakeholders are overwhelmed by a constant stream of initiatives, reforms, and new systems. Even when individual changes are well designed, the sheer volume and pace leave people exhausted, cynical, and disengaged. Instead of enthusiasm, new programs are met with skepticism and eye rolls.",
+    "whyItMatters": "Transformation cannot succeed without people. When staff feel burned out by change, even the best ideas stall. Change fatigue erodes trust, reduces adoption, and fuels resistance, creating a vicious cycle where each new initiative becomes harder to implement.",
+    "howItShowsUp": [
+      "Employees disengage or passively resist new programs.",
+      "Engagement and adoption drop sharply over time.",
+      "Frontline staff quietly maintain old routines while appearing to comply.",
+      "Stakeholders stop showing up to consultations, assuming little will change."
+    ],
+    "howToCounteract": [
+      "Establish a culture of learning that emphasizes reflection and adaptation, not constant reinvention.",
+      "Involve staff and stakeholders in co-creation so change feels shared, not imposed.",
+      "Use after-action reviews to learn from past initiatives and avoid repeating mistakes.",
+      "Apply adaptive leadership practices to pace change realistically and support people through uncertainty."
+    ],
+    "reflectionPrompt": "What recent change has felt most energizing for me, and what made it different from the exhausting ones?",
+    "examples": []
+  },
+  {
+    "id": "financial-constraints",
+    "title": "Financial Constraints",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Financial constraints arise when tight budgets and fiscal pressures leave little room for experimentation or innovation. In these conditions, maintaining existing programs takes priority, while investments in new approaches are seen as optional or risky. Innovation becomes framed as a luxury instead of an essential driver of future resilience.",
+    "whyItMatters": "When resources only sustain the past, governments can't build the future. Budget pressures can entrench outdated systems, widen inequality, and erode capacity for adaptation. Small and medium-sized entities (SMEs) are especially vulnerable, lacking the discretionary funds to try new tools or methods. Without dedicated financial strategies, innovation remains stalled.",
+    "howItShowsUp": [
+      "SMEs unable to invest in new tools or processes.",
+      "Innovation projects cut first when budgets tighten.",
+      "Funds locked into legacy systems, leaving little for new initiatives.",
+      "Leaders focus on short-term cost savings rather than long-term value creation."
+    ],
+    "howToCounteract": [
+      "Design government incentives that reward innovation and reduce risk for SMEs and public bodies.",
+      "Use participatory budgeting to align spending with citizen priorities.",
+      "Create protected funding streams or innovation funds resistant to annual cuts.",
+      "Frame innovation as cost-avoidance and long-term savings, not just an expense."
+    ],
+    "reflectionPrompt": "Where are we maintaining the past instead of creating the future because of financial pressures?",
+    "examples": [
+      "Brazil's Participatory Budgeting channels limited resources directly toward citizen-driven priorities.",
+      "Canada's Strategic Innovation Fund provides financial support for experimentation and growth.",
+      "EU Horizon Europe Program funds cross-sector innovation even in fiscally constrained contexts."
+    ]
+  },
+  {
+    "id": "fake-alignment",
+    "title": "Fake Alignment",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Fake Alignment occurs when individuals or organizations outwardly agree with a strategy, vision, or initiative, but privately hold different interpretations, priorities, or reservations. Alignment exists in language and documents, but not in shared understanding, commitment, or action.",
+    "whyItMatters": "Fake alignment creates a dangerous illusion of progress. Leaders believe everyone is 'on the same page,' while teams interpret goals differently or quietly disengage. This leads to stalled implementation, passive resistance, and confusion when decisions or trade-offs arise. Over time, trust erodes as results fail to match rhetoric.",
+    "howItShowsUp": [
+      "Strategy documents are unanimously endorsed, but teams execute in conflicting ways.",
+      "Meetings end with apparent consensus, yet little changes afterward.",
+      "Stakeholders use the same words (e.g., 'innovation,' 'integration,' 'outcomes') to mean different things.",
+      "Concerns are raised informally or off-line rather than in shared forums."
+    ],
+    "howToCounteract": [
+      "Slow down to surface assumptions, trade-offs, and tensions, not just agreement.",
+      "Use tools like Theory of Change, Collective Sensemaking, or Better Questions to make differences explicit.",
+      "Ask people to explain what alignment means in practice, not just whether they agree.",
+      "Create psychological safety for dissent and reframing."
+    ],
+    "reflectionPrompt": "Where do we have agreement in words but not in actions? What assumptions are we avoiding naming because they might create discomfort? If we had to make a hard trade-off today, where would alignment quickly break down?",
+    "examples": [
+      "Brazil's Participatory Budgeting channels limited resources directly toward citizen-driven priorities.",
+      "Canada's Strategic Innovation Fund provides financial support for experimentation and growth.",
+      "EU Horizon Europe Program funds cross-sector innovation even in fiscally constrained contexts."
+    ]
+  },
+  {
+    "id": "zombie-work",
+    "title": "Zombie Work",
+    "category": "barrier",
+    "color": "#E8A98C",
+    "description": "Zombie work refers to initiatives, programs, reports, or routines that continue long after they have stopped creating value. They persist out of habit, risk aversion, or fear of stopping—consuming time and energy while contributing little to outcomes.",
+    "whyItMatters": "Zombie work silently drains capacity needed for real transformation. It crowds calendars, exhausts staff, and creates the illusion of productivity while preventing meaningful change.",
+    "howItShowsUp": [
+      "Reports are produced because they always have been, not because they're used.",
+      "Programs continue despite weak outcomes or unclear purpose.",
+      "New priorities are added without stopping existing work.",
+      "Staff privately acknowledge work is pointless but feel powerless to stop it."
+    ],
+    "howToCounteract": [],
+    "reflectionPrompt": "What work in our system would no one choose to start today—but we keep doing anyway?",
+    "examples": []
+  }
+]

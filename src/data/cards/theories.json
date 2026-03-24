@@ -1,0 +1,497 @@
+[
+  {
+    "id": "three-horizons",
+    "title": "Three Horizons",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "The Three Horizons framework is a tool for understanding how change unfolds across time. It frames transformation through three overlapping horizons: Horizon 1 – Today's dominant system, practices, and structures. Horizon 2 – Emerging innovations and transitional practices. Horizon 3 – Transformative futures that challenge current assumptions. Rather than a linear timeline, the horizons overlap, showing how old systems decline while new ones grow.",
+    "whyItMatters": "Governments must deliver services today while also preparing for the future. The Three Horizons framework helps leaders balance short-term demands with long-term innovation, avoid being trapped in the status quo, and recognize when incremental improvements aren't enough. It provides a language for navigating tensions between stability and transformation.",
+    "howToUseIt": [
+      "Facilitate workshops to map current systems (H1), emerging practices (H2), and desired futures (H3).",
+      "Use horizon mapping to align today's service delivery with future reforms.",
+      "Identify 'pockets of the future in the present' (H2 experiments) and design pathways to scale them.",
+      "Pair horizon work with horizon scanning to detect signals of change."
+    ],
+    "reflectionPrompts": [
+      "Which of our current practices (H1) are reaching the end of their usefulness?",
+      "Where do we see emerging innovations (H2) that could grow into tomorrow's system?",
+      "What bold futures (H3) should guide our long-term strategy—and what can we do now to move toward them?"
+    ],
+    "examples": [
+      "UK Government Office for Science has used Three Horizons for long-term policy foresight.",
+      "UNDP applies the model to frame development transitions in fragile states.",
+      "Scottish Government has used horizon mapping to align health and social care reforms with future needs."
+    ]
+  },
+  {
+    "id": "berkana-two-loops",
+    "title": "Berkana Two-Loops",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "The Berkana Two Loops model illustrates how change happens as old systems decline and new ones emerge. One loop represents the incumbent system, which eventually peaks and begins to break down. The other represents emerging systems, which start small and grow as pioneers, stewards, and transition bridges nurture them. The model emphasizes that transformation requires both 'hospicing' what is ending and 'seeding' what is beginning.",
+    "whyItMatters": "Public systems often cling to outdated practices even as cracks appear. The Two Loops model helps leaders see that endings and beginnings happen simultaneously—and that both roles are essential. It legitimizes the work of innovators building new futures and the stewards who maintain stability while transitions unfold.",
+    "howToUseIt": [
+      "Facilitate Two-Loops Mapping to identify practices, programs, or institutions that need to be 'hospiced' (supported to end well) versus those that should be scaled up.",
+      "Recognize and support different roles: pioneers creating alternatives, stewards maintaining essential functions, and bridges connecting the two.",
+      "Use the model to guide resource allocation—ensuring both the old and the new are supported during transitions."
+    ],
+    "reflectionPrompts": [
+      "What practices in our system need 'hospicing' so they can end with dignity?",
+      "Where are the pioneers seeding new possibilities—and how can we support them?",
+      "Who is playing the role of bridge between the old and the new—and how can we strengthen that role?"
+    ],
+    "examples": [
+      "Health systems in Canada and the US have used the model to decide which care models to phase out and which to expand.",
+      "Local food movements applied the Two Loops to transition from industrial agriculture toward community-based systems.",
+      "New Zealand public sector labs used it to frame the dual challenge of sustaining services while innovating new delivery models."
+    ]
+  },
+  {
+    "id": "diffusion-of-innovation",
+    "title": "Diffusion of Innovation",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "The Diffusion of Innovation theory explains how new ideas and practices spread through a population over time. Adoption follows a bell curve with distinct groups: innovators, early adopters, early majority, late majority, and laggards. Each group has different motivations and thresholds for adopting change, and the speed of diffusion depends on how well the innovation meets needs, communicates value, and leverages social networks.",
+    "whyItMatters": "Public sector innovations rarely spread evenly or automatically. Understanding adoption dynamics helps leaders design strategies tailored to different groups, avoid frustration when uptake is slow, and focus on creating the right conditions for diffusion. It highlights that successful change is as much about relationships and trust as about the innovation itself.",
+    "howToUseIt": [
+      "Map stakeholders to the adoption curve and design tailored engagement strategies.",
+      "Support early adopters to become visible champions and role models.",
+      "Create low-barrier opportunities for the early majority to test and gain confidence.",
+      "Develop strategies to support the late majority through training, guides, and coaching."
+    ],
+    "reflectionPrompts": [
+      "Where are our 'early adopters,' and how can we make their success visible?",
+      "What conditions would help the early majority feel safe to try this change?",
+      "How might we reduce barriers for those lagging behind while still moving the system forward?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "theory-u",
+    "title": "Theory U",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Theory U describes transformation as a journey that moves down and back up a 'U-shaped' path. On the way down, we notice old habits, open ourselves to seeing with fresh eyes, and immerse in the system to sense what's really happening. At the bottom of the U, in the space of presencing, we let go of past assumptions and connect to emerging future possibilities. On the way up, we crystallize insights into prototypes, test them in practice, and ultimately embed new approaches that reshape systems and culture.",
+    "whyItMatters": "Complex public challenges cannot be solved with surface-level fixes. Theory U emphasizes the inner work of transformation—shifting mindsets, building empathy, and connecting to deeper sources of creativity. It provides a structured pathway for moving from reactive problem-solving to co-creating the future we want to bring into being.",
+    "howToUseIt": [
+      "Facilitate U-shaped workshops that guide participants through sensing, presencing, and prototyping.",
+      "Use deep listening and dialogue methods to surface hidden assumptions.",
+      "Create spaces for reflection before moving to action.",
+      "Prototype quickly to learn from the future as it emerges."
+    ],
+    "reflectionPrompts": [
+      "What old assumptions do we need to let go of before we can see new possibilities?",
+      "How might deeper listening change the way we design this initiative?",
+      "What future is trying to emerge here—and how can we prototype our way toward it?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "adaptive-leadership",
+    "title": "Adaptive Leadership",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Adaptive Leadership is a framework for leading in complex environments where problems cannot be solved with technical expertise alone. It distinguishes between technical challenges (clear problems with known solutions) and adaptive challenges (ambiguous problems that require learning, experimentation, and shifts in values or behaviours). Adaptive leadership is about mobilizing people to face uncertainty, learn together, and adapt in order to thrive.",
+    "whyItMatters": "Governments often treat adaptive challenges (like climate change, digital transformation, or health system reform) as if they were technical problems. This leads to frustration and failed reforms. Adaptive leadership helps leaders recognize when the work is about enabling people to change, not just applying expertise. It equips organizations to navigate uncertainty, conflict, and resistance.",
+    "howToUseIt": [
+      "Diagnose whether challenges are technical or adaptive (or a mix).",
+      "Create 'holding environments' where difficult conversations and learning can take place safely.",
+      "Encourage distributed leadership so multiple actors can experiment and contribute solutions.",
+      "Normalize iteration, adaptation, and reflection rather than demanding immediate answers."
+    ],
+    "reflectionPrompts": [
+      "Are we treating an adaptive challenge as if it were only technical? What risks does that create?",
+      "What values, habits, or assumptions must change for this initiative to succeed?",
+      "How can we create space for learning and experimentation without needing all the answers upfront?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "path-dependence-theory",
+    "title": "Path Dependence",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Path Dependence explains how historical decisions shape present choices in ways that are difficult to reverse. Once institutions, technologies, or practices take root, they create self-reinforcing loops, through habits, sunk costs, regulations, or cultural norms, that lock systems into certain trajectories. Over time, alternatives become harder to adopt, even when better options exist.",
+    "whyItMatters": "Public systems often inherit structures designed for a different era. Policies, IT systems, or governance models persist not because they are effective, but because shifting away seems too costly or disruptive. Understanding path dependence helps leaders see that resistance to change isn't just cultural; it's structural. Naming these lock-ins allows for strategies that loosen constraints and make space for new pathways.",
+    "howToUseIt": [
+      "Map the historical choices that led to current practices and constraints.",
+      "Identify self-reinforcing mechanisms (e.g., procurement rules, legacy IT, professional norms).",
+      "Use Two-Loops Mapping to distinguish between what needs to be maintained, hospiced, or reimagined.",
+      "Design deliberate 'path-breaking' interventions to create forks in the road."
+    ],
+    "reflectionPrompts": [
+      "Which of our current practices persist mainly because of past choices, not because they work well today?",
+      "What reinforcing loops keep us locked into the status quo?",
+      "Where might we create a deliberate 'fork in the road' to open new possibilities?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "open-innovation",
+    "title": "Open Innovation",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Open Innovation challenges the idea that valuable ideas must come only from within an organization. Instead, it sees innovation as a porous process where knowledge flows in and out across organizational boundaries. Governments and agencies collaborate with citizens, universities, firms, and international partners to co-develop solutions, share risks, and accelerate adoption.",
+    "whyItMatters": "Public institutions face complex challenges that no single department or agency can solve alone. By embracing open innovation, governments can access broader expertise, reduce duplication, and leverage ecosystems of partners. This shifts innovation from siloed efforts to collective problem-solving, unlocking ideas and resources that would otherwise remain untapped.",
+    "howToUseIt": [
+      "Establish mechanisms for citizen and stakeholder co-creation (e.g., crowdsourcing, civic tech challenges).",
+      "Build innovation partnerships with universities, startups, and NGOs.",
+      "Use open data platforms to enable external actors to create new services.",
+      "Apply challenge prizes or innovation competitions to attract diverse solutions."
+    ],
+    "reflectionPrompts": [
+      "Who outside our organization could help us solve challenges we can't solve alone?",
+      "What barriers currently prevent knowledge or ideas from flowing in and out?",
+      "How could open data, partnerships, or competitions accelerate our transformation work?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "collective-impact",
+    "title": "Collective Impact",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Collective Impact (Kania & Kramer, 2011) is a framework for aligning multiple actors to tackle complex challenges together. It rests on five conditions: (1) A common agenda – shared understanding of the problem and joint vision for change. (2) Shared measurement systems – consistent metrics to track progress. (3) Mutually reinforcing activities – coordinated efforts across sectors. (4) Continuous communication – to build trust and align strategies. (5) A backbone organization – to provide coordination, facilitation, and support.",
+    "whyItMatters": "Fragmented efforts waste energy and confuse stakeholders. Collective Impact provides structure for coordination, ensuring that diverse actors row in the same direction. It shifts collaboration from ad hoc partnerships to disciplined, long-term efforts capable of driving systemic change.",
+    "howToUseIt": [
+      "Convene diverse stakeholders to co-create a common agenda.",
+      "Develop shared measurement systems that align all actors around outcomes, not just outputs.",
+      "Establish a backbone team to facilitate, track, and sustain the collaboration.",
+      "Foster trust through regular communication and transparency."
+    ],
+    "reflectionPrompts": [
+      "What systemic challenge in our context requires multiple actors working from a common agenda?",
+      "How might shared metrics help us build trust and accountability across partners?",
+      "Who could play the role of 'backbone' to support and sustain a collective effort?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "multi-dimensional-scaling",
+    "title": "Multi-Dimensional Scaling",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Scaling in systemic transformation goes beyond simply expanding successful programs. It is about embedding change in institutions, shifting culture, and creating enabling conditions for lasting impact. Scaling requires working at multiple levels simultaneously: growing reach, embedding reforms, shifting mindsets, and strengthening the infrastructure that supports transformation.",
+    "whyItMatters": "Systemic change requires more than program growth. It depends on institutional embedding, cultural transformation, supportive conditions, and approaches that embrace complexity. Without this broader view, innovations remain fragile pilots that fail to alter the deeper system.",
+    "howToUseIt": [
+      "Scaling Out – Replicating solutions across geographies and populations.",
+      "Scaling Up – Embedding change in laws, policies, and institutions.",
+      "Scaling Deep – Shifting norms, values, and behaviours for lasting impact.",
+      "Scaling Conditions – Building infrastructure, partnerships, and resources to sustain scale.",
+      "Scaling Scale Logic – Using a portfolio of interventions, not replication alone, to adapt to complexity.",
+      "Design portfolios that balance replication with cultural and institutional change.",
+      "Align policies, funding, and partnerships to create enabling conditions for scale.",
+      "Track progress across multiple dimensions—not just size or reach."
+    ],
+    "reflectionPrompts": [
+      "Where in our work are we only 'scaling out' when deeper forms of scale are needed?",
+      "What enabling conditions—policy, culture, infrastructure—must be built for change to last?",
+      "How could a portfolio approach strengthen our scaling strategy?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "conways-law",
+    "title": "Conway's Law",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Conway's Law (Conway, 1968) states that organizations design systems that mirror their own internal structures. If teams are fragmented, the systems they produce will also be fragmented. In government, this means siloed departments often create siloed policies, IT platforms, or services, reinforcing disjointed experiences for citizens.",
+    "whyItMatters": "When organizational design drives system design, the result is complexity for citizens, who must navigate multiple portals, processes, and agencies. Recognizing Conway's Law helps leaders see that structural silos aren't just internal problems—they directly shape the usability and coherence of public services.",
+    "howItShowsUp": [
+      "Fragmented digital services that reflect departmental boundaries.",
+      "Duplicated IT systems across ministries.",
+      "Citizen journeys broken into agency-specific steps, rather than integrated life events.",
+      "Interagency projects struggling because organizational charts dictate technical design."
+    ],
+    "howToUseIt": [
+      "Align organizational structures with desired citizen experiences (e.g., cross-functional teams around life events).",
+      "Use service blueprints to reveal where silos affect users.",
+      "Create cross-agency design authorities to ensure coherence across systems.",
+      "Apply modular architecture to decouple technical design from bureaucratic silos."
+    ],
+    "reflectionPrompts": [
+      "How do our organizational boundaries show up in the systems and services we deliver?",
+      "If citizens designed our organizational chart, what would it look like?",
+      "What cross-boundary structures could reduce fragmentation in the systems we build?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "public-value-theory",
+    "title": "Public Value Theory",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Public Value Theory reframes the role of public managers from simply executing policy to actively creating value for society. Public managers are seen as strategists who mobilize resources, build legitimacy, and design services that reflect what citizens collectively value. Value creation is not only about efficiency—it includes equity, trust, legitimacy, and democratic accountability.",
+    "whyItMatters": "Traditional public management often focuses on compliance, inputs, or cost savings. Public Value Theory emphasizes outcomes that matter to citizens, recognizing that governments exist to serve the public interest, not just administer programs. It provides a compass for innovation and transformation grounded in legitimacy and purpose.",
+    "howToUseIt": [
+      "Apply the Public Value Strategic Triangle: Legitimacy & Support – Build authorization from citizens, stakeholders, and political leaders; Operational Capacity – Mobilize people, funding, and partnerships; Public Value Outcomes – Define what value means in this context.",
+      "Use co-creation practices to define value with citizens rather than for them.",
+      "Reframe reporting and accountability toward outcomes that reflect shared societal goals."
+    ],
+    "reflectionPrompts": [
+      "How do we define 'value' in our work, and who gets to decide?",
+      "What authorizing environment (citizens, politicians, stakeholders) must support our change efforts?",
+      "How might shifting from efficiency to public value change the way we design and measure services?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "mission-oriented-innovation",
+    "title": "Mission-Oriented Innovation",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Mission-Oriented Innovation (Mazzucato, 2018) reframes government's role from fixing market failures to shaping markets and setting bold directions. Missions are ambitious, time-bound goals that mobilize public and private actors to work collectively on solving grand challenges, like putting a man on the moon, achieving net-zero carbon, or eradicating disease. Missions create a clear 'north star' while encouraging diverse experimentation and innovation along the way.",
+    "whyItMatters": "Incremental innovation is insufficient for today's complex challenges. Mission-oriented approaches provide focus, legitimacy, and momentum by rallying stakeholders around shared societal goals. They combine vision with distributed problem-solving, ensuring that transformation is both ambitious and practical.",
+    "howItShowsUp": [
+      "Governments set bold, measurable goals (e.g., EU's mission for climate-neutral cities by 2030).",
+      "Multiple actors contribute through a portfolio of projects, not a single solution.",
+      "Policy, procurement, and regulation are aligned to accelerate mission progress.",
+      "Missions drive innovation in adjacent sectors, creating spillovers and systemic change."
+    ],
+    "howToUseIt": [
+      "Define clear missions tied to urgent societal needs.",
+      "Mobilize cross-sector partnerships (government, academia, private sector, civil society).",
+      "Use portfolio management to support diverse pathways toward mission success.",
+      "Create governance and funding models that sustain long-term missions beyond political cycles."
+    ],
+    "reflectionPrompts": [
+      "What bold societal goal could act as a north star to align fragmented efforts in our system?",
+      "How might a portfolio of diverse projects advance our mission more effectively than one 'big bet'?",
+      "What governance or funding structures would we need to sustain a mission through multiple political cycles?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "institutional-isomorphism",
+    "title": "Institutional Isomorphism",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Institutional Isomorphism explains why organizations within a field often end up looking and acting alike. It identifies three mechanisms: Coercive isomorphism – pressures from laws, regulations, or funders. Mimetic isomorphism – copying others in times of uncertainty. Normative isomorphism – professional norms and training shaping similar behaviors. Together, these forces push organizations toward uniformity, even when diversity or experimentation might be more effective.",
+    "whyItMatters": "In the public sector, isomorphism can stifle innovation as agencies adopt the same structures and practices regardless of local context. While it can promote legitimacy and stability, it also leads to conformity, risk aversion, and the spread of 'best practices' without adaptation. Recognizing isomorphic pressures helps leaders resist automatic imitation and design for fit, not just conformity.",
+    "howItShowsUp": [
+      "Agencies adopt identical performance frameworks to meet national audit requirements.",
+      "Governments copy 'best practices' from other jurisdictions without testing local relevance.",
+      "Professional training programs standardize ways of thinking across organizations.",
+      "New agencies mirror existing ministries in structure, even when needs differ."
+    ],
+    "howToUseIt": [
+      "Diagnose which isomorphic pressures (coercive, mimetic, normative) are shaping current practices.",
+      "Question whether conformity serves public value or just legitimacy.",
+      "Adapt 'best practices' through co-design instead of copying wholesale.",
+      "Use comparative learning to diversify approaches rather than homogenize."
+    ],
+    "reflectionPrompts": [
+      "Where are we conforming because of pressure, not because it serves citizens?",
+      "Which 'best practices' have we copied without adapting—and what could be done differently?",
+      "How might we balance legitimacy with the freedom to innovate in our context?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "thin-slicing",
+    "title": "Thin Slicing",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Thin-slicing is a way to bring future possibilities into the present by creating experiments or 'slices' of time that generate new data — small, actionable tests of what doesn't yet exist but could materially shift the system. Instead of refining the past, it's about creating emergent futures, testing them, learning fast, and using that learning to shape the path forward.",
+    "whyItMatters": "Innovation stagnates when we only tweak what is, rather than imagining what might be. Decision-makers don't have data about the future — but we can generate it through small experiments. This builds confidence, reduces risk, and helps move from fear of failure toward purpose-driven experimentation.",
+    "howToUseIt": [
+      "Identify a future possibility you'd like to explore (an innovation that doesn't yet exist).",
+      "Design a thin slice: a low cost, small scale prototype or pilot that can generate new data quickly.",
+      "Define in advance what you're looking for: which assumptions you want to test, which metrics will show promise or failure.",
+      "Use rapid, iterative prototyping — multiple slices — to refine, learning each time.",
+      "Involve key stakeholders early; share the data from each slice so others' confidence can grow alongside yours."
+    ],
+    "reflectionPrompts": [
+      "Which possible future could we test now with a thin slice of time — a pilot so small the risk is manageable, yet big enough to generate valuable insight?",
+      "What assumption underlying our current path would it help to test early through a prototype?",
+      "Who needs to see the outcomes of our early slices in order to support scaling or broader change?"
+    ],
+    "examples": []
+  },
+  {
+    "id": "social-movements",
+    "title": "Social Movements",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Drawing on Judith A. Holton's work on leadership and change in complex systems, Social Movement Theory frames transformation as an emergent, values-driven process rather than a planned intervention. Change arises when people connect around shared meaning, lived experience, and deeply held values. Momentum builds not through command or control, but through collective energy that enables people to self-organize around what matters most.",
+    "whyItMatters": "Many public sector transformations fail because they rely on formal authority, technical plans, or compliance mechanisms to solve fundamentally adaptive challenges. Social movement dynamics explain why real change often happens outside formal structures and why legitimacy, trust, and values matter more than mandates. This lens helps leaders mobilize commitment where authority is limited, navigate resistance without forcing compliance, harness informal networks as engines of change, and understand why people move—or refuse to move—during transformation.",
+    "howItShowsUp": [
+      "Leaders pay close attention to everyday experience and what people are saying 'between the lines.'",
+      "Change initiatives are grounded in shared values rather than abstract targets.",
+      "Communities self-organize around emerging needs, creating momentum that formal systems later adopt.",
+      "Transformation unfolds through dialogue, storytelling, and collective action, not just plans and structures."
+    ],
+    "howToUseIt": [
+      "Shift from 'implementing change' to listening for energy already present in the system.",
+      "Create spaces for reflective dialogue where values and lived experience can surface.",
+      "Support informal leaders and networks rather than relying solely on hierarchy.",
+      "Watch for adjacent possibilities—small openings where energy is already coalescing.",
+      "Use narrative and shared purpose to mobilize people, not just incentives or directives."
+    ],
+    "reflectionPrompts": [
+      "Where do we see energy already gathering around a shared concern or value in our system?",
+      "What 'felt needs' are people expressing that our formal plans may be missing?",
+      "How might our role shift from directing change to enabling emergence?"
+    ],
+    "examples": [
+      "Health and social care reforms where frontline-led movements reshape practice before policy catches up.",
+      "Community-led system change initiatives that grow through shared values rather than formal authority.",
+      "Public sector transformation efforts where trust and legitimacy become the primary levers of change."
+    ]
+  },
+  {
+    "id": "organizational-ambidexterity",
+    "title": "Organizational Ambidexterity",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Organizational Ambidexterity describes an organization's capacity to simultaneously exploit existing capabilities—delivering reliable, efficient services today—while exploring new approaches needed to adapt for the future. Rather than choosing between stability or innovation, ambidextrous organizations deliberately manage both, recognizing that each requires different structures, cultures, and leadership approaches.",
+    "whyItMatters": "Most public and large social organizations are optimized for exploitation: efficiency, risk control, and consistency. This creates reliability—but also makes innovation fragile or threatening. Without ambidexterity, organizations either protect the present at the expense of the future, or chase innovation in ways that destabilize core operations. Ambidexterity enables organizations to perform today while transforming for tomorrow.",
+    "howItShowsUp": [
+      "Core operations focus on stable, accountable service delivery.",
+      "Separate or semi-autonomous spaces (labs, pilots, innovation units) explore new models.",
+      "Leaders explicitly manage tensions between short-term performance and long-term learning.",
+      "Different success metrics are used for operational work vs. exploratory work."
+    ],
+    "howToUseIt": [
+      "Differentiate: Design distinct structures, processes, and incentives for exploitation vs. exploration.",
+      "Integrate: Ensure senior leadership connects learning from innovation back into the core.",
+      "Protect: Shield exploratory work from premature performance pressures.",
+      "Evolve: Allow innovations to migrate into core operations once proven.",
+      "Use frameworks like Three Horizons, Layered Governance, and Portfolio Approaches to operationalize ambidexterity."
+    ],
+    "reflectionPrompts": [
+      "Where in our organization are we over-optimizing for stability at the expense of learning?",
+      "How well do we protect exploratory work from the performance expectations of core operations?",
+      "What leadership practices are needed to manage—not eliminate—the tension between today and tomorrow?"
+    ],
+    "examples": [
+      "Public sector innovation labs operate alongside line departments, exploring new service models.",
+      "Health systems maintain standardized clinical pathways while piloting new community-based care approaches.",
+      "Digital government teams experiment with agile methods while legacy systems ensure continuity of service."
+    ]
+  },
+  {
+    "id": "social-practice-theory",
+    "title": "Social Practice Theory",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Social Practice Theory explains social change by focusing on practices—the everyday things people routinely do—rather than on individual attitudes, intentions, or formal rules alone. Drawing on the work of Elizabeth Shove, Mika Pantzar, and Matt Watson, the theory argues that practices are held together by the interaction of three elements: Materials – tools, technologies, infrastructure; Competencies – skills, know-how, and routines; Meanings – norms, values, expectations, and purpose. Change happens when these elements shift together—not when one is addressed in isolation.",
+    "whyItMatters": "Many transformation efforts focus on changing mindsets, issuing new policies, or restructuring organizations—yet everyday behavior remains unchanged. Social Practice Theory explains why: people continue practices that are materially supported, socially reinforced, and easy to perform. Sustainable transformation requires redesigning the conditions of practice, not just persuading individuals to behave differently.",
+    "howItShowsUp": [
+      "Organizations redesign workflows so new behaviors are embedded into daily routines.",
+      "New tools and systems make desired practices easier and old ones harder.",
+      "Cultural change is approached through rituals, roles, and routines, not slogans.",
+      "Innovation focuses on altering how services are practiced, not just how they are described."
+    ],
+    "howToUseIt": [
+      "Identify the practice you want to change (e.g. case management, decision-making, collaboration).",
+      "Map its current materials, competencies, and meanings.",
+      "Redesign all three elements together: update tools and systems, build skills through practice, shift meanings through narrative and leadership behavior.",
+      "Prototype new practices in real settings and iterate.",
+      "Use methods like Service Blueprints, Prototyping Organizational Culture, and Learning Journeys to support change in practice."
+    ],
+    "reflectionPrompts": [
+      "What everyday practice most sustains the current system we are trying to change?",
+      "Which elements—materials, competencies, or meanings—are we neglecting in our change efforts?",
+      "What would make the desired new practice the easiest and most natural option?"
+    ],
+    "examples": [
+      "Health systems shift discharge practices by changing digital tools, staff roles, and expectations about patient responsibility.",
+      "Digital government reforms succeed when new platforms, skills, and norms evolve together—not through technology alone.",
+      "Sustainability initiatives change consumption by reshaping infrastructure and routines, not by relying on awareness campaigns."
+    ]
+  },
+  {
+    "id": "temporal-structuring",
+    "title": "Temporal Structuring",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Temporal Structuring explains how organizations actively produce time through everyday practices—meetings, deadlines, planning cycles, reporting rhythms, and review routines—rather than simply operating within neutral, fixed schedules. Drawing on the work of Wanda J. Orlikowski and JoAnne Yates, the theory shows that time is continuously shaped and reshaped through action. How work is timed determines what gets attention, what gets postponed, and what becomes possible.",
+    "whyItMatters": "Many transformation efforts fail not because of poor strategy, but because they are forced into old temporal patterns—annual budgeting cycles, infrequent decision points, slow approval chains, and irregular feedback loops. These rhythms privilege stability over learning. Temporal Structuring highlights that real change requires redesigning how time is organized, not just what people are asked to do.",
+    "howItShowsUp": [
+      "Teams shift from annual planning to shorter, iterative planning cycles.",
+      "Decision-making is redesigned to happen in regular, predictable intervals rather than ad hoc escalations.",
+      "Reflection and learning become routine through after-action reviews and sprint retrospectives.",
+      "Innovation work operates on faster rhythms than core operations, without destabilizing them."
+    ],
+    "howToUseIt": [
+      "Map existing temporal structures: planning cycles, reporting deadlines, decision rhythms.",
+      "Identify where current time patterns block learning, adaptation, or collaboration.",
+      "Introduce new rhythms intentionally: shorter feedback loops, regular sensemaking and reflection sessions, time-boxed experimentation cycles.",
+      "Align temporal structures with purpose: stability where reliability is needed, speed where learning is required.",
+      "Pair with Agile & Iterative Processes, Layered Governance, and Portfolio Approaches to manage multiple time horizons."
+    ],
+    "reflectionPrompts": [
+      "Which time structures in our organization most constrain learning or adaptation?",
+      "What rhythms would better support the kind of change we are trying to lead?",
+      "Where do we need stability—and where do we need speed?"
+    ],
+    "examples": [
+      "Digital service teams operate on sprint cycles while legacy systems run on slower operational rhythms.",
+      "Health systems introduce regular multidisciplinary huddles to accelerate coordination and learning.",
+      "Public sector transformation programs use quarterly strategy refreshes instead of multi-year lock-ins."
+    ]
+  },
+  {
+    "id": "authorization-theory",
+    "title": "Authorization Theory",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Authorization Theory, developed by Mark H. Moore, explains how public action gains and sustains legitimacy through an authorizing environment—the web of political leaders, institutions, stakeholders, professionals, and citizens whose support (explicit or tacit) enables action. Authorization is not a one-time approval; it is an ongoing, negotiated process that evolves as conditions, risks, and public expectations change.",
+    "whyItMatters": "Many transformation efforts fail despite strong evidence or good design because they lack sufficient authorization to proceed, adapt, or persist. Others stall when leaders assume authorization is fixed and underestimate how quickly legitimacy can erode. Authorization Theory helps leaders navigate political and institutional risk, understand why technically sound initiatives get blocked, adapt action without overstepping legitimacy, and sustain change through shifting contexts and leadership cycles.",
+    "howItShowsUp": [
+      "Leaders actively engage ministers, executives, and boards to interpret mandates, not just receive instructions.",
+      "Change initiatives are adjusted as stakeholder support strengthens or weakens.",
+      "Public servants test 'how far they can go' while remaining legitimate.",
+      "Authorization is rebuilt through transparency, engagement, and demonstrated value."
+    ],
+    "howToUseIt": [
+      "Map your authorizing environment: who grants legitimacy, who can withdraw it, and who influences both.",
+      "Distinguish between formal authority (laws, mandates) and informal authorization (trust, credibility).",
+      "Treat authorization as dynamic—check and renew it regularly.",
+      "Use pilots, prototypes, and early wins to build confidence and expand legitimacy.",
+      "Align authorization work with Public Value creation, not just compliance."
+    ],
+    "reflectionPrompts": [
+      "Who currently authorizes this work—and who could withdraw that authorization?",
+      "Where might we be underestimating the importance of informal legitimacy and trust?",
+      "How could small, visible successes expand our room to maneuver?"
+    ],
+    "examples": [
+      "Public sector innovation labs operate with partial mandates, gradually building authorization through results.",
+      "Health system reforms succeed when clinicians, unions, and patients are engaged as authorizers—not just recipients.",
+      "Digital government programs expand scope as trust grows through early delivery of value."
+    ]
+  },
+  {
+    "id": "networked-governance",
+    "title": "Networked Governance",
+    "category": "theory",
+    "color": "#1A2A4A",
+    "description": "Networked Governance describes a mode of governing in which public outcomes are achieved through networks of interdependent actors—across government, civil society, communities, and the private sector—rather than through hierarchical control alone. Drawing on the work of Eva Sørensen and Jacob Torfing, this theory recognizes that power, resources, and expertise are distributed across the system. In networked governance, the role of government shifts from directing and delivering to convening, enabling, and stewarding collaboration.",
+    "whyItMatters": "Many of today's public challenges—health system integration, climate action, social care, digital transformation—cannot be solved by any single organization. Traditional hierarchical models struggle when authority is fragmented and problems span boundaries. Networked governance helps leaders coordinate action where authority is shared, mobilize diverse capabilities and resources, build legitimacy through participation and collaboration, and enable adaptive responses in complex systems.",
+    "howItShowsUp": [
+      "Governments convene cross-sector networks around shared outcomes rather than issuing directives.",
+      "Policy implementation relies on partnerships, alliances, and informal coordination mechanisms.",
+      "Leadership focuses on facilitation, trust-building, and alignment rather than command and control.",
+      "Accountability is shared and negotiated, not imposed unilaterally."
+    ],
+    "howToUseIt": [
+      "Identify the network already producing the outcome (often invisible in formal org charts).",
+      "Clarify shared purpose, roles, and interdependencies among actors.",
+      "Invest in backbone functions: facilitation, coordination, data-sharing, and learning.",
+      "Design governance arrangements that balance autonomy with alignment.",
+      "Use tools like Collective Sensemaking, Shared Measurement Systems, and Communities of Service to strengthen the network."
+    ],
+    "reflectionPrompts": [
+      "What outcome are we trying to achieve that no single organization can deliver alone?",
+      "Where are we relying on hierarchy when a networked approach might be more effective?",
+      "What capabilities does government need to strengthen to steward networks well?"
+    ],
+    "examples": [
+      "Integrated health and social care networks coordinating across hospitals, community providers, and NGOs.",
+      "Place-based governance models where municipalities, nonprofits, and citizens co-produce services.",
+      "Climate action networks aligning public agencies, businesses, and community groups around shared targets."
+    ]
+  }
+]

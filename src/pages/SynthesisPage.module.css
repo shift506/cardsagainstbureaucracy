@@ -1,0 +1,173 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--color-galaxy);
+  padding: var(--space-8) var(--space-4);
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--color-white);
+}
+
+.challenge {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.9rem;
+  font-style: italic;
+  border-left: 3px solid var(--color-new-leaf);
+  padding-left: var(--space-4);
+}
+
+.loading {
+  display: flex;
+  gap: var(--space-2);
+  align-items: center;
+  padding: var(--space-8) 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-new-leaf);
+  animation: bounce 1.2s ease-in-out infinite;
+}
+
+.dot:nth-child(2) { animation-delay: 0.2s; }
+.dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: translateY(0); opacity: 0.4; }
+  40% { transform: translateY(-8px); opacity: 1; }
+}
+
+.synthesisOutput {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sectionHeading {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-new-leaf);
+  text-transform: none;
+}
+
+.sectionBody {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.paragraph {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.listItem {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.listItem::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.raw {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.cursor {
+  animation: blink 0.8s step-end infinite;
+  color: var(--color-new-leaf);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.primaryButton {
+  background-color: var(--color-new-leaf);
+  color: var(--color-galaxy);
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: var(--space-3) var(--space-8);
+}
+
+.secondaryButton {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  padding: var(--space-3) var(--space-6);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.secondaryButton:hover {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: var(--color-white);
+}
+
+.downloadButton {
+  background: transparent;
+  color: var(--color-ocean);
+  border: 1px solid var(--color-ocean);
+  border-radius: 100px;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  padding: var(--space-3) var(--space-6);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.downloadButton:hover {
+  background: var(--color-ocean);
+  color: var(--color-white);
+}
