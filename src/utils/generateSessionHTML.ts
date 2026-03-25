@@ -31,7 +31,7 @@ const SUIT_ICONS: Partial<Record<CardCategory, string>> = {
 const PERSONA_COLORS: Record<PersonaId, string> = {
   critic: '#F0AB86',
   optimist: '#D6DE23',
-  academic: '#6BAEBE',
+  academic: '#2A6F85',
   practitioner: '#3B8EA5',
   philosopher: '#BAE0C6',
   lead: '#D6DE23',
@@ -40,7 +40,7 @@ const PERSONA_COLORS: Record<PersonaId, string> = {
 const CATEGORY_COLORS: Record<CardCategory, string> = {
   barrier: '#F0AB86',
   enabler: '#D6DE23',
-  theory: '#6BAEBE',
+  theory: '#2A6F85',
   tool: '#3B8EA5',
   provocation: '#BAE0C6',
   agenda: '#BAE0C6',
