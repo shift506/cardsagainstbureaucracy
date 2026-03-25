@@ -53,9 +53,9 @@ export function SynthesisPage() {
     navigate('/')
   }
 
-  function handleDownload() {
+  async function handleDownload() {
     if (!challengeInput || !synthesis) return
-    downloadSessionHTML(challengeInput, selectedAgenda, drawnCards, synthesis)
+    await downloadSessionHTML(challengeInput, selectedAgenda, drawnCards, synthesis)
   }
 
   const sections = parseSynthesis(synthesis ?? '')

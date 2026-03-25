@@ -1,6 +1,7 @@
 import type { ChallengeInput, SelectedAgenda, DrawnCard, CardCategory, PersonaId } from '@/types/session'
 import { getCardById } from '@/data/cards/index'
 import { isBarrier, isEnabler, isTheory, isTool, isProvocation } from '@/data/types/cards'
+import { getCardFaceImage } from '@/utils/cardImages'
 import { SHIFTFLOW_LOGO_DATA_URL } from './logoBase64'
 
 const PERSONA_NAMES: Record<PersonaId, string> = {
@@ -32,7 +33,22 @@ const CATEGORY_COLORS: Record<CardCategory, string> = {
 
 import { renderInline } from './renderMarkdown'
 
-// Fix #1 + #6 — proper single <ul> grouping, inline markdown rendered
+async function toDataURL(url: string): Promise<string> {
+  if (!url) return ''
+  try {
+    const res = await fetch(url)
+    const blob = await res.blob()
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onloadend = () => resolve(reader.result as string)
+      reader.onerror = reject
+      reader.readAsDataURL(blob)
+    })
+  } catch {
+    return ''
+  }
+}
+
 function synthesisMdToHTML(text: string): string {
   const lines = text.split('\n')
   const out: string[] = []
@@ -73,10 +89,8 @@ function synthesisMdToHTML(text: string): string {
   return out.join('\n')
 }
 
-// Fix #5 — use provocation-specific fields when description is absent
 function cardContent(card: DrawnCard): string {
   if (card.description) return card.description
-  // Provocation cards carry their content in quote / coreQuestion
   const c = card as Record<string, unknown>
   const quote = c['quote'] as string | undefined
   const coreQ = c['coreQuestion'] as string | undefined
@@ -86,14 +100,18 @@ function cardContent(card: DrawnCard): string {
   return ''
 }
 
-function cardHTML(card: DrawnCard): string {
+function cardHTML(card: DrawnCard, imageDataUrl?: string): string {
   const color = CATEGORY_COLORS[card.category] ?? '#888'
   const content = cardContent(card)
   const descHTML = content
     ? `<p class="card-desc">${content}</p>`
     : `<p class="card-desc card-desc-empty">—</p>`
+  const topHTML = imageDataUrl
+    ? `<img src="${imageDataUrl}" alt="${card.title}" class="card-image">`
+    : ''
   return `
     <div class="card">
+      ${topHTML}
       <div class="card-accent" style="background:${color}"></div>
       <div class="card-body">
         <span class="card-category" style="color:${color}">${card.category.toUpperCase()}</span>
@@ -103,40 +121,40 @@ function cardHTML(card: DrawnCard): string {
     </div>`
 }
 
-function cardContentHTML(drawnCard: DrawnCard, personaId: PersonaId, index: number): string {
+function cardContentHTML(card: DrawnCard, personaId: PersonaId, index: number): string {
   const name = PERSONA_NAMES[personaId]
   const color = PERSONA_COLORS[personaId]
-  const card = getCardById(drawnCard.id)
-  if (!card) return ''
+  const fullCard = getCardById(card.id)
+  if (!fullCard) return ''
 
   const rows: string[] = []
 
-  if (isProvocation(card)) {
-    rows.push(`<p class="card-quote">"${card.quote}"<br><span class="card-attr">— ${card.attribution}</span></p>`)
-    rows.push(`<p><strong>${card.coreQuestion}</strong></p>`)
-    if (card.howToUseIt?.length) rows.push(`<p><strong>How to use it:</strong> ${card.howToUseIt.join(' ')}</p>`)
-    if (card.reflectionPrompts?.length) rows.push(`<p><em>${card.reflectionPrompts[0]}</em></p>`)
+  if (isProvocation(fullCard)) {
+    rows.push(`<p class="card-quote">"${fullCard.quote}"<br><span class="card-attr">— ${fullCard.attribution}</span></p>`)
+    rows.push(`<p><strong>${fullCard.coreQuestion}</strong></p>`)
+    if (fullCard.howToUseIt?.length) rows.push(`<p><strong>How to use it:</strong> ${fullCard.howToUseIt.join(' ')}</p>`)
+    if (fullCard.reflectionPrompts?.length) rows.push(`<p><em>${fullCard.reflectionPrompts[0]}</em></p>`)
   } else {
-    if ('description' in card) rows.push(`<p>${card.description as string}</p>`)
-    if ('whyItMatters' in card) rows.push(`<p><strong>Why it matters:</strong> ${card.whyItMatters as string}</p>`)
-    if (isBarrier(card)) {
-      if (card.howItShowsUp?.length) rows.push(`<p><strong>How it shows up:</strong> ${card.howItShowsUp.join(' ')}</p>`)
-      if (card.howToCounteract?.length) rows.push(`<p><strong>How to counteract:</strong> ${card.howToCounteract.join(' ')}</p>`)
-      if (card.reflectionPrompt) rows.push(`<p><em>${card.reflectionPrompt}</em></p>`)
-    } else if (isEnabler(card)) {
-      if (card.howToUseIt?.length) rows.push(`<p><strong>How to use it:</strong> ${card.howToUseIt.join(' ')}</p>`)
-      if (card.reflectionPrompt) rows.push(`<p><em>${card.reflectionPrompt}</em></p>`)
-    } else if (isTheory(card) || isTool(card)) {
-      if (card.howToUseIt?.length) rows.push(`<p><strong>How to use it:</strong> ${card.howToUseIt.join(' ')}</p>`)
-      if (card.reflectionPrompts?.length) rows.push(`<p><em>${card.reflectionPrompts[0]}</em></p>`)
+    if ('description' in fullCard) rows.push(`<p>${fullCard.description as string}</p>`)
+    if ('whyItMatters' in fullCard) rows.push(`<p><strong>Why it matters:</strong> ${fullCard.whyItMatters as string}</p>`)
+    if (isBarrier(fullCard)) {
+      if (fullCard.howItShowsUp?.length) rows.push(`<p><strong>How it shows up:</strong> ${fullCard.howItShowsUp.join(' ')}</p>`)
+      if (fullCard.howToCounteract?.length) rows.push(`<p><strong>How to counteract:</strong> ${fullCard.howToCounteract.join(' ')}</p>`)
+      if (fullCard.reflectionPrompt) rows.push(`<p><em>${fullCard.reflectionPrompt}</em></p>`)
+    } else if (isEnabler(fullCard)) {
+      if (fullCard.howToUseIt?.length) rows.push(`<p><strong>How to use it:</strong> ${fullCard.howToUseIt.join(' ')}</p>`)
+      if (fullCard.reflectionPrompt) rows.push(`<p><em>${fullCard.reflectionPrompt}</em></p>`)
+    } else if (isTheory(fullCard) || isTool(fullCard)) {
+      if (fullCard.howToUseIt?.length) rows.push(`<p><strong>How to use it:</strong> ${fullCard.howToUseIt.join(' ')}</p>`)
+      if (fullCard.reflectionPrompts?.length) rows.push(`<p><em>${fullCard.reflectionPrompts[0]}</em></p>`)
     }
   }
 
   return `
-    <details class="persona"${index === 0 ? ' open' : ''}>
+    <details class="persona"${index === 0 ? ' open' : ''} style="border-left:3px solid ${color}">
       <summary class="persona-summary">
         <span class="persona-dot" style="background:${color}"></span>
-        <span class="persona-name" style="color:${color}">${name} — ${drawnCard.title}</span>
+        <span class="persona-name" style="color:${color}">${name} — ${card.title}</span>
         <span class="persona-toggle">▸</span>
       </summary>
       <div class="persona-content">${rows.join('\n')}</div>
@@ -154,7 +172,8 @@ export function generateSessionHTML(
   agenda: SelectedAgenda | null,
   drawnCards: Partial<Record<CardCategory, DrawnCard>>,
   synthesis: string,
-  sessionDate: string
+  sessionDate: string,
+  imageMap: Record<string, string> = {}
 ): string {
   const cards = Object.values(drawnCards).filter(Boolean) as DrawnCard[]
   const personaSections = PERSONA_ORDER
@@ -196,7 +215,7 @@ export function generateSessionHTML(
     }
     a { color: var(--new-leaf); }
 
-    /* ── Progress bar (fix #8) ── */
+    /* ── Progress bar ── */
     #progress-bar {
       position: fixed; top: 0; left: 0; height: 3px;
       background: var(--new-leaf); width: 0%;
@@ -211,9 +230,10 @@ export function generateSessionHTML(
     /* ── Header ── */
     .brand { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--new-leaf); margin-bottom: 12px; }
     .page-title { font-size: 2.2rem; font-weight: 600; line-height: 1.15; margin-bottom: 8px; }
-    .session-date { font-size: 0.85rem; color: rgba(255,255,255,0.45); }
+    .page-subtitle { font-size: 1.15rem; color: rgba(255,255,255,0.6); margin-top: 10px; font-weight: 400; line-height: 1.4; }
+    .session-date { font-size: 0.85rem; color: rgba(255,255,255,0.45); margin-top: 8px; }
 
-    /* ── Sticky nav (fix #4) ── */
+    /* ── Sticky nav ── */
     .toc-wrap {
       position: sticky; top: 0; z-index: 50;
       background: rgba(16,33,60,0.92); backdrop-filter: blur(10px);
@@ -242,9 +262,10 @@ export function generateSessionHTML(
     .section-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 8px; }
     .section-title { font-size: 1.4rem; font-weight: 500; color: var(--white); margin-bottom: 24px; }
 
-    /* ── Cards (fix #7) ── */
+    /* ── Cards ── */
     .cards-grid { display: flex; flex-wrap: wrap; gap: 16px; }
     .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius); overflow: hidden; width: 220px; flex-shrink: 0; }
+    .card-image { width: 100%; height: 160px; object-fit: contain; background: rgba(255,255,255,0.04); display: block; padding: 8px; }
     .card-accent { height: 10px; width: 100%; }
     .card-body { padding: 16px; }
     .card-category { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; display: block; margin-bottom: 6px; }
@@ -252,7 +273,7 @@ export function generateSessionHTML(
     .card-desc { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
     .card-desc-empty { font-style: italic; color: rgba(255,255,255,0.25); }
 
-    /* ── Personas (fix #3, #7) ── */
+    /* ── Personas ── */
     .persona { border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; }
     .persona-summary { display: flex; align-items: center; gap: 10px; padding: 16px 20px; cursor: pointer; list-style: none; user-select: none; background: rgba(255,255,255,0.02); }
     .persona-summary::-webkit-details-marker { display: none; }
@@ -264,7 +285,7 @@ export function generateSessionHTML(
     .persona-content p { font-size: 0.92rem; color: rgba(255,255,255,0.82); line-height: 1.8; margin-bottom: 14px; }
     .persona-content p:last-child { margin-bottom: 0; }
 
-    /* ── Synthesis (fix #1) ── */
+    /* ── Synthesis ── */
     .synthesis-box { background: rgba(214,222,35,0.04); border: 1px solid rgba(214,222,35,0.2); border-radius: var(--radius); padding: 28px 32px; }
     .synth-heading { font-size: 0.92rem; font-weight: 600; color: var(--new-leaf); letter-spacing: 0.04em; margin: 24px 0 10px; }
     .synth-heading:first-child { margin-top: 0; }
@@ -307,9 +328,10 @@ export function generateSessionHTML(
   <div class="page">
 
     <header class="section">
-      <img src="${SHIFTFLOW_LOGO_DATA_URL}" alt="ShiftFlow" style="height:28px;width:auto;margin-bottom:16px;display:block;">
+      <img src="${SHIFTFLOW_LOGO_DATA_URL}" alt="ShiftFlow" style="height:84px;width:auto;margin-bottom:20px;display:block;">
       <p class="brand">Cards Against Bureaucracy</p>
       <h1 class="page-title">Session Summary</h1>
+      <p class="page-subtitle">${challenge.name}</p>
       <p class="session-date">${sessionDate}</p>
     </header>
 
@@ -386,7 +408,7 @@ export function generateSessionHTML(
       <p class="section-label">Phase 2</p>
       <h2 class="section-title">The Spread</h2>
       <div class="cards-grid">
-        ${cards.map(cardHTML).join('\n')}
+        ${cards.map(c => cardHTML(c, imageMap[c.id])).join('\n')}
       </div>
     </section>
 
@@ -420,7 +442,6 @@ export function generateSessionHTML(
   </div>
 
   <script>
-    // Reading progress bar (fix #8)
     const bar = document.getElementById('progress-bar');
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY;
@@ -428,7 +449,6 @@ export function generateSessionHTML(
       bar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
     }, { passive: true });
 
-    // Sticky TOC scroll-spy (fix #4)
     const sections = document.querySelectorAll('section[id]');
     const tocLinks = document.querySelectorAll('.toc-link');
     const observer = new IntersectionObserver((entries) => {
@@ -446,16 +466,25 @@ export function generateSessionHTML(
 </html>`
 }
 
-export function downloadSessionHTML(
+export async function downloadSessionHTML(
   challenge: ChallengeInput,
   agenda: SelectedAgenda | null,
   drawnCards: Partial<Record<CardCategory, DrawnCard>>,
   synthesis: string
-): void {
+): Promise<void> {
+  const cards = Object.values(drawnCards).filter(Boolean) as DrawnCard[]
+  const imageMap: Record<string, string> = {}
+  await Promise.all(cards.map(async (card) => {
+    const url = getCardFaceImage(card.category, card.id)
+    if (url) {
+      imageMap[card.id] = await toDataURL(url)
+    }
+  }))
+
   const date = new Date().toLocaleDateString('en-AU', {
     year: 'numeric', month: 'long', day: 'numeric',
   })
-  const html = generateSessionHTML(challenge, agenda, drawnCards, synthesis, date)
+  const html = generateSessionHTML(challenge, agenda, drawnCards, synthesis, date, imageMap)
   const blob = new Blob([html], { type: 'text/html;charset=utf-8' })
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
