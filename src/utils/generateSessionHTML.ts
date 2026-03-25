@@ -36,11 +36,11 @@ function synthesisMdToHTML(text: string): string {
   const lines = text.split('\n')
   const out: string[] = []
   let inList = false
+  let inThinSlice = false
 
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i].trim()
     if (!line) {
-      // If blank line sits between two bullet lines, stay in list
       const next = lines.slice(i + 1).find((l) => l.trim())
       if (inList && next && (next.trim().startsWith('- ') || /^\d+\.\s/.test(next.trim()))) {
         continue
@@ -50,8 +50,13 @@ function synthesisMdToHTML(text: string): string {
     }
     if (line.startsWith('## ') || line.startsWith('### ')) {
       if (inList) { out.push('</ul>'); inList = false }
+      if (inThinSlice) { out.push('</div>'); inThinSlice = false }
       const level = line.startsWith('### ') ? 4 : 3
       const content = renderInline(line.replace(/^#{2,3}\s*/, ''))
+      if (content === '72-Hour Thin Slice') {
+        out.push(`<div class="synth-thin-slice">`)
+        inThinSlice = true
+      }
       out.push(`<h${level} class="synth-heading">${content}</h${level}>`)
     } else if (line.startsWith('- ') || /^\d+\.\s/.test(line)) {
       if (!inList) { out.push('<ul class="synth-list">'); inList = true }
@@ -63,6 +68,7 @@ function synthesisMdToHTML(text: string): string {
     }
   }
   if (inList) out.push('</ul>')
+  if (inThinSlice) out.push('</div>')
   return out.join('\n')
 }
 
@@ -266,6 +272,10 @@ export function generateSessionHTML(
     .synth-list li { font-size: 0.92rem; color: rgba(255,255,255,0.88); padding-left: 22px; position: relative; line-height: 1.7; }
     .synth-list li::before { content: '—'; position: absolute; left: 0; color: rgba(255,255,255,0.3); }
     .synth-list li strong { color: var(--white); }
+
+    /* ── Thin Slice ── */
+    .synth-thin-slice { background: rgba(214,222,35,0.06); border: 1px solid rgba(214,222,35,0.25); border-radius: var(--radius); padding: 20px 24px; margin-top: 24px; }
+    .synth-thin-slice .synth-heading { margin-top: 0; }
 
     /* ── Footer ── */
     .footer { font-size: 0.78rem; color: rgba(255,255,255,0.25); text-align: center; margin-top: 64px; }

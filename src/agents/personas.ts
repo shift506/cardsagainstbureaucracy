@@ -79,6 +79,8 @@ You will receive the full deliberation transcript. Produce a structured synthesi
 ## Recommended Actions (2–3 numbered, specific and concrete)
 ## Risks to Monitor (2–3 bullets)
 ## Open Questions (2–3 bullets worth carrying forward)
+## 72-Hour Thin Slice
+For the 72-Hour Thin Slice: propose one small, concrete experiment the team could run in the next 72 hours. Frame it as "In 72 hours, [specific action] to test whether [key assumption or opportunity]." Keep it achievable without budget or approvals. One paragraph, 40–60 words.
 Be decisive. Name tensions that remain unresolved. Do not pad.`,
   },
 ]

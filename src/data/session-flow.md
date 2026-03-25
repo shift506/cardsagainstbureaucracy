@@ -57,26 +57,30 @@ Stakes: [what happens if this is resolved well vs. poorly]
 **Output format:**
 
 ## Challenge Recap
-[Restated challenge after deliberation — note any reframing]
+[One paragraph restating the users inputs from Step 1]
 
 ## Key Insights
-1. [Insight]
-2. [Insight]
-3. [Insight]
+1. [Insight from deliberation]
+2. [Insight from deliberation]
+3. [Insight from deliberation]
+4. [Insight from deliberation]
+5. [Insight from deliberation]
 
 ## Recommended Actions
-1. [Specific, actionable step]
-2. [Specific, actionable step]
-3. [Specific, actionable step]
+1. [Concrete, specific action]
+2. [Concrete, specific action]
+3. [Concrete, specific action]
 
 ## Risks to Monitor
-- [Risk]
-- [Risk]
-- [Risk]
+- [Risk surfaced during deliberation]
+- [Risk surfaced during deliberation]
+
+## Experiment
+- an assumption to test
+- an opportunity to explore
+- one experiment the team can try in the next 72 hours to test and explore.
 
 ## Open Questions
 - [Question worth carrying forward]
 - [Question worth carrying forward]
 - [Question worth carrying forward]
-
-**Output:** A richer, more textured understanding of the challenge with key tensions named.

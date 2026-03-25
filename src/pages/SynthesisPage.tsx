@@ -95,7 +95,7 @@ export function SynthesisPage() {
           >
             {sections.length > 0 ? (
               sections.map((section, i) => (
-                <div key={i} className={styles.section}>
+                <div key={i} className={`${styles.section}${section.heading === '72-Hour Thin Slice' ? ` ${styles.thinSliceSection}` : ''}`}>
                   {section.heading && (
                     <h2 className={styles.sectionHeading}>{section.heading}</h2>
                   )}

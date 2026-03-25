@@ -119,6 +119,17 @@
   50% { opacity: 0; }
 }
 
+.thinSliceSection {
+  background: rgba(214, 222, 35, 0.06);
+  border: 1px solid rgba(214, 222, 35, 0.25);
+  border-radius: 10px;
+  padding: var(--space-5) var(--space-6);
+}
+
+.thinSliceSection .sectionHeading {
+  color: var(--color-new-leaf);
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
