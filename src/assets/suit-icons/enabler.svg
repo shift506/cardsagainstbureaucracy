@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="96" fill="#C5D12A"/>
+
+  <!-- Stem -->
+  <path d="M100,158 L100,48" fill="none" stroke="#1a1a1a" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Top center leaf -->
+  <path d="M100,62 C96,48 88,34 100,22 C112,34 104,48 100,62 Z"
+        fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round"/>
+  <!-- top leaf midrib -->
+  <path d="M100,58 C100,46 100,34 100,26" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Left large leaf -->
+  <path d="M98,92 C88,76 68,62 48,64 C52,82 74,90 98,92 Z"
+        fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round"/>
+  <!-- left leaf midrib -->
+  <path d="M96,90 C82,80 66,70 52,66" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Right large leaf -->
+  <path d="M102,92 C112,76 132,62 152,64 C148,82 126,90 102,92 Z"
+        fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round"/>
+  <!-- right leaf midrib -->
+  <path d="M104,90 C118,80 134,70 148,66" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Lower left leaf -->
+  <path d="M98,120 C84,110 62,106 46,114 C56,128 80,122 98,120 Z"
+        fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round"/>
+  <!-- lower left midrib -->
+  <path d="M96,118 C78,114 62,110 50,115" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Lower right leaf -->
+  <path d="M102,120 C116,110 138,106 154,114 C144,128 120,122 102,120 Z"
+        fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round"/>
+  <!-- lower right midrib -->
+  <path d="M104,118 C122,114 138,110 150,115" fill="none" stroke="#1a1a1a" stroke-width="1.5"/>
+
+  <!-- Soil mound -->
+  <path d="M68,162 C70,150 80,145 90,148 C92,143 98,140 100,140 C102,140 108,143 110,148 C120,145 130,150 132,162 Z"
+        fill="none" stroke="#1a1a1a" stroke-width="3" stroke-linejoin="round"/>
+</svg>

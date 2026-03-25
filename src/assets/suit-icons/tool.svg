@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="96" fill="#3A8FA3"/>
+
+  <!-- Wrench: goes from lower-left (head) to upper-right (handle) -->
+  <g fill="#3A8FA3" stroke="#1E5F72" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Wrench handle and open-end head, rotated -->
+    <g transform="rotate(-45, 100, 100)">
+      <!-- Handle -->
+      <rect x="91" y="62" width="18" height="86" rx="8"/>
+      <!-- Open-end head: outer ring notch -->
+      <path d="M74,48 L74,26 A26,26 0 0,1 126,26 L126,48 L110,48 L110,40 A10,10 0 0,0 90,40 L90,48 Z"/>
+      <!-- Handle end rounded -->
+      <rect x="91" y="140" width="18" height="16" rx="8"/>
+    </g>
+  </g>
+
+  <!-- Hammer: head at upper-left, handle going to lower-right -->
+  <g fill="#3A8FA3" stroke="#1E5F72" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+    <g transform="rotate(45, 100, 100)">
+      <!-- Hammer head -->
+      <rect x="68" y="28" width="64" height="28" rx="6"/>
+      <!-- Hammer handle -->
+      <rect x="92" y="54" width="16" height="92" rx="7"/>
+    </g>
+  </g>
+</svg>

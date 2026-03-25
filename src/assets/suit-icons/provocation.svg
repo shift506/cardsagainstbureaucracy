@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="96" fill="#AACAB8"/>
+
+  <!-- Large 4-pointed sparkle star -->
+  <!-- Centered ~(88, 112), outer radius ~42 -->
+  <path d="M88,70
+           Q99,100  130,112
+           Q99,124  88,154
+           Q77,124  46,112
+           Q77,100  88,70 Z"
+        fill="#0D1F38"/>
+
+  <!-- Small 4-pointed sparkle star -->
+  <!-- Centered ~(133, 70), outer radius ~19 -->
+  <path d="M133,51
+           Q138,65  152,70
+           Q138,75  133,89
+           Q128,75  114,70
+           Q128,65  133,51 Z"
+        fill="#0D1F38"/>
+</svg>

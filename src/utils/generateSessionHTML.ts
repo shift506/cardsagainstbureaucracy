@@ -3,6 +3,13 @@ import { getCardById } from '@/data/cards/index'
 import { isBarrier, isEnabler, isTheory, isTool, isProvocation } from '@/data/types/cards'
 import { getCardFaceImage } from '@/utils/cardImages'
 import { SHIFTFLOW_LOGO_DATA_URL } from './logoBase64'
+import {
+  SUIT_ICON_BARRIER,
+  SUIT_ICON_ENABLER,
+  SUIT_ICON_THEORY,
+  SUIT_ICON_TOOL,
+  SUIT_ICON_PROVOCATION,
+} from './suitIconsBase64'
 
 const PERSONA_NAMES: Record<PersonaId, string> = {
   critic: 'The Critic',
@@ -11,6 +18,14 @@ const PERSONA_NAMES: Record<PersonaId, string> = {
   practitioner: 'The Practitioner',
   philosopher: 'The Philosopher',
   lead: 'The Lead',
+}
+
+const SUIT_ICONS: Partial<Record<CardCategory, string>> = {
+  barrier: SUIT_ICON_BARRIER,
+  enabler: SUIT_ICON_ENABLER,
+  theory: SUIT_ICON_THEORY,
+  tool: SUIT_ICON_TOOL,
+  provocation: SUIT_ICON_PROVOCATION,
 }
 
 const PERSONA_COLORS: Record<PersonaId, string> = {
@@ -151,9 +166,9 @@ function cardContentHTML(card: DrawnCard, personaId: PersonaId, index: number): 
   }
 
   return `
-    <details class="persona"${index === 0 ? ' open' : ''} style="border-left:3px solid ${color}">
+    <details class="persona" style="border-left:3px solid ${color}">
       <summary class="persona-summary">
-        <span class="persona-dot" style="background:${color}"></span>
+        <img src="${SUIT_ICONS[PERSONA_SUITS[personaId]] ?? ''}" alt="${card.category}" class="persona-suit-icon">
         <span class="persona-name" style="color:${color}">${name} — ${card.title}</span>
         <span class="persona-toggle">▸</span>
       </summary>
@@ -277,7 +292,7 @@ export function generateSessionHTML(
     .persona { border: 1px solid rgba(255,255,255,0.07); border-radius: var(--radius); overflow: hidden; margin-bottom: 12px; }
     .persona-summary { display: flex; align-items: center; gap: 10px; padding: 16px 20px; cursor: pointer; list-style: none; user-select: none; background: rgba(255,255,255,0.02); }
     .persona-summary::-webkit-details-marker { display: none; }
-    .persona-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .persona-suit-icon { width: 20px; height: 20px; object-fit: contain; flex-shrink: 0; opacity: 0.85; }
     .persona-name { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; }
     .persona-toggle { margin-left: auto; color: rgba(255,255,255,0.35); font-size: 0.8rem; transition: transform 0.2s; display: inline-block; }
     details[open] .persona-toggle { transform: rotate(90deg); }

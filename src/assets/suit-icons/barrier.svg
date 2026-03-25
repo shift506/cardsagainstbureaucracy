@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="96" fill="#E8906B"/>
+  <!-- Outlined lightning bolt: fill=background color, white stroke around the shape -->
+  <path d="M118,18 L78,98 L106,98 L76,182 L116,106 L88,106 Z"
+        fill="#E8906B" stroke="white" stroke-width="5"
+        stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
