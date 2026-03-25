@@ -132,7 +132,7 @@ export async function runSynthesis(
       lead.systemPrompt,
       [{ role: 'user', content: userMessage }],
       1200,
-      'claude-sonnet-4-20250514'
+      'claude-sonnet-4-6'
     )) {
       callbacks.onChunk('lead', text)
     }
