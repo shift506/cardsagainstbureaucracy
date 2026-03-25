@@ -12,6 +12,7 @@ import type {
 
 interface SessionActions {
   setPhase: (phase: SessionPhase) => void
+  setEmail: (email: string) => void
   setChallengeInput: (input: ChallengeInput) => void
   setSelectedAgenda: (agenda: SelectedAgenda) => void
   drawCard: (category: CardCategory, card: DrawnCard) => void
@@ -27,6 +28,7 @@ interface SessionActions {
 
 const initialState: SessionState = {
   phase: 'challenge',
+  email: '',
   challengeInput: null,
   selectedAgenda: null,
   drawnCards: {},
@@ -40,6 +42,8 @@ export const useSessionStore = create<SessionState & SessionActions>((set) => ({
   ...initialState,
 
   setPhase: (phase) => set({ phase }),
+
+  setEmail: (email) => set({ email }),
 
   setChallengeInput: (input) => set({ challengeInput: input }),
 

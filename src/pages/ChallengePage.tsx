@@ -12,7 +12,7 @@ import logoUrl from '@/assets/WEB/WEB/Landscape/ShiftFlow-Logo-Landscape-FullCol
 export function ChallengePage() {
   const prefersReduced = useReducedMotion()
   const navigate = useNavigate()
-  const { setChallengeInput, setPhase } = useSessionStore()
+  const { setChallengeInput, setPhase, email } = useSessionStore()
 
   const [form, setForm] = useState<ChallengeInput>({
     name: '',
@@ -23,14 +23,12 @@ export function ChallengePage() {
     transformTo: '',
     transformSoThat: '',
   })
-  const [email, setEmail] = useState('')
   const [userName, setUserName] = useState('')
   const [organisation, setOrganisation] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   function loadDemoScenario() {
     const scenario = demoScenarios[Math.floor(Math.random() * demoScenarios.length)]
-    setEmail(scenario.email)
     setUserName(scenario.userName)
     setOrganisation(scenario.organisation)
     setForm({
@@ -50,7 +48,6 @@ export function ChallengePage() {
   }
 
   const isValid =
-    email.trim().includes('@') &&
     userName.trim().length > 0 &&
     organisation.trim().length > 0 &&
     form.name.trim().length > 0 &&
@@ -130,22 +127,6 @@ export function ChallengePage() {
         </motion.div>
 
         <motion.form className={styles.form} onSubmit={handleSubmit} variants={itemVariants}>
-          {/* Email */}
-          <div className={styles.field}>
-            <label className={styles.label}>
-              <span className={styles.labelText}>Your Email</span>
-              <span className={styles.labelHint}>We'll send you a copy of your session summary</span>
-            </label>
-            <input
-              type="email"
-              className={styles.input}
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@organisation.com"
-              required
-            />
-          </div>
-
           {/* Name */}
           <div className={styles.field}>
             <label className={styles.label}>

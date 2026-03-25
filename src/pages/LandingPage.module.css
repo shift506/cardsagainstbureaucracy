@@ -119,6 +119,39 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
+.emailGate {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.emailInput {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: var(--space-3) var(--space-4);
+  width: 100%;
+  transition: border-color 0.2s ease;
+}
+
+.emailInput::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.emailInput:focus {
+  outline: none;
+  border-color: var(--color-ocean);
+}
+
+.emailHint {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.5;
+}
+
 .startButton {
   background-color: var(--color-new-leaf);
   color: var(--color-galaxy);
@@ -131,6 +164,12 @@
   padding: var(--space-4) var(--space-12);
   display: inline-flex;
   align-items: center;
+  transition: opacity 0.2s ease;
+}
+
+.startButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
 }
 
 @media (max-width: 480px) {

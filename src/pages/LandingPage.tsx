@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/animations/hooks/useReducedMotion'
@@ -8,10 +9,14 @@ import logoUrl from '@/assets/WEB/WEB/Landscape/ShiftFlow-Logo-Landscape-FullCol
 export function LandingPage() {
   const prefersReduced = useReducedMotion()
   const navigate = useNavigate()
-  const reset = useSessionStore((s) => s.reset)
+  const { reset, setEmail } = useSessionStore()
+  const [emailInput, setEmailInput] = useState('')
+
+  const isValidEmail = emailInput.trim().includes('@') && emailInput.trim().includes('.')
 
   function handleStart() {
     reset()
+    setEmail(emailInput.trim())
     navigate('/session/challenge')
   }
 
@@ -85,12 +90,24 @@ export function LandingPage() {
           ))}
         </motion.div>
 
-        <motion.div variants={itemVariants}>
+        <motion.div className={styles.emailGate} variants={itemVariants}>
+          <input
+            type="email"
+            className={styles.emailInput}
+            value={emailInput}
+            onChange={(e) => setEmailInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && isValidEmail && handleStart()}
+            placeholder="Enter your email to start"
+          />
+          <p className={styles.emailHint}>
+            We'll send you your session summary and occasionally share new decks and resources.
+          </p>
           <motion.button
             className={styles.startButton}
             onClick={handleStart}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
+            disabled={!isValidEmail}
+            whileHover={isValidEmail ? { scale: 1.03 } : {}}
+            whileTap={isValidEmail ? { scale: 0.97 } : {}}
           >
             Start a Session
           </motion.button>

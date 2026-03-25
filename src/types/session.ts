@@ -41,6 +41,7 @@ export interface SelectedAgenda {
 
 export interface SessionState {
   phase: SessionPhase
+  email: string
   challengeInput: ChallengeInput | null
   selectedAgenda: SelectedAgenda | null
   drawnCards: Partial<Record<CardCategory, DrawnCard>>
