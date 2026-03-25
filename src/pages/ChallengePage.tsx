@@ -26,9 +26,15 @@ export function ChallengePage() {
   const [userName, setUserName] = useState('')
   const [organisation, setOrganisation] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [demoIndex, setDemoIndex] = useState<number | null>(null)
 
   function loadDemoScenario() {
-    const scenario = demoScenarios[Math.floor(Math.random() * demoScenarios.length)]
+    let index: number
+    do {
+      index = Math.floor(Math.random() * demoScenarios.length)
+    } while (index === demoIndex && demoScenarios.length > 1)
+    setDemoIndex(index)
+    const scenario = demoScenarios[index]
     setUserName(scenario.userName)
     setOrganisation(scenario.organisation)
     setForm({
@@ -122,7 +128,7 @@ export function ChallengePage() {
 
         <motion.div variants={itemVariants} style={{ textAlign: 'center', marginBottom: '1rem' }}>
           <button type="button" className={styles.demoButton} onClick={loadDemoScenario}>
-            Try a demo scenario →
+            {demoIndex === null ? 'Try a demo scenario →' : 'Try another demo →'}
           </button>
         </motion.div>
 
@@ -184,7 +190,7 @@ export function ChallengePage() {
               value={form.context}
               onChange={set('context')}
               placeholder="Our department has attempted three digital transformation programmes in the last five years..."
-              rows={4}
+              rows={6}
               required
             />
           </div>
@@ -200,7 +206,7 @@ export function ChallengePage() {
               value={form.stakeholders}
               onChange={set('stakeholders')}
               placeholder="Frontline staff who manage paper-based processes, senior leadership who have mandated the change..."
-              rows={3}
+              rows={5}
             />
           </div>
 
@@ -215,7 +221,7 @@ export function ChallengePage() {
               value={form.stakes}
               onChange={set('stakes')}
               placeholder="If resolved well: faster service delivery, reduced costs, improved staff morale..."
-              rows={3}
+              rows={5}
             />
           </div>
 
@@ -234,7 +240,7 @@ export function ChallengePage() {
                 value={form.transformFrom}
                 onChange={set('transformFrom')}
                 placeholder="e.g. siloed decision-making driven by hierarchy"
-                rows={2}
+                rows={4}
                 required
               />
             </div>
@@ -249,7 +255,7 @@ export function ChallengePage() {
                 value={form.transformTo}
                 onChange={set('transformTo')}
                 placeholder="e.g. distributed leadership with clear accountability"
-                rows={2}
+                rows={4}
                 required
               />
             </div>
@@ -264,7 +270,7 @@ export function ChallengePage() {
                 value={form.transformSoThat}
                 onChange={set('transformSoThat')}
                 placeholder="e.g. frontline teams can respond faster without waiting for approval"
-                rows={2}
+                rows={4}
                 required
               />
             </div>

@@ -135,7 +135,7 @@ export function SynthesisPage() {
               rel="noopener noreferrer"
               className={styles.workshopCtaLink}
             >
-              Book an in-person session with the physical deck →
+              Book an in-person team session with the physical deck →
             </a>
           </motion.div>
         )}
