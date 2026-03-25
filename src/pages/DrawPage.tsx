@@ -20,11 +20,12 @@ const CARD_POOLS: Record<CardCategory, DrawnCard[]> = {
   agenda: [],
 }
 
-function pickRandom<T>(arr: T[], exclude?: T): { item: T; index: number } {
-  const pool = arr.length > 1 && exclude ? arr.filter((x) => x !== exclude) : arr
-  const index = Math.floor(Math.random() * pool.length)
-  const item = pool[index]
-  return { item, index: arr.indexOf(item) }
+function pickUnseen(pool: DrawnCard[], seen: number[]): { item: DrawnCard; index: number; resetCycle: boolean } {
+  const available = pool.map((_, i) => i).filter((i) => !seen.includes(i))
+  const cycleReset = available.length === 0
+  const candidates = cycleReset ? pool.map((_, i) => i) : available
+  const index = candidates[Math.floor(Math.random() * candidates.length)]
+  return { item: pool[index], index, resetCycle: cycleReset }
 }
 
 const INSTRUCTIONS: Record<string, string> = {
@@ -41,6 +42,7 @@ export function DrawPage() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [previewCard, setPreviewCard] = useState<DrawnCard | null>(null)
   const [isShuffling, setIsShuffling] = useState(false)
+  const [seenIndices, setSeenIndices] = useState<number[]>([])
 
   useEffect(() => {
     if (!challengeInput) navigate('/')
@@ -49,16 +51,18 @@ export function DrawPage() {
   const activeCategory = DRAW_ORDER[activeIndex] ?? null
   const allDrawn = activeIndex >= DRAW_ORDER.length
 
-  // Reset preview whenever the active suit changes
+  // Reset preview and seen indices whenever the active suit changes
   useEffect(() => {
     setPreviewCard(null)
     setIsShuffling(false)
+    setSeenIndices([])
   }, [activeIndex])
 
   function handleReveal() {
     if (!activeCategory) return
     const pool = CARD_POOLS[activeCategory]
-    const { item, index } = pickRandom(pool)
+    const { item, index, resetCycle } = pickUnseen(pool, seenIndices)
+    setSeenIndices(resetCycle ? [index] : [...seenIndices, index])
     setPreviewCard({ ...item, imageIndex: index })
   }
 
@@ -66,9 +70,11 @@ export function DrawPage() {
     if (!activeCategory || isShuffling) return
     setIsShuffling(true)
     const pool = CARD_POOLS[activeCategory]
-    const { item, index } = pickRandom(pool, previewCard ?? undefined)
+    const { item, index, resetCycle } = pickUnseen(pool, seenIndices)
+    const nextSeen = resetCycle ? [index] : [...seenIndices, index]
     // Brief pause so the exit animation plays before the new card enters
     setTimeout(() => {
+      setSeenIndices(nextSeen)
       setPreviewCard({ ...item, imageIndex: index })
       setIsShuffling(false)
     }, prefersReduced ? 0 : 220)
