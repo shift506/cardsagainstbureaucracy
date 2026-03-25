@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/animations/hooks/useReducedMotion'
 import { useSessionStore } from '@/store/sessionStore'
 import { captureLead } from '@/lib/supabase'
+import { demoScenarios } from '@/data/demo-scenarios'
 import type { ChallengeInput } from '@/types/session'
 import styles from './ChallengePage.module.css'
 import logoUrl from '@/assets/WEB/WEB/Landscape/ShiftFlow-Logo-Landscape-FullColour-DarkBackground-2500x930px-72dpi.png'
@@ -26,6 +27,22 @@ export function ChallengePage() {
   const [userName, setUserName] = useState('')
   const [organisation, setOrganisation] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+  function loadDemoScenario() {
+    const scenario = demoScenarios[Math.floor(Math.random() * demoScenarios.length)]
+    setEmail(scenario.email)
+    setUserName(scenario.userName)
+    setOrganisation(scenario.organisation)
+    setForm({
+      name: scenario.name,
+      context: scenario.context,
+      stakeholders: scenario.stakeholders,
+      stakes: scenario.stakes,
+      transformFrom: scenario.transformFrom,
+      transformTo: scenario.transformTo,
+      transformSoThat: scenario.transformSoThat,
+    })
+  }
 
   function set(key: keyof ChallengeInput) {
     return (e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) =>
@@ -104,6 +121,12 @@ export function ChallengePage() {
           <p className={styles.subtitle}>
             Be specific. The quality of the deliberation depends on the quality of the framing.
           </p>
+        </motion.div>
+
+        <motion.div variants={itemVariants} style={{ textAlign: 'center', marginBottom: '1rem' }}>
+          <button type="button" className={styles.demoButton} onClick={loadDemoScenario}>
+            Try a demo scenario →
+          </button>
         </motion.div>
 
         <motion.form className={styles.form} onSubmit={handleSubmit} variants={itemVariants}>
