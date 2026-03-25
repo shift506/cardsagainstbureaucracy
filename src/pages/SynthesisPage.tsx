@@ -121,6 +121,27 @@ export function SynthesisPage() {
 
         {!isFacilitatorStreaming && synthesis && (
           <motion.div
+            className={styles.workshopCta}
+            initial={{ opacity: 0, y: prefersReduced ? 0 : 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
+          >
+            <p className={styles.workshopCtaText}>
+              This was the digital version. The real breakthroughs happen in the room.
+            </p>
+            <a
+              href="https://www.shiftflow.ca/transformation"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.workshopCtaLink}
+            >
+              Book an in-person session with the physical deck →
+            </a>
+          </motion.div>
+        )}
+
+        {!isFacilitatorStreaming && synthesis && (
+          <motion.div
             className={styles.actions}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
