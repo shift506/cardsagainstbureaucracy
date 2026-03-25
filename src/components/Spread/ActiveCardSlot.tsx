@@ -78,7 +78,7 @@ export function ActiveCardSlot({
               </motion.p>
             </motion.div>
           ) : (
-            /* Card face — shuffle or confirm */
+            /* Card face — click to shuffle */
             <motion.div
               key={previewCard.id}
               variants={cardVariants}
@@ -86,8 +86,19 @@ export function ActiveCardSlot({
               animate={isShuffling ? 'exit' : 'enter'}
               exit="exit"
               className={styles.cardWrap}
+              onClick={onShuffle}
+              style={{ cursor: 'pointer' }}
+              title="Click to see a different card"
             >
               <CardFace card={previewCard} />
+              <motion.p
+                className={styles.clickHint}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+              >
+                Click card to shuffle
+              </motion.p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -103,15 +114,6 @@ export function ActiveCardSlot({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            <motion.button
-              className={styles.shuffleButton}
-              onClick={onShuffle}
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.96 }}
-              title="See a different card"
-            >
-              ↺ Shuffle
-            </motion.button>
             <motion.button
               className={styles.confirmButton}
               onClick={onConfirm}
