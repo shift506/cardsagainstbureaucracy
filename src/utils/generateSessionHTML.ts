@@ -192,7 +192,7 @@ export function generateSessionHTML(
 ): string {
   const cards = Object.values(drawnCards).filter(Boolean) as DrawnCard[]
   const personaSections = PERSONA_ORDER
-    .map((personaId, i) => {
+    .map((personaId) => {
       const card = drawnCards[PERSONA_SUITS[personaId]]
       if (!card) return ''
       return cardContentHTML(card, personaId)
