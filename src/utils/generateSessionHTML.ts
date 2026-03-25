@@ -136,7 +136,7 @@ function cardHTML(card: DrawnCard, imageDataUrl?: string): string {
     </div>`
 }
 
-function cardContentHTML(card: DrawnCard, personaId: PersonaId, index: number): string {
+function cardContentHTML(card: DrawnCard, personaId: PersonaId): string {
   const name = PERSONA_NAMES[personaId]
   const color = PERSONA_COLORS[personaId]
   const fullCard = getCardById(card.id)
@@ -195,7 +195,7 @@ export function generateSessionHTML(
     .map((personaId, i) => {
       const card = drawnCards[PERSONA_SUITS[personaId]]
       if (!card) return ''
-      return cardContentHTML(card, personaId, i)
+      return cardContentHTML(card, personaId)
     })
     .filter(Boolean)
     .join('\n')
