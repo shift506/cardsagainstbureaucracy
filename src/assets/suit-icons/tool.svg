@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <circle cx="100" cy="100" r="96" fill="#3A8FA3"/>
+  <circle cx="100" cy="100" r="96" fill="#3B8EA5"/>
 
   <!-- Wrench: goes from lower-left (head) to upper-right (handle) -->
-  <g fill="#3A8FA3" stroke="#1E5F72" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+  <g fill="#3B8EA5" stroke="#1E5F72" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
     <!-- Wrench handle and open-end head, rotated -->
     <g transform="rotate(-45, 100, 100)">
       <!-- Handle -->
@@ -15,7 +15,7 @@
   </g>
 
   <!-- Hammer: head at upper-left, handle going to lower-right -->
-  <g fill="#3A8FA3" stroke="#1E5F72" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+  <g fill="#3B8EA5" stroke="#1E5F72" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
     <g transform="rotate(45, 100, 100)">
       <!-- Hammer head -->
       <rect x="68" y="28" width="64" height="28" rx="6"/>

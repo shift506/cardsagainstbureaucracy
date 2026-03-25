@@ -29,21 +29,21 @@ const SUIT_ICONS: Partial<Record<CardCategory, string>> = {
 }
 
 const PERSONA_COLORS: Record<PersonaId, string> = {
-  critic: '#E8A98C',
-  optimist: '#BAE0C6',
-  academic: '#3B8EA5',
-  practitioner: '#D6DE23',
-  philosopher: '#B8C4C8',
+  critic: '#F0AB86',
+  optimist: '#D6DE23',
+  academic: '#6BAEBE',
+  practitioner: '#3B8EA5',
+  philosopher: '#BAE0C6',
   lead: '#D6DE23',
 }
 
 const CATEGORY_COLORS: Record<CardCategory, string> = {
-  barrier: '#E8A98C',
-  enabler: '#BAE0C6',
-  theory: '#3B8EA5',
-  tool: '#D6DE23',
-  provocation: '#B8C4C8',
-  agenda: '#B8C4C8',
+  barrier: '#F0AB86',
+  enabler: '#D6DE23',
+  theory: '#6BAEBE',
+  tool: '#3B8EA5',
+  provocation: '#BAE0C6',
+  agenda: '#BAE0C6',
 }
 
 import { renderInline } from './renderMarkdown'

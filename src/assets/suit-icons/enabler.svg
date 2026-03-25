@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
-  <circle cx="100" cy="100" r="96" fill="#C5D12A"/>
+  <circle cx="100" cy="100" r="96" fill="#D6DE23"/>
 
   <!-- Stem -->
   <path d="M100,158 L100,48" fill="none" stroke="#1a1a1a" stroke-width="3.5" stroke-linecap="round"/>
