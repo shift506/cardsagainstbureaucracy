@@ -15,6 +15,33 @@
   gap: var(--space-1);
 }
 
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.toggleIcon {
+  display: none;
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 768px) {
+  .header {
+    cursor: pointer;
+  }
+  .toggleIcon {
+    display: block;
+  }
+  .panel[data-open="false"] .body {
+    display: none;
+  }
+}
+
 .personaName {
   font-family: var(--font-subheading);
   font-size: 0.65rem;

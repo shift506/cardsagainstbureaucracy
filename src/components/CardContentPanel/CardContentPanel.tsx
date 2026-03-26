@@ -12,9 +12,11 @@ interface CardContentPanelProps {
   personaId: PersonaId
   card: TransformationCard
   index: number
+  isOpen?: boolean
+  onToggle?: () => void
 }
 
-export function CardContentPanel({ personaId, card, index }: CardContentPanelProps) {
+export function CardContentPanel({ personaId, card, index, isOpen = true, onToggle }: CardContentPanelProps) {
   const prefersReduced = useReducedMotion()
   const persona = getPersona(personaId)
 
@@ -22,15 +24,19 @@ export function CardContentPanel({ personaId, card, index }: CardContentPanelPro
     <motion.div
       className={styles.panel}
       style={{ borderLeftColor: persona.color }}
+      data-open={isOpen}
       initial={{ opacity: 0, y: prefersReduced ? 0 : 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: prefersReduced ? 0 : 0.4, delay: prefersReduced ? 0 : index * 0.1 }}
     >
-      <div className={styles.header}>
+      <div className={styles.header} onClick={onToggle}>
         <span className={styles.personaName} style={{ color: persona.color }}>
           {persona.name}
         </span>
-        <span className={styles.cardTitle}>{card.title}</span>
+        <div className={styles.headerRow}>
+          <span className={styles.cardTitle}>{card.title}</span>
+          <span className={styles.toggleIcon}>{isOpen ? '−' : '+'}</span>
+        </div>
       </div>
 
       <div className={styles.body}>

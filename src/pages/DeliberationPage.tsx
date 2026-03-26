@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/animations/hooks/useReducedMotion'
@@ -18,6 +18,7 @@ export function DeliberationPage() {
   const navigate = useNavigate()
 
   const { challengeInput, drawnCards, setPhase } = useSessionStore()
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   useEffect(() => {
     if (!challengeInput) navigate('/')
@@ -74,6 +75,8 @@ export function DeliberationPage() {
                 personaId={personaId}
                 card={card}
                 index={i}
+                isOpen={openIndex === i}
+                onToggle={() => setOpenIndex(openIndex === i ? null : i)}
               />
             ))}
           </div>
