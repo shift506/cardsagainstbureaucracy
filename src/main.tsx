@@ -15,6 +15,7 @@ import { AgendaPage } from '@/pages/AgendaPage'
 import { DrawPage } from '@/pages/DrawPage'
 import { DeliberationPage } from '@/pages/DeliberationPage'
 import { SynthesisPage } from '@/pages/SynthesisPage'
+import { PrivacyPage } from '@/pages/PrivacyPage'
 import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -30,6 +31,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           <Route path="/session/draw" element={<DrawPage />} />
           <Route path="/session/deliberation" element={<DeliberationPage />} />
           <Route path="/session/synthesis" element={<SynthesisPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>

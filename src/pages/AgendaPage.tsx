@@ -7,6 +7,7 @@ import { agendaCards } from '@/data/cards/index'
 import type { SelectedAgenda } from '@/types/session'
 import styles from './AgendaPage.module.css'
 import logoUrl from '@/assets/WEB/WEB/Landscape/ShiftFlow-Logo-Landscape-FullColour-DarkBackground-2500x930px-72dpi.png'
+import { StepProgressNav } from '@/components/StepProgressNav/StepProgressNav'
 
 const cardImages = import.meta.glob<{ default: string }>(
   '../data/cards/agenda-card-images/*.png',
@@ -30,6 +31,8 @@ export function AgendaPage() {
     if (!challengeInput) navigate('/session/challenge')
   }, [challengeInput, navigate])
 
+  useEffect(() => { setPhase('agenda') }, [])
+
   function handleConfirm() {
     if (!selected) return
     setSelectedAgenda(selected)
@@ -51,7 +54,9 @@ export function AgendaPage() {
   }
 
   return (
-    <div className={styles.page}>
+    <div className={styles.pageLayout}>
+      <StepProgressNav />
+      <div className={styles.page}>
       <div className={styles.topBar}>
         <a href="https://www.shiftflow.ca/transformation" target="_blank" rel="noopener noreferrer">
           <img src={logoUrl} alt="ShiftFlow" className={styles.logo} />
@@ -62,7 +67,7 @@ export function AgendaPage() {
       <div className={styles.container}>
         <div className={styles.header}>
           <span className="subheading" style={{ color: 'var(--color-ocean)', fontSize: '0.7rem' }}>
-            Step 2 of 4 — Agenda
+            Step 2 of 5 — Agenda
           </span>
           <h1 className={styles.title}>Select your change agenda</h1>
           <p className={styles.subtitle}>
@@ -147,6 +152,7 @@ export function AgendaPage() {
             </motion.div>
           )}
         </AnimatePresence>
+      </div>
       </div>
     </div>
   )

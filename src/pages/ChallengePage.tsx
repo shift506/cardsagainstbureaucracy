@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '@/animations/hooks/useReducedMotion'
@@ -8,6 +8,7 @@ import { demoScenarios } from '@/data/demo-scenarios'
 import type { ChallengeInput } from '@/types/session'
 import styles from './ChallengePage.module.css'
 import logoUrl from '@/assets/WEB/WEB/Landscape/ShiftFlow-Logo-Landscape-FullColour-DarkBackground-2500x930px-72dpi.png'
+import { StepProgressNav } from '@/components/StepProgressNav/StepProgressNav'
 
 export function ChallengePage() {
   const prefersReduced = useReducedMotion()
@@ -27,6 +28,8 @@ export function ChallengePage() {
   const [organisation, setOrganisation] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [demoIndex, setDemoIndex] = useState<number | null>(null)
+
+  useEffect(() => { setPhase('challenge') }, [])
 
   function loadDemoScenario() {
     let index: number
@@ -102,7 +105,9 @@ export function ChallengePage() {
   }
 
   return (
-    <div className={styles.page}>
+    <div className={styles.pageLayout}>
+      <StepProgressNav />
+      <div className={styles.page}>
       <div className={styles.topBar}>
         <a href="https://www.shiftflow.ca/transformation" target="_blank" rel="noopener noreferrer">
           <img src={logoUrl} alt="ShiftFlow" className={styles.logo} />
@@ -118,17 +123,18 @@ export function ChallengePage() {
       >
         <motion.div className={styles.header} variants={itemVariants}>
           <span className="subheading" style={{ color: 'var(--color-ocean)', fontSize: '0.7rem' }}>
-            Step 1 of 4 — Setup
+            Step 1 of 5 — The Setup
           </span>
           <h1 className={styles.title}>Frame your challenge</h1>
           <p className={styles.subtitle}>
-            Be specific. The quality of the deliberation depends on the quality of the framing.
+            Be specific. The quality of the deliberation depends on the quality of the framing.{' '}
+            <span style={{ opacity: 0.6 }}>Don't overthink it — even a rough frame generates useful perspectives. You can refine as you go.</span>
           </p>
         </motion.div>
 
         <motion.div variants={itemVariants} style={{ textAlign: 'center', marginBottom: '1rem' }}>
           <button type="button" className={styles.demoButton} onClick={loadDemoScenario}>
-            {demoIndex === null ? 'Try a demo scenario →' : 'Try another demo →'}
+            {demoIndex === null ? 'Not sure how to start? Load an example →' : 'Try another example →'}
           </button>
         </motion.div>
 
@@ -146,6 +152,7 @@ export function ChallengePage() {
               placeholder="Jane Smith"
               required
             />
+            <p className={styles.fieldHint}>Personalises your synthesis</p>
           </div>
 
           {/* Organisation */}
@@ -161,6 +168,7 @@ export function ChallengePage() {
               placeholder="Department of..."
               required
             />
+            <p className={styles.fieldHint}>Helps contextualise the scenarios to your context</p>
           </div>
 
           {/* Challenge name */}
@@ -289,6 +297,7 @@ export function ChallengePage() {
           </div>
         </motion.form>
       </motion.div>
+      </div>
     </div>
   )
 }

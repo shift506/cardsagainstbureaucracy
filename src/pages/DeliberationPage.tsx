@@ -10,6 +10,7 @@ import { getCardById } from '@/data/cards/index'
 import type { PersonaId } from '@/types/session'
 import type { TransformationCard } from '@/data/types/cards'
 import styles from './DeliberationPage.module.css'
+import { StepProgressNav } from '@/components/StepProgressNav/StepProgressNav'
 
 const DELIBERATION_ORDER: PersonaId[] = ['critic', 'optimist', 'academic', 'practitioner', 'philosopher']
 
@@ -23,6 +24,8 @@ export function DeliberationPage() {
   useEffect(() => {
     if (!challengeInput) navigate('/')
   }, [challengeInput, navigate])
+
+  useEffect(() => { setPhase('deliberation') }, [])
 
   function handleProceed() {
     setPhase('synthesis')
@@ -39,7 +42,9 @@ export function DeliberationPage() {
   }).filter(Boolean) as { personaId: PersonaId; card: TransformationCard; drawnCard: NonNullable<typeof drawnCards[keyof typeof drawnCards]> }[]
 
   return (
-    <div className={styles.page}>
+    <div className={styles.pageLayout}>
+      <StepProgressNav />
+      <div className={styles.page}>
       <div className={styles.layout}>
         <motion.aside
           className={styles.sidebar}
@@ -60,7 +65,7 @@ export function DeliberationPage() {
         <main className={styles.main}>
           <div className={styles.header}>
             <span className="subheading" style={{ color: 'var(--color-new-leaf)', fontSize: '0.7rem' }}>
-              Phase 3 — Deliberation
+              Step 4 of 5 — Deliberation
             </span>
             <h1 className={styles.title}>The Spread</h1>
             {challengeInput && (
@@ -110,6 +115,7 @@ export function DeliberationPage() {
             </motion.div>
           )}
         </main>
+      </div>
       </div>
     </div>
   )

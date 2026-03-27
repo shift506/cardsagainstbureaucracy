@@ -46,9 +46,11 @@ export function LandingPage() {
       <div className={styles.banner}>
         <span className={styles.bannerEmoji}>🃏</span>
         <p className={styles.bannerText}>
-          You're previewing a <strong>beta version</strong> of the Cards Against Bureaucracy deck.
-          This digital session gives you a taste of the method — for the full experience, where the real breakthroughs happen,{' '}
-          <strong>book an in-person session with the physical deck.</strong>
+          <strong>This is a taste of what's possible.</strong>{' '}
+          The real breakthroughs happen in the room, with your team and the physical deck. Try the digital version first —{' '}
+          <a href="https://www.shiftflow.ca/transformation" target="_blank" rel="noopener noreferrer" className={styles.bannerLink}>
+            Book an in-person session →
+          </a>
         </p>
       </div>
       <div className={styles.content}>
@@ -68,10 +70,23 @@ export function LandingPage() {
           Cards Against Bureaucracy
         </motion.h1>
 
-        <motion.p className={styles.tagline} variants={itemVariants}>
-          A multi-persona deliberation session for real organizational challenges.
-          Five perspectives. One synthesis. Actionable every time.
+        <motion.p className={styles.tagline} variants={itemVariants} style={{ fontSize: 'clamp(1.6rem, 4vw, 2.4rem)', color: 'var(--color-white)', lineHeight: 1.2, marginBottom: 0 }}>
+          You've had the meeting.
         </motion.p>
+
+        <motion.p className={styles.tagline} variants={itemVariants} style={{ fontSize: 'clamp(1.6rem, 4vw, 2.4rem)', color: 'var(--color-new-leaf)', lineHeight: 1.2 }}>
+          Now try the game.
+        </motion.p>
+
+        <motion.p className={styles.tagline} variants={itemVariants} style={{ opacity: 0.6, marginTop: 8 }}>
+          A structured play session designed for that moment before the breakthrough.
+        </motion.p>
+
+        <div className={styles.personaChips}>
+          <span className={styles.personaChip}>For managers trying to get unstuck</span>
+          <span className={styles.personaChip}>For leaders pursuing a mandate</span>
+          <span className={styles.personaChip}>For facilitators guiding a team</span>
+        </div>
 
         <motion.div className={styles.suits} variants={itemVariants}>
           {SUITS.map((s) => (
@@ -90,6 +105,20 @@ export function LandingPage() {
           ))}
         </motion.div>
 
+        <div className={styles.testimonials}>
+          {[
+            {
+              quote: "The Transformation Deck turned abstract ideas into concrete insights we could immediately apply to our work.",
+              attribution: "Senior Director, Singapore",
+            },
+          ].map((item, i) => (
+            <div key={i} className={styles.testimonialItem}>
+              <p className={styles.testimonialQuote}>"{item.quote}"</p>
+              <p className={styles.testimonialAttribution}>— {item.attribution}</p>
+            </div>
+          ))}
+        </div>
+
         <motion.div className={styles.emailGate} variants={itemVariants}>
           <input
             type="email"
@@ -100,7 +129,10 @@ export function LandingPage() {
             placeholder="Enter your email to start"
           />
           <p className={styles.emailHint}>
-            We'll send you your session summary and occasionally share new decks and resources.
+            We'll send you your session summary and occasionally share new resources.
+          </p>
+          <p className={styles.emailHint} style={{ marginTop: 0 }}>
+            Your session data is processed by <strong>Claude (Anthropic)</strong> to generate your synthesis on Step 4.
           </p>
           <motion.button
             className={styles.startButton}
@@ -109,7 +141,7 @@ export function LandingPage() {
             whileHover={isValidEmail ? { scale: 1.03 } : {}}
             whileTap={isValidEmail ? { scale: 0.97 } : {}}
           >
-            Start a Session
+            Try it →
           </motion.button>
         </motion.div>
       </motion.div>

@@ -8,6 +8,7 @@ import { SpreadBoard } from '@/components/Spread/SpreadBoard'
 import { ActiveCardSlot } from '@/components/Spread/ActiveCardSlot'
 import type { CardCategory, DrawnCard } from '@/types/session'
 import styles from './DrawPage.module.css'
+import { StepProgressNav } from '@/components/StepProgressNav/StepProgressNav'
 
 const DRAW_ORDER: CardCategory[] = ['barrier', 'enabler', 'theory', 'tool', 'provocation']
 
@@ -37,7 +38,7 @@ const INSTRUCTIONS: Record<string, string> = {
 export function DrawPage() {
   const prefersReduced = useReducedMotion()
   const navigate = useNavigate()
-  const { challengeInput, drawnCards, drawCard, setPhase } = useSessionStore()
+  const { challengeInput, drawnCards, drawCard, clearDrawnCards, setPhase } = useSessionStore()
 
   const [activeIndex, setActiveIndex] = useState(0)
   const [previewCard, setPreviewCard] = useState<DrawnCard | null>(null)
@@ -47,6 +48,8 @@ export function DrawPage() {
   useEffect(() => {
     if (!challengeInput) navigate('/')
   }, [challengeInput, navigate])
+
+  useEffect(() => { setPhase('draw') }, [])
 
   const activeCategory = DRAW_ORDER[activeIndex] ?? null
   const allDrawn = activeIndex >= DRAW_ORDER.length
@@ -86,6 +89,13 @@ export function DrawPage() {
     setActiveIndex((i) => i + 1)
   }
 
+  function handleRedraw() {
+    clearDrawnCards()
+    setActiveIndex(0)
+    setPreviewCard(null)
+    setSeenIndices([])
+  }
+
   function handleProceed() {
     setPhase('deliberation')
     navigate('/session/deliberation')
@@ -94,10 +104,12 @@ export function DrawPage() {
   const instructionKey = allDrawn ? 'done' : previewCard ? 'preview' : 'reveal'
 
   return (
-    <div className={styles.page}>
+    <div className={styles.pageLayout}>
+      <StepProgressNav />
+      <div className={styles.page}>
       <div className={styles.header}>
         <span className="subheading" style={{ color: 'var(--color-new-leaf)', fontSize: '0.7rem' }}>
-          Phase 2 — The Draw
+          Step 3 of 5 — The Draw
         </span>
         <h1 className={styles.title}>Draw your cards</h1>
         <AnimatePresence mode="wait">
@@ -148,6 +160,14 @@ export function DrawPage() {
             transition={{ delay: 0.3 }}
           >
             <motion.button
+              className={styles.redrawButton}
+              onClick={handleRedraw}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              ← Redraw Cards
+            </motion.button>
+            <motion.button
               className={styles.proceedButton}
               onClick={handleProceed}
               whileHover={{ scale: 1.02 }}
@@ -158,6 +178,7 @@ export function DrawPage() {
           </motion.div>
         )}
       </AnimatePresence>
+      </div>
     </div>
   )
 }

@@ -394,7 +394,7 @@ export function generateSessionHTML(
 
     ${agenda ? `
     <section class="section" id="agenda">
-      <p class="section-label">Step 2</p>
+      <p class="section-label">Step 2 of 5 — Agenda</p>
       <h2 class="section-title">Change Agenda</h2>
       <div class="challenge-box">
         <div class="challenge-field">
@@ -420,7 +420,7 @@ export function generateSessionHTML(
     ` : ''}
 
     <section class="section" id="spread">
-      <p class="section-label">Phase 2</p>
+      <p class="section-label">Step 3 of 5 — The Draw</p>
       <h2 class="section-title">The Spread</h2>
       <div class="cards-grid">
         ${cards.map(c => cardHTML(c, imageMap[c.id])).join('\n')}
@@ -438,7 +438,7 @@ export function generateSessionHTML(
     <hr class="divider">
 
     <section class="section" id="synthesis">
-      <p class="section-label">Phase 5</p>
+      <p class="section-label">Step 5 of 5 — Synthesis</p>
       <h2 class="section-title">The Lead's Synthesis</h2>
       <div class="synthesis-box">
         ${synthesisMdToHTML(synthesis)}

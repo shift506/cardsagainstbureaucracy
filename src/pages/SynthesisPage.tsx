@@ -7,6 +7,7 @@ import { runSynthesis } from '@/agents/facilitator'
 import { downloadSessionHTML } from '@/utils/generateSessionHTML'
 import { renderInline } from '@/utils/renderMarkdown'
 import styles from './SynthesisPage.module.css'
+import { StepProgressNav } from '@/components/StepProgressNav/StepProgressNav'
 
 export function SynthesisPage() {
   const prefersReduced = useReducedMotion()
@@ -21,8 +22,11 @@ export function SynthesisPage() {
     setSynthesis,
     setFacilitatorStreaming,
     isFacilitatorStreaming,
+    setPhase,
     reset,
   } = useSessionStore()
+
+  useEffect(() => { setPhase('synthesis') }, [])
 
   useEffect(() => {
     if (!challengeInput) { navigate('/'); return }
@@ -61,7 +65,9 @@ export function SynthesisPage() {
   const sections = parseSynthesis(synthesis ?? '')
 
   return (
-    <div className={styles.page}>
+    <div className={styles.pageLayout}>
+      <StepProgressNav />
+      <div className={styles.page}>
       <motion.div
         className={styles.container}
         initial={{ opacity: 0 }}
@@ -70,7 +76,7 @@ export function SynthesisPage() {
       >
         <div className={styles.header}>
           <span className="subheading" style={{ color: 'var(--color-new-leaf)', fontSize: '0.7rem' }}>
-            Phase 5 — Synthesis
+            Step 5 of 5 — Synthesis
           </span>
           <h1 className={styles.title}>The Lead's Synthesis</h1>
           {challengeInput && (
@@ -174,6 +180,7 @@ export function SynthesisPage() {
           </motion.div>
         )}
       </motion.div>
+      </div>
     </div>
   )
 }

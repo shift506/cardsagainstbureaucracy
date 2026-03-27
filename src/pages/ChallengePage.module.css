@@ -1,3 +1,13 @@
+.pageLayout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  min-height: 100vh;
+}
+
+.pageLayout > :last-child {
+  min-width: 0;
+}
+
 .page {
   min-height: 100vh;
   display: flex;
@@ -85,6 +95,34 @@
 .labelHint {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.4);
+}
+
+.fieldHint {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 4px;
+}
+
+.contextPrompts {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contextPrompts li {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  padding-left: 14px;
+  position: relative;
+}
+
+.contextPrompts li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
 }
 
 .input {
@@ -187,6 +225,7 @@
 }
 
 .demoButton {
+  width: 100%;
   background: none;
   border: 1px solid var(--color-ocean);
   color: var(--color-ocean);
