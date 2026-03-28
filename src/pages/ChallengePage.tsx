@@ -8,7 +8,6 @@ import { demoScenarios } from '@/data/demo-scenarios'
 import type { ChallengeInput } from '@/types/session'
 import styles from './ChallengePage.module.css'
 import logoUrl from '@/assets/WEB/WEB/Landscape/ShiftFlow-Logo-Landscape-FullColour-DarkBackground-2500x930px-72dpi.png'
-import { StepProgressNav } from '@/components/StepProgressNav/StepProgressNav'
 
 export function ChallengePage() {
   const prefersReduced = useReducedMotion()
@@ -105,9 +104,7 @@ export function ChallengePage() {
   }
 
   return (
-    <div className={styles.pageLayout}>
-      <StepProgressNav />
-      <div className={styles.page}>
+    <div className={styles.page}>
       <div className={styles.topBar}>
         <a href="https://www.shiftflow.ca/transformation" target="_blank" rel="noopener noreferrer">
           <img src={logoUrl} alt="ShiftFlow" className={styles.logo} />
@@ -297,7 +294,6 @@ export function ChallengePage() {
           </div>
         </motion.form>
       </motion.div>
-      </div>
     </div>
   )
 }

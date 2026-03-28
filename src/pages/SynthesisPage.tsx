@@ -7,7 +7,6 @@ import { runSynthesis } from '@/agents/facilitator'
 import { downloadSessionHTML } from '@/utils/generateSessionHTML'
 import { renderInline } from '@/utils/renderMarkdown'
 import styles from './SynthesisPage.module.css'
-import { StepProgressNav } from '@/components/StepProgressNav/StepProgressNav'
 
 export function SynthesisPage() {
   const prefersReduced = useReducedMotion()
@@ -65,9 +64,7 @@ export function SynthesisPage() {
   const sections = parseSynthesis(synthesis ?? '')
 
   return (
-    <div className={styles.pageLayout}>
-      <StepProgressNav />
-      <div className={styles.page}>
+    <div className={styles.page}>
       <motion.div
         className={styles.container}
         initial={{ opacity: 0 }}
@@ -180,7 +177,6 @@ export function SynthesisPage() {
           </motion.div>
         )}
       </motion.div>
-      </div>
     </div>
   )
 }

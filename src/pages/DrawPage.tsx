@@ -8,7 +8,6 @@ import { SpreadBoard } from '@/components/Spread/SpreadBoard'
 import { ActiveCardSlot } from '@/components/Spread/ActiveCardSlot'
 import type { CardCategory, DrawnCard } from '@/types/session'
 import styles from './DrawPage.module.css'
-import { StepProgressNav } from '@/components/StepProgressNav/StepProgressNav'
 
 const DRAW_ORDER: CardCategory[] = ['barrier', 'enabler', 'theory', 'tool', 'provocation']
 
@@ -104,9 +103,7 @@ export function DrawPage() {
   const instructionKey = allDrawn ? 'done' : previewCard ? 'preview' : 'reveal'
 
   return (
-    <div className={styles.pageLayout}>
-      <StepProgressNav />
-      <div className={styles.page}>
+    <div className={styles.page}>
       <div className={styles.header}>
         <span className="subheading" style={{ color: 'var(--color-new-leaf)', fontSize: '0.7rem' }}>
           Step 3 of 5 — The Draw
@@ -178,7 +175,6 @@ export function DrawPage() {
           </motion.div>
         )}
       </AnimatePresence>
-      </div>
     </div>
   )
 }

@@ -10,7 +10,6 @@ import { getCardById } from '@/data/cards/index'
 import type { PersonaId } from '@/types/session'
 import type { TransformationCard } from '@/data/types/cards'
 import styles from './DeliberationPage.module.css'
-import { StepProgressNav } from '@/components/StepProgressNav/StepProgressNav'
 
 const DELIBERATION_ORDER: PersonaId[] = ['critic', 'optimist', 'academic', 'practitioner', 'philosopher']
 
@@ -42,9 +41,7 @@ export function DeliberationPage() {
   }).filter(Boolean) as { personaId: PersonaId; card: TransformationCard; drawnCard: NonNullable<typeof drawnCards[keyof typeof drawnCards]> }[]
 
   return (
-    <div className={styles.pageLayout}>
-      <StepProgressNav />
-      <div className={styles.page}>
+    <div className={styles.page}>
       <div className={styles.layout}>
         <motion.aside
           className={styles.sidebar}
@@ -115,7 +112,6 @@ export function DeliberationPage() {
             </motion.div>
           )}
         </main>
-      </div>
       </div>
     </div>
   )
